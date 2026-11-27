@@ -1,0 +1,19 @@
+{%- comment -%} Page left at an old address; generated from _data/redirects.yml by _plugins/ivl_redirects.rb. {%- endcomment -%}
+{%- if page.redirect_to contains '://' -%}
+  {%- assign target = page.redirect_to -%}
+{%- else -%}
+  {%- assign target = page.redirect_to | relative_url -%}
+{%- endif -%}
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting…</title>
+    <link rel="canonical" href="{% if target contains '://' %}{{ target }}{% else %}{{ target | absolute_url }}{% endif %}">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0; url={{ target }}">
+  </head>
+  <body>
+    <p>This page has moved to <a href="{{ target }}">{{ target }}</a>.</p>
+  </body>
+</html>

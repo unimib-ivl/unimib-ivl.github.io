@@ -1,0 +1,54 @@
+# Builds the site and publishes it on GitHub Pages at every push to main.
+# Repository settings: Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
+# The address comes from the Pages settings: https://<owner>.github.io/<repo>/ until a custom domain
+# (e.g. ivl.disco.unimib.it) is set there, then the custom domain. No change to _config.yml is needed.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "4.0" # same as the Docker image used for the local preview
+          bundler-cache: true
+      - name: Install ImageMagick (responsive images)
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Build
+        env:
+          JEKYLL_ENV: production
+          PAGES_ORIGIN: ${{ steps.pages.outputs.origin }}
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          printf 'url: "%s"\n' "$PAGES_ORIGIN" > _config.pages.yml
+          bundle exec jekyll build --config _config.yml,_config.pages.yml --baseurl "$PAGES_BASE_PATH"
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

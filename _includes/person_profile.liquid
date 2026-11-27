@@ -1,0 +1,93 @@
+{% assign person = include.person %}
+<section class="ivl-person-profile">
+  <div class="ivl-person-profile-media">
+    {% if person.image %}
+      {% include figure.liquid loading="eager" path=person.image title=person.name class="img-fluid" %}
+    {% else %}
+      <div class="lab-person-placeholder" aria-hidden="true">{{ person.initials }}</div>
+    {% endif %}
+    {% if person.email or person.links %}
+      <div class="ivl-person-links" aria-label="Professional links">
+        {% if person.email %}
+          <a href="mailto:{{ person.email }}" aria-label="Email {{ person.name }}" title="Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+        {% endif %}
+        {% for link in person.links %}
+          <a href="{{ link.url }}" aria-label="{{ link.title }}" title="{{ link.title }}">
+            <i class="{{ link.icon }}" aria-hidden="true"></i>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="ivl-person-profile-copy">
+    <p class="ivl-eyebrow">{{ person.position }}</p>
+    <div class="ivl-person-bio">{{ person.bio | markdownify }}</div>
+
+    <dl class="ivl-person-contact">
+      {% if person.email %}
+        <div>
+          <dt>Email</dt>
+          <dd>
+            <a href="mailto:{{ person.email }}">{{ person.email }}</a>
+          </dd>
+        </div>
+      {% endif %}
+      {% if person.office %}
+        <div>
+          <dt>Office</dt>
+          <dd>{{ person.office }}</dd>
+        </div>
+      {% endif %}
+      {% if person.phone %}
+        <div>
+          <dt>Phone</dt>
+          <dd>
+            <a href="tel:{{ person.phone | remove: ' ' }}">{{ person.phone }}</a>
+          </dd>
+        </div>
+      {% endif %}
+    </dl>
+  </div>
+</section>
+
+{% comment %}
+  Optional teaching section. Add to the member's front matter, e.g.:
+  teaching:
+    - course: Image Processing
+      degree: B.Sc. in Computer Science
+      url: https://elearning.unimib.it/...
+      period: 2024–present
+      role: teaching assistant   # optional, omit for the course teacher
+  When the list is missing or empty, the section is not rendered.
+{% endcomment %}
+{% if person.teaching and person.teaching.size > 0 %}
+  <section class="ivl-person-section ivl-person-teaching" aria-labelledby="teaching-title">
+    <h2 id="teaching-title" class="ivl-section-title">Teaching</h2>
+    <ul class="ivl-course-list">
+      {% for course in person.teaching %}
+        <li>
+          <span class="ivl-course-name">
+            {%- if course.url -%}
+              <a href="{{ course.url }}">{{ course.course }}</a>
+            {%- else -%}
+              {{ course.course }}
+            {%- endif -%}
+          </span>
+          {% if course.degree or course.period or course.role %}
+            <span class="ivl-course-meta">
+              {{- course.degree -}}
+              {%- if course.degree and course.period %} · {% endif -%}
+              {{- course.period -}}
+              {%- if course.role %} · {{ course.role | capitalize }}{% endif -%}
+            </span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}
+
+<script defer src="{{ '/assets/js/publication-filters.js' | relative_url | bust_file_cache }}"></script>
+{% include pub-fallback-sprite.svg %}

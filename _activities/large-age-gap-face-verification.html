@@ -1,0 +1,26 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/large-age-gap-face-verification/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Large Age-Gap Face Verification
+description: This paper introduces a new method for face verification across large age gaps and also a dataset containing variations of age in the wild, the Large…
+participants:
+- Simone Bianco
+publication_tag: large-age-gap-face-verification
+render_with_liquid: false
+---
+<p>This paper introduces a new method for face verification across large age gaps and also a dataset containing variations of age in the wild, the Large Age-Gap (LAG) dataset, with images ranging from child/young to adult/old. The proposed method exploits a deep convolutional neural network (DCNN) pre-trained for the face recognition task on a large dataset and then fine-tuned for the large age-gap face verification task. Finetuning is performed in a Siamese architecture using a contrastive loss function. A feature injection layer is introduced to boost verification accuracy, showing the ability of the DCNN to learn a similarity metric leveraging external features. Experimental results on the LAG dataset show that our method is able to outperform the face verification solutions in the state of the art considered.</p>
+<h2>Large Age-Gap (LAG) database</h2>
+<figure><a href="../../wp-content/uploads/2016/09/LAG-db.webp"><img alt="LAG-db" height="108" src="../../wp-content/uploads/2016/09/LAG-db.webp" width="600"/></a><figcaption>Examples of face crops for matching pairs in the Large Age-Gap (LAG) dataset</figcaption></figure>
+<p>The dataset contains 3,828 images of 1,010 celebrities. For each identity at least one child/young image and one adult/old image are present.<br/>
+LAG database (100×100) (<a href="../../wp-content/uploads/2016/09/LAGdataset_100.zip">.zip</a>, 70MB)<br/>
+LAG database (200×200) (<a href="../../wp-content/uploads/2016/09/LAGdataset_200.zip">.zip</a>, 215MB)</p>
+<p>If you use these data, please cite:</p>
+<pre tabindex="0">@article{bianco2017large-age,
+ author = {Bianco, Simone},
+ year = {2017},
+ pages = {36-42},
+ title = {Large Age-Gap Face Verification by Feature Injection in Deep Networks},
+ volume = {90},
+ journal = {Pattern Recognition Letters},
+ doi = {10.1016/j.patrec.2017.03.006}}</pre>

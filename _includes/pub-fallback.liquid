@@ -1,0 +1,66 @@
+{%- comment -%}
+  Thumbnail for a publication without its own `preview` image (used by _layouts/bib.liquid).
+  `is_preprint` is set by _layouts/bib.liquid (unpublished or arXiv entries get the preprint drawing).
+  Three styles, chosen with `pub_fallback_style` in _config.yml (publisher logos must not be used):
+    illustration  drawing of the publication type (_includes/pub-fallback-sprite.svg) + venue badge   [default]
+    venue         the venue abbreviation as text (Patent / Thesis / Misc when there is no venue)
+    publisher     the publisher or organization name as text (_data/venue_publishers.yml), venue underneath
+{%- endcomment -%}
+{%- assign fb_proceedings = 'inproceedings,conference,proceedings' | split: ',' -%}
+{%- assign fb_books = 'book,inbook,incollection' | split: ',' -%}
+{%- assign fb_theses = 'thesis,phdthesis,mastersthesis' | split: ',' -%}
+{%- if is_preprint -%}{%- assign fb_type = 'preprint' -%}{%- assign fb_type_label = 'Preprint' -%}
+{%- elsif entry.type == 'article' -%}{%- assign fb_type = 'journal' -%}{%- assign fb_type_label = 'Journal' -%}
+{%- elsif fb_proceedings contains entry.type -%}{%- assign fb_type = 'conference' -%}{%- assign fb_type_label = 'Conference' -%}
+{%- elsif fb_books contains entry.type -%}{%- assign fb_type = 'book' -%}{%- assign fb_type_label = 'Book' -%}
+{%- elsif entry.type == 'patent' -%}{%- assign fb_type = 'patent' -%}{%- assign fb_type_label = 'Patent' -%}
+{%- elsif fb_theses contains entry.type -%}{%- assign fb_type = 'other' -%}{%- assign fb_type_label = 'Thesis' -%}
+{%- else -%}{%- assign fb_type = 'other' -%}{%- assign fb_type_label = 'Misc' -%}{%- endif -%}
+{%- assign fb_style = site.pub_fallback_style | default: 'illustration' -%}
+{%- assign fb_has_venue = false -%}
+{%- if entry.abbr -%}{%- if fb_type == 'journal' or fb_type == 'conference' or fb_type == 'preprint' -%}{%- assign fb_has_venue = true -%}{%- endif -%}{%- endif -%}
+
+{%- if fb_style == 'venue' -%}
+  {%- if fb_has_venue -%}{%- assign fb_main = entry.abbr -%}{%- assign fb_sub = fb_type_label -%}
+  {%- else -%}{%- assign fb_main = fb_type_label -%}{%- assign fb_sub = '' -%}{%- endif -%}
+{%- elsif fb_style == 'publisher' -%}
+  {%- assign fb_main = '' -%}
+  {%- if fb_type != 'patent' and fb_type != 'other' and fb_type != 'preprint' or fb_has_venue -%}
+    {%- if entry.abbr -%}
+      {%- for org in site.data.venue_publishers -%}
+        {%- if org.venues contains entry.abbr -%}{%- assign fb_main = org.name -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if fb_main == '' and entry.publisher -%}
+      {%- for org in site.data.venue_publishers -%}
+        {%- for word in org.publisher -%}
+          {%- if entry.publisher contains word -%}{%- assign fb_main = org.name -%}{%- break -%}{%- endif -%}
+        {%- endfor -%}
+        {%- if fb_main != '' -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+      {%- assign fb_pub_text = entry.publisher | remove: '{' | remove: '}' | strip -%}
+      {%- if fb_main == '' and fb_pub_text.size < 24 -%}{%- assign fb_main = fb_pub_text -%}{%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- if fb_main == '' -%}
+    {%- if fb_has_venue -%}{%- assign fb_main = entry.abbr -%}{%- else -%}{%- assign fb_main = fb_type_label -%}{%- endif -%}
+    {%- assign fb_sub = '' -%}
+  {%- elsif fb_has_venue -%}{%- assign fb_sub = entry.abbr -%}
+  {%- else -%}{%- assign fb_sub = fb_type_label -%}{%- endif -%}
+{%- endif -%}
+
+{%- if fb_style == 'venue' or fb_style == 'publisher' -%}
+  {%- assign fb_len = fb_main | size -%}
+  {%- if fb_len <= 5 -%}{%- assign fb_size = 'xl' -%}{%- elsif fb_len <= 9 -%}{%- assign fb_size = 'lg' -%}{%- elsif fb_len <= 13 -%}{%- assign fb_size = 'md' -%}{%- else -%}{%- assign fb_size = 'sm' -%}{%- endif -%}
+  <div class="pub-fb pub-fb--text pub-fb--{{ fb_style }}" data-pub-type="{{ fb_type }}" title="{{ venue_text | strip_html | escape }}">
+    <span class="pub-fb-main pub-fb-main--{{ fb_size }}">{{ fb_main | escape }}</span>
+    {%- if fb_sub != '' -%}<span class="pub-fb-sub">{{ fb_sub | escape }}</span>{%- endif -%}
+  </div>
+{%- else -%}
+  <div class="pub-fb" data-pub-type="{{ fb_type }}">
+    <svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#ivl-pubtype-{{ fb_type }}"/></svg>
+    {%- if fb_has_venue -%}
+      <span class="pub-fb-venue" title="{{ venue_text | strip_html | escape }}">{{ entry.abbr | escape }}</span>
+    {%- endif -%}
+  </div>
+{%- endif -%}

@@ -1,0 +1,42 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/image-retrieval/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Image Retrieval
+description: We have developed algorithms for image similarity computation and image representation that can be used in content based image retrieval systems as well as…
+publication_tag: image-retrieval
+render_with_liquid: false
+---
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2017/05/retrieval.webp"><img alt="Full-size image" height="2965" src="../../wp-content/uploads/2017/05/retrieval.webp" width="5057"/></a>
+</figure>
+</div>
+<p>We have developed algorithms for image similarity computation and image representation that can be used in content based image retrieval systems as well as for image understanding in classification tasks.</p>
+<ul>
+<li><a href="#QL">Quicklook2 CBIR system</a></li>
+<li><a href="#DSCH">Dynamic Spatial Chromatic Histogram</a></li>
+<li><a href="#Prosemantic">Prosemantic features</a></li>
+</ul>
+<h2>The Quicklook2 CBIR System</h2>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2017/05/Qlook.png"><img alt="Full-size image: The Quicklook2 system architecture" height="383" src="../../wp-content/uploads/2017/05/Qlook.png" width="775"/></a>
+<figcaption>
+				The Quicklook2 system architecture
+				</figcaption></figure>
+</div>
+<p>Quicklook2 allows the user to query image and multimedia databases with the aid of sample images, or an impromptu sketch and/or textual descriptions, and progressively refine the system’s response by indicating the relevance, or non-relevance of the retrieved items. The major innovation of the system is its relevance feedback mechanism that performs a statistical analysis of both the image and textual feature distributions of the retrieved items the user has judged relevant, or not relevant to identify what features the user has taken into account (and to what extent) in formulating this judgement, and then weigh their influence in the overall evaluation of similarity, as well as in the formulation of a new, single query that better expresses the user’s multimedia information needs.<br/>
+.</p>
+<h2>Low level image features: Dynamic Spatial Chromatic Histogram (DSCH)</h2>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2017/05/DSCH.png"><img alt="Full-size image: Illustrative example of DSCH similarity computation." height="322" src="../../wp-content/uploads/2017/05/DSCH.png" width="721"/></a>
+<figcaption>
+				Illustrative example of DSCH similarity computation.
+				</figcaption></figure>
+</div>
+<p><span>We introduce an innovative image retrieval strategy, the Dynamic Spatial Chromatic Histogram, which makes it possible to take into account spatial information and dynamic color quantization in a flexible way without greatly adding to computation costs.</span></p>
+<h2>High level image features: Prosemantic features</h2>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2017/05/prosemantic.png"><img alt="Full-size image" height="566" src="../../wp-content/uploads/2017/05/prosemantic.png" width="1026"/></a>
+</figure>
+</div>
+<p>Prosemantic features are obtained through a two-level feature extraction process. A first level of features, related to image structure and color distribution, is extracted from the images, and used as input to a bank of classifiers, each one trained to recognize a given category. Packing together the scores, the features that we call prosemantic are finally obtained. Our experiments show that the use of prosemantic features allows for a more successful and quick retrieval of images with respect to the other features. We have also demonstrate that they can be effectively used also for unsupervised image categorization, that is, for grouping semantically similar images.</p>

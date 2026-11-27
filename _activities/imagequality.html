@@ -1,0 +1,42 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/imagequality/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Image Quality
+description: Subjective Data IVL_SD (17.3 KiB) SD_IVL dataset (244.0 MiB) copyright notice IVL (239.9 KiB)
+participants:
+- Gianluigi Ciocca
+- Silvia Corchs
+- Francesca Gasparini
+- Raimondo Schettini
+publication_tag: imagequality
+render_with_liquid: false
+---
+Image quality assessment (IQA) is a multidimensional research problem and an active and evolving research area.
+IQA methods can be categorized as subjective versus objective. Subjective methods are based on psycho-physical experiments involving human observers. The human observers assign quality scores from an integer scale. These scores characterize the quality of the images and are related to semantic terms [excellent, good, fair, poor, bad]. In this way, the human observers make a classification, while the given score could be interpreted as a confidence of the observer in her/his judgment.
+Objective metrics aim to substitute the subjective experiments. However, it is mandatory to compare the objective scores with the subjective ones. Objective image quality approaches can be categorized into three groups depending on the availability of the original image. Full Reference (FR) methods perform a direct comparison between the image under test and a reference or original image. No Reference (NR) metrics, also called blind methods, are applied when the original image is unavailable. Reduced Reference (RR) metrics lie between FR and NR metrics and are designed to predict image quality with only partial information about the reference image.
+<hr/>
+<h3>IVL DATABASE</h3>
+The IVL database originates from 20 reference images of 886×591 pixels (15×10 cm at 150 dpi, typical printing parameters for natural photos), chosen to sample different contents both in terms of low level features (frequencies, colors) and higher ones (face, buildings, close-up, outdoor, landscape).
+Starting from these images we have generated:
+1] A database of single distortions SD-IVL: 200 noisy images and 180 JPEG compressed images.<br/>
+2] A database of multiply distorted images MD-IVL: 400 images with noise plus JPEG distrotions and 350 images with blur plus JPEG distortions.
+If you use the single distortion database SD-IVL in your research, we kindly ask you to cite this paper:
+<pre tabindex="0"><code>@article{corchs2014no-reference,
+ author = {Corchs, Silvia and Gasparini, Francesca and Schettini, Raimondo},
+ year = {2014},
+ pages = {86-100},
+ title = {No Reference Image Quality classification for JPEG-Distorted Images},
+ volume = {30},
+ publisher = {Elsevier},
+ journal = {Digital Signal Processing},
+ doi = {10.1016/j.dsp.2014.04.003},
+ issn = {1051-2004}
+}</code></pre>
+Database is password protected, please contact gasparini-at-disco.unimib.it and the password will be sent to you.
+The use of these datasets is intended only for accademic or educational purposes.
+<h2>DATASETS</h2>
+<h3>Single Distortion Database SD-IVL</h3>
+<p><p>  <strong><a href="../../wp-content/files/subjDataSD.zip">Subjective Data IVL_SD</a></strong> (17.3 KiB)</p><p>  <strong><a href="../../wp-content/files/SDIVL.zip">SD_IVL dataset</a></strong> (244.0 MiB)</p><p>  <strong><a href="../../wp-content/files/copyrightnoticeIVL.pdf">copyright notice IVL</a></strong> (239.9 KiB)</p></p>
+<h3>Multiply Distorted Database MD -IVL</h3>
+<p><p>  <strong><a href="../../wp-content/files/MDIVL.zip">MDIVL.zip</a></strong> (95.3 MiB)</p><p>  <strong><a href="../../wp-content/files/copyrightnoticeMDIVL.pdf">copyright notice MDIVL</a></strong> (399.6 KiB)</p></p>

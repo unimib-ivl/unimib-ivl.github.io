@@ -1,0 +1,170 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/logo-recognition/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Deep Learning for Logo Recognition
+description: In this project we present a method for logo recognition based on deep learning. Our recognition pipeline is composed of a logo region proposal followed by…
+participants:
+- Simone Bianco
+- Marco Buzzelli
+- Davide Mazzini
+- Raimondo Schettini
+publication_tag: logo-recognition
+render_with_liquid: false
+---
+<p>In this project we present a method for logo recognition based on deep learning. Our recognition pipeline is composed of a logo region proposal followed by a Convolutional Neural Network (CNN) specifically trained for logo classification.<br/>
+Experiments are carried out on both the <strong>FlickrLogos-32</strong> database and our extended <strong>Logos-32plus</strong> dataset.</p>
+<p>Our classification model and extended dataset are made available for research purposes (<a href="https://goo.gl/FPtqxR">link</a>). If you use any of this material, please cite:</p>
+<pre tabindex="0">@article{bianco2017deep,
+  title={Deep learning for logo recognition},
+  author={Simone Bianco and Marco Buzzelli and Davide Mazzini and Raimondo Schettini},
+  journal={Neurocomputing},
+  volume={245},
+  pages={23--30},
+  year={2017},
+  issn={0925-2312},
+  doi={http://dx.doi.org/10.1016/j.neucom.2017.03.051},
+  url={http://www.sciencedirect.com/science/article/pii/S0925231217305660}
+ }
+@inproceedings{bianco2015logo,
+  title={Logo recognition using cnn features},
+  author={Bianco, Simone and Buzzelli, Marco and Mazzini, Davide and Schettini, Raimondo},
+  booktitle={International Conference on Image Analysis and Processing},
+  pages={438--448},
+  year={2015},
+  organization={Springer}
+ }</pre>
+<hr/>
+<h2>Datasets</h2>
+<p><strong>FlickrLogos-32</strong> (<a href="http://www.multimedia-computing.de/flickrlogos/">link</a>) dataset is a publicly-available collection of photos showing 32 different logo brands. It is meant for the evaluation of logo retrieval and multi-class logo detection/recognition systems on real-world images.</p>
+<figure><img alt="" height="326" src="../../wp-content/uploads/2016/09/logos.jpg" width="659"/><figcaption>Example images for each of the 32 classes of the FlickrLogos-32 dataset</figcaption></figure>
+<p><strong>Logos-32plus</strong> (<a href="https://goo.gl/FPtqxR">link</a>) dataset is an expansion of the train-set of FlickrLogos-32. It has the same classes of objects as its counterpart but a larger cardinality (12312 instances).<br/>
+We collected this new dataset with the aim of taking into account a larger set of real imaging conditions and transformations that may occur in uncontrolled acquisitions.<br/>
+The dataset contains on average 400 examples per class, with each image including one or multiple instances of the same class.</p>
+<figure><img alt="" height="339" src="../../wp-content/uploads/2017/02/Logos-32plus_histogram.png" width="659"/><figcaption>Graphical comparison of the distribution of the 32 logo classes between FlickLogos-32 and our augmented Logos-32plus dataset</figcaption></figure>
+<p><strong>To ensure a high variability of the new dataset and to avoid any overlap with the existing one, we performed a semi-automatic check for duplicate images within the Logos-32plus dataset itself and with the FlickrLogos-32 dataset.</strong></p>
+<hr/>
+<h2>Results</h2>
+<p>The following table reports methods trained on either FlickrLogos-32 or on the combination of both FlickrLogos-32 and Logos-32plus.<br/>
+The test set is always the official test set of FlickrLogos-32.<br/>
+Results refer to <strong>recognition</strong> performance, and are computed according to the standard evaluation protocol defined in <a href="http://www.multimedia-computing.de/flickrlogos/sdk/FlickrLogos-32_eval-kit-1.0.4/scripts/fl_eval_classification.py">fl_eval_classification.py</a>.</p>
+<div class="ivl-legacy-table"><table>
+<tbody>
+<tr>
+<th>Method</th>
+<th width="14%">Train data</th>
+<th width="14%">Precision</th>
+<th width="14%">Recall</th>
+<th width="14%">F1</th>
+<th width="14%">Accuracy</th>
+</tr>
+<tr>
+<td>BoW SIFT [1]</td>
+<td>FL32</td>
+<td>0.991</td>
+<td>0.784</td>
+<td>0.875</td>
+<td>0.941</td>
+</tr>
+<tr>
+<td>BoW SIFT + SP + SynQE [1]</td>
+<td>FL32</td>
+<td>0.994</td>
+<td>0.826</td>
+<td>0.902</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Romberg et al [2]</td>
+<td>FL32</td>
+<td>0.981</td>
+<td>0.610</td>
+<td>0.752</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Revaud et al. [3]</td>
+<td>FL32</td>
+<td>&gt;0.980</td>
+<td>0.726</td>
+<td>0.834÷0.841</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Romberg et al. [1]</td>
+<td>FL32</td>
+<td>0.999</td>
+<td>0.832</td>
+<td>0.908</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Bianco et al. 2015 [4]</td>
+<td>FL32</td>
+<td>0.909</td>
+<td>0.845</td>
+<td>0.876</td>
+<td>0.884</td>
+</tr>
+<tr>
+<td>Bianco et al. 2015 + Q.Exp [4]</td>
+<td>FL32</td>
+<td>0.971</td>
+<td>0.629</td>
+<td>0.763</td>
+<td>0.904</td>
+</tr>
+<tr>
+<td>Eggert et al. [5]</td>
+<td>FL32</td>
+<td>0.996</td>
+<td>0.786</td>
+<td>0.879</td>
+<td>0.846</td>
+</tr>
+<tr>
+<td>Oliveira et al. [6]</td>
+<td>FL32</td>
+<td>0.955</td>
+<td>0.908</td>
+<td>0.931</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>DeepLogo [7]</td>
+<td>FL32</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>0.896</td>
+</tr>
+<tr>
+<td rowspan="2">Bianco et al. 2017 [8] 
+(This work)</td>
+<td>FL32</td>
+<td>0.976</td>
+<td>0.676</td>
+<td>0.799</td>
+<td>0.910</td>
+</tr>
+<tr>
+<td>FL32, L32+</td>
+<td>0.989</td>
+<td>0.906</td>
+<td>0.946</td>
+<td>0.958</td>
+</tr>
+</tbody>
+</table></div>
+<p>Researchers are highly invited to submit their own results to <a href="mailto:marco.buzzelli@disco.unimib.it">marco.buzzelli@disco.unimib.it</a> for inclusion in this table.<br/>
+Submissions should follow <a href="../../wp-content/uploads/2017/02/Logos_example_submission.txt">this example</a> format, containing one class and confidence for each entry in the FlickrLogos-32 test set.</p>
+<hr/>
+<h2>References</h2>
+<p>[1] S. Romberg, R. Lienhart, Bundle min-hashing for logo recognition, in: Proceedings of the 3rd ACM conference on International conference on multimedia retrieval, ACM, 2013, pp. 113–120.<br/>
+[2] S. Romberg, L. G. Pueyo, R. Lienhart, R. Van Zwol, Scalable logo recognition in real-world images, in: Proceedings of the 1st ACM International Conference on Multimedia Retrieval, ACM, 2011, p. 25.<br/>
+[3] J. Revaud, M. Douze, C. Schmid, Correlation-based burstiness for logo retrieval, in: Proceedings of the 20th ACM international conference on Multimedia, ACM, 2012, pp. 965–968.<br/>
+[4] S. Bianco, M. Buzzelli, D. Mazzini, R. Schettini, Logo recognition using cnn features, in: Image Analysis and ProcessingICIAP 2015, Springer, 2015, pp. 438–448.<br/>
+[5] C. Eggert, A. Winschel, R. Lienhart, On the benefit of synthetic data for company logo detection, in: Proceedings of the 23rd Annual ACM Conference on Multimedia Conference, ACM, 2015, pp. 1283–1286.<br/>
+[6] G. Oliveira, X. Frazão, A. Pimentel, B. Ribeiro, Automatic graphic logo detection via fast region-based convolutional networks, in: Neural Networks (IJCNN), 2016 International Joint Conference on, IEEE, 2016, pp. 985–991.<br/>
+[7] F. N. Iandola, A. Shen, P. Gao, K. Keutzer, Deeplogo: Hitting logo recognition with the deep neural network hammer, arXiv preprint arXiv:1510.02131.<br/>
+[8] S. Bianco, M. Buzzelli, D. Mazzini, R. Schettini, Deep Learning for Logo Recognition, Neurocomputing 245, 23–30 (2017), http://dx.doi.org/10.1016/j.neucom.2017.03.051</p>

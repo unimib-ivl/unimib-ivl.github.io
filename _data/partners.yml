@@ -1,0 +1,79 @@
+# Partners listed on the homepage (#partners), as plain text: the lab is not allowed to use their logos.
+# Each group is a scrolling text band with its name fixed on the left; bands alternate direction.
+# `band: primary` = large type on white; `secondary` = smaller type, grouped on a light violet block.
+# Groups and names appear in the order listed.
+#   name:  text shown on the page
+#   full:  optional longer name, shown as a tooltip and read by screen readers
+#   url:   optional link
+
+- group: Industry
+  band: primary
+  partners:
+    - name: Huawei
+      url: https://www.huawei.com/
+    - name: Canon
+      url: https://global.canon/
+    - name: Accenture
+      url: https://www.accenture.com/
+    - name: STMicroelectronics
+      url: https://www.st.com/
+    - name: HP
+      url: https://www.hp.com/
+    - name: NVIDIA
+      url: https://www.nvidia.com/
+    - name: Pirelli
+      url: https://www.pirelli.com/
+    - name: Almawave
+      url: https://www.almawave.com/
+    - name: Almaviva
+      url: https://www.almavivagroup.com/
+    - name: lastminute.com group
+      url: https://corporate.lastminute.com/
+    - name: MBDA
+      url: https://www.mbda-systems.com/
+    - name: Selex Sistemi Integrati
+    - name: ST-Ericsson
+    - name: Océ
+      url: https://cpp.canon/
+    - name: MEI
+      url: https://meisystem.com/
+    - name: Olivetti
+      url: https://www.olivetti.com/
+    - name: CTS electronics
+    - name: Sprinx Technologies
+      url: https://sprinx.ai/
+    - name: Micro Systems
+
+- group: Research institutions
+  band: secondary
+  partners:
+    - name: University of Helsinki
+      url: https://www.helsinki.fi/en
+    - name: CNR
+      full: CNR - National Research Council of Italy
+      url: https://www.cnr.it/
+    - name: ENEA
+      full: ENEA - Italian National Agency for New Technologies, Energy and Sustainable Economic Development
+      url: https://www.enea.it/
+    - name: ICSC
+      full: ICSC - National Research Centre in HPC, Big Data and Quantum Computing
+      url: https://www.supercomputing-icsc.it/
+    - name: OnFoods
+      url: https://onfoods.it/
+
+- group: Funding bodies
+  band: secondary
+  partners:
+    - name: European Union
+      url: https://european-union.europa.eu/
+    - name: MUR
+      full: MUR - Italian Ministry of University and Research
+      url: https://www.mur.gov.it/
+    - name: Italia Domani (PNRR)
+      url: https://www.italiadomani.gov.it/
+    - name: Regione Lombardia
+      url: https://www.regione.lombardia.it/
+    - name: Fondazione Cariplo
+      url: https://www.fondazionecariplo.it/
+    - name: University of Milano-Bicocca
+      url: https://www.unimib.it/

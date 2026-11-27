@@ -1,0 +1,110 @@
+# Research areas shown on the homepage and used to filter publications.
+#
+# Each publication in _bibliography/papers.bib can carry two custom fields that
+# reference the slugs below (comma separated):
+#
+#   areas  = {color, quality},
+#   topics = {color-constancy, restoration},
+#
+# Topics: `name` is the short label shown on the homepage and in the filters, `full` the longer
+# description shown on hover.
+# When adding a new publication, pick one or more areas and the matching topics.
+# Clicking an area title or a topic on the homepage opens the publications page
+# filtered by that slug (e.g. /publications/?topic=color-constancy).
+
+- slug: color
+  title: Color and Multispectral Imaging
+  short: Color & Spectral
+  description: >-
+    Modelling how cameras and observers see color, from illuminant estimation and color correction to
+    device characterization and the acquisition and analysis of multi- and hyperspectral images.
+  image: assets/img/ivl/research/color-illuminants.webp
+  image_alt: A color checker chart split into four strips, rendered under sodium lamp, tungsten, daylight and blue sky light
+  topics:
+    - slug: color-constancy
+      name: Color constancy
+      full: Color constancy and illuminant estimation
+    - slug: color-correction
+      name: Color correction
+      full: Camera color characterization and correction
+    - slug: spectral-imaging
+      name: Spectral imaging
+      full: Spectral imaging and reconstruction
+    - slug: color-perception
+      name: Color perception
+      full: Color appearance and perception
+    - slug: color-texture
+      name: Color texture
+      full: Color texture and material recognition
+
+- slug: quality
+  title: Image Quality and Enhancement
+  short: Quality & Enhancement
+  description: >-
+    Improving and measuring the visual quality of images and videos: enhancement, restoration of degraded
+    content, and objective models of perceived quality.
+  image: assets/img/ivl/research/image-enhancement.webp
+  image_alt: A dull, noisy photo of a tulip field split with its enhanced version
+  topics:
+    - slug: quality-assessment
+      name: Quality assessment
+      full: Image and video quality assessment
+    - slug: image-aesthetics
+      name: Image aesthetics
+      full: Aesthetics, complexity and memorability
+    - slug: image-enhancement
+      name: Image enhancement
+      full: Image enhancement and night photography
+    - slug: restoration
+      name: Restoration
+      full: Image and video restoration
+    - slug: super-resolution
+      name: Super-resolution
+      full: Super-resolution of images, videos and spectral images
+
+- slug: vision
+  title: Computer and Machine Vision
+  short: Computer Vision
+  description: >-
+    Teaching machines to interpret scenes and objects, with methods for detection, segmentation and
+    recognition, and for spotting anomalies and defects in industrial inspection.
+  image: assets/img/ivl/research/instance-segmentation.webp
+  image_alt: Instance segmentation of two people walking a dog next to a car
+  topics:
+    - slug: object-recognition
+      name: Object recognition
+      full: Object detection and recognition
+    - slug: segmentation
+      name: Segmentation
+      full: Semantic segmentation
+    - slug: food-computing
+      name: Food computing
+      full: Food recognition and dietary monitoring
+    - slug: human-monitoring
+      name: Human monitoring
+      full: Face, emotion and driver monitoring
+    - slug: 3d-reconstruction
+      name: 3D reconstruction
+      full: 3D reconstruction and structure from motion
+    - slug: visual-inspection
+      name: Visual inspection
+      full: Visual inspection and anomaly detection
+
+- slug: vim
+  title: Visual Information Management
+  short: Visual Information
+  description: >-
+    Organizing large collections of images and videos so they can be searched, browsed and understood:
+    content-based retrieval, automatic tagging and indexing, and semantic organization.
+  image: assets/img/ivl/research/image-retrieval.webp
+  image_alt: Content-based image retrieval, a photo of a gondola and the four most similar images found in a collection
+  topics:
+    - slug: image-retrieval
+      name: Image retrieval
+      full: Content-based image retrieval
+    - slug: annotation
+      name: Annotation
+      full: Image and video annotation
+    - slug: photo-collections
+      name: Photo collections
+      full: Browsing and organizing photo collections

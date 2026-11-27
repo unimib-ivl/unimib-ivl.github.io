@@ -1,0 +1,149 @@
+# Redirects from addresses of the old website (www.ivl.disco.unimib.it) to their new location.
+# One source for all hosts (see _plugins/ivl_redirects.rb):
+#   - Netlify: written to /_redirects (real HTTP 301 redirects, also for command-line downloads);
+#   - page addresses (ending in "/") also get a small HTML page that redirects at once (works on any host);
+#   - GitHub Pages: the 404 page forwards browsers that land on any other address listed here.
+# "from" is a path on this site, optionally with address parameters (?id=:id, where ":id" matches any value and can be
+# used in "to"); "to" is a path on this site or a full URL.
+
+# Old project pages that are now in the Projects section, and old pages that pointed to another site
+- from: /activities/onfoods/
+  to: /projects/onfoods/
+- from: /activities/hpc/
+  to: /projects/hpc/
+- from: /activities/progetto-e4s-energy-for-safety/
+  to: /projects/e4s/
+- from: /activities/aicv4food/
+  to: https://sites.google.com/unimib.it/aicv4food/
+
+# Old pages that pointed to a minisite (copied into the site at its old address, /minisites/<name>/)
+- from: /activities/dalib/
+  to: /minisites/DALib/
+- from: /activities/cciw-2024/
+  to: /minisites/cciw-2024/
+- from: /cciw-2024/
+  to: /minisites/cciw-2024/
+- from: /news-cciw-2024/
+  to: /minisites/cciw-2024/
+
+# RawFooT minisite (/minisites/rawfoot/): the old PHP pages are now static .html pages
+- from: /minisites/rawfoot/index.php
+  to: /minisites/rawfoot/
+- from: /minisites/rawfoot/details.php
+  to: /minisites/rawfoot/details.html
+- from: /minisites/rawfoot/textures.php
+  to: /minisites/rawfoot/textures.html
+- from: /minisites/rawfoot/download.php
+  to: /minisites/rawfoot/download.html
+- from: /minisites/rawfoot/contact.php
+  to: /minisites/rawfoot/contact.html
+# address parameters: ":name" matches any value and can be reused in "to"
+- from: /minisites/rawfoot/textures_detail.php?id=:id&name=:name
+  to: /minisites/rawfoot/textures_detail_:id.html
+- from: /minisites/rawfoot/textures_detail.php?id=:id
+  to: /minisites/rawfoot/textures_detail_:id.html
+
+# Other old addresses: people who are no longer in the lab (listed under "Former members" on the Team page), contacts
+- from: /how-to-reach-us/
+  to: /how-to-reach/
+- from: /people/alberto-raimondi/
+  to: /people/
+- from: /people/alessio_albe/
+  to: /people/
+- from: /people/claudio-cusano/
+  to: /people/
+- from: /people/daniela-dauria/
+  to: /people/
+- from: /people/davide-marelli/
+  to: /people/
+- from: /people/davide-mazzini/
+  to: /people/
+- from: /people/flavio-piccoli/
+  to: /people/
+- from: /people/gianmarco-corti/
+  to: /people/
+- from: /people/giorgia-rigamonti/
+  to: /people/
+- from: /people/hamza-amrani/
+  to: /people/
+- from: /people/ilaria-erba/
+  to: /people/
+- from: /people/illya-bakurov/
+  to: /people/
+- from: /people/intissar-khalifa/
+  to: /people/
+- from: /people/ionel-eduard-stan/
+  to: /people/
+- from: /people/isabella-gagliardi/
+  to: /people/
+- from: /people/luigi-celona/
+  to: /people/
+- from: /people/marco-leonardi/
+  to: /people/
+- from: /people/mario-avolio/
+  to: /people/
+- from: /people/mirko-agarla/
+  to: /people/
+- from: /people/mirko-barbato/
+  to: /people/
+- from: /people/paolo-napoletano/
+  to: /people/
+- from: /people/rajesh-kumar/
+  to: /people/
+- from: /people/simone-locatelli/
+  to: /people/
+- from: /people/simone-zini/
+  to: /people/
+- from: /people/sofia-amaru/
+  to: /people/
+- from: /people/thomas-barbera/
+  to: /people/
+
+# Old download-manager links (/download/<file>) to the files, which are kept at their old path wp-content/files/
+- from: /download/Benchmarking-segmentation-algorithms-dataset.zip
+  to: /wp-content/files/Benchmarking-segmentation-algorithms-dataset.zip
+- from: /download/color_constancy_stability.zip
+  to: /wp-content/files/color_constancy_stability.zip
+- from: /download/copyrightnoticeIVL.pdf
+  to: /wp-content/files/copyrightnoticeIVL.pdf
+- from: /download/copyrightnoticeMDIVL.pdf
+  to: /wp-content/files/copyrightnoticeMDIVL.pdf
+- from: /download/copyrightnotice_RSIVL.pdf
+  to: /wp-content/files/copyrightnotice_RSIVL.pdf
+- from: /download/data_RSIVL.zip
+  to: /wp-content/files/data_RSIVL.zip
+- from: /download/FOOD475DB.zip
+  to: /wp-content/files/FOOD475DB.zip
+- from: /download/FOOD524DB.zip
+  to: /wp-content/files/FOOD524DB.zip
+- from: /download/ImageAnnotation.zip
+  to: /wp-content/files/ImageAnnotation.zip
+- from: /download/orientation-mta-dist.tar.gz
+  to: /wp-content/files/orientation-mta-dist.tar.gz
+- from: /download/split.zip
+  to: /wp-content/files/split.zip
+- from: /download/subjDataSD.zip
+  to: /wp-content/files/subjDataSD.zip
+- from: /download/texture_data.zip
+  to: /wp-content/files/texture_data.zip
+
+# Large dataset files, kept outside the website (folder large-files/ next to the site, same paths) and shared from
+# Google Drive ("anyone with the link"). To move one elsewhere, replace its "to" (and that of its /download/ line).
+- from: /wp-content/files/IVL-SYNTHSFM.zip
+  to: https://drive.google.com/file/d/1y8BcXUM2qfKbtcX3eLN9Ox1f-hMbkf8H/view
+- from: /download/IVL-SYNTHSFM.zip
+  to: https://drive.google.com/file/d/1y8BcXUM2qfKbtcX3eLN9Ox1f-hMbkf8H/view
+- from: /wp-content/files/SDIVL.zip
+  to: https://drive.google.com/file/d/1y20i32fTBi8ssn2DMtm4E3cQs6E9X--X/view
+- from: /download/SDIVL.zip
+  to: https://drive.google.com/file/d/1y20i32fTBi8ssn2DMtm4E3cQs6E9X--X/view
+- from: /wp-content/files/MDIVL.zip
+  to: https://drive.google.com/file/d/1rR3Rb2bIAUXvOrW2LiNr2PEXDB5k2fLQ/view
+- from: /download/MDIVL.zip
+  to: https://drive.google.com/file/d/1rR3Rb2bIAUXvOrW2LiNr2PEXDB5k2fLQ/view
+- from: /wp-content/uploads/2016/09/LAGdataset_100.zip
+  to: https://drive.google.com/file/d/1lnc_Pg508ATI9XnHLuCgY8UG8JMwoF5g/view
+- from: /wp-content/uploads/2016/09/LAGdataset_200.zip
+  to: https://drive.google.com/file/d/1yZ-aC3X10x3Nx65rhKl1rtkSB-nBg16C/view
+- from: /minisites/UNIMIB2016/UNIMIB2016-images.zip
+  to: https://drive.google.com/file/d/1yysI7j8DN1_0ejT-5KT71PBt_2-tSPnp/view

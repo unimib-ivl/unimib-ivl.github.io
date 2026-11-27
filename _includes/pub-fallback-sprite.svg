@@ -1,0 +1,111 @@
+{% comment %}
+  Illustrations for publications without their own `preview` image, one per publication type
+  (journal, conference, book, patent, preprint, other). Used by _layouts/bib.liquid through <use href="#ivl-pubtype-…">.
+  Include it once on every page that lists publications (publications page, member pages).
+  Colours: --pt-ink (logo navy), --pt-soft (light violet), --pt-paper (white); set in assets/css/ivl.css.
+{% endcomment %}
+<svg class="pub-fb-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="ivl-pubtype-journal" viewBox="0 0 160 100">
+    <!-- a journal issue: masthead, article title and two text columns with a figure (not a cover with a portrait) -->
+    <rect style="fill:var(--pt-soft)" x="72" y="15" width="52" height="70" rx="2.5" transform="rotate(7 98 50)"/>
+    <g transform="rotate(-5 78 50)">
+      <rect style="fill:var(--pt-paper);stroke:var(--pt-ink)" x="50" y="14" width="56" height="72" rx="2.5" stroke-width="3"/>
+      <path style="fill:var(--pt-ink)" d="M50 16.5a2.5 2.5 0 0 1 2.5-2.5h51a2.5 2.5 0 0 1 2.5 2.5V28H50Z"/>
+      <rect style="fill:var(--pt-paper)" x="56" y="19.2" width="25" height="3.6" rx="1.2"/>
+      <rect style="fill:var(--pt-accent)" x="88" y="19.2" width="12" height="3.6" rx="1.2"/>
+      <rect style="fill:var(--pt-ink)" x="56" y="33" width="44" height="3.8" rx="1.2"/>
+      <rect style="fill:var(--pt-ink)" x="56" y="39.5" width="30" height="3.8" rx="1.2"/>
+      <g style="fill:var(--pt-soft)">
+        <rect x="56" y="49" width="19" height="2.6" rx="1.3"/>
+        <rect x="56" y="54" width="19" height="2.6" rx="1.3"/>
+        <rect x="56" y="59" width="19" height="2.6" rx="1.3"/>
+        <rect x="56" y="64" width="19" height="2.6" rx="1.3"/>
+        <rect x="56" y="69" width="19" height="2.6" rx="1.3"/>
+        <rect x="56" y="74" width="13" height="2.6" rx="1.3"/>
+        <rect x="81" y="66" width="19" height="2.6" rx="1.3"/>
+        <rect x="81" y="71" width="19" height="2.6" rx="1.3"/>
+        <rect x="81" y="76" width="12" height="2.6" rx="1.3"/>
+      </g>
+      <rect style="fill:var(--pt-accent)" x="81" y="49" width="19" height="13" rx="1.5"/>
+      <path style="fill:var(--pt-paper)" d="M83 60l5-6 3.5 4 2.5-2.5 4 4.5Z"/>
+    </g>
+  </symbol>
+
+  <symbol id="ivl-pubtype-conference" viewBox="0 0 160 100">
+    <rect style="fill:var(--pt-ink)" x="66" y="12" width="78" height="4.5" rx="2.25"/>
+    <rect style="fill:var(--pt-paper);stroke:var(--pt-ink)" x="70" y="16.5" width="70" height="44" stroke-width="3"/>
+    <rect style="fill:var(--pt-soft)" x="82" y="42" width="9" height="12" rx="1"/>
+    <rect style="fill:var(--pt-accent)" x="95" y="34" width="9" height="20" rx="1"/>
+    <rect style="fill:var(--pt-ink)" x="108" y="26" width="9" height="28" rx="1"/>
+    <path style="stroke:var(--pt-ink)" d="M78 54.5h54" stroke-width="1.6" stroke-linecap="round"/>
+    <circle style="fill:var(--pt-ink)" cx="41" cy="33" r="7.5"/>
+    <path style="fill:var(--pt-ink)" d="M27 66c0-13 5.5-22 14-22s14 9 14 22Z"/>
+    <path style="stroke:var(--pt-ink)" d="M51 52l11-8" stroke-width="5.5" stroke-linecap="round"/>
+    <path style="stroke:var(--pt-ink)" d="M55 62l3.5-10" stroke-width="1.6" stroke-linecap="round"/>
+    <circle style="fill:var(--pt-ink)" cx="58.8" cy="51" r="2.2"/>
+    <rect style="fill:var(--pt-ink)" x="26" y="61" width="40" height="5.5" rx="1.5"/>
+    <path style="fill:var(--pt-ink)" d="M29.5 66.5h33l-3 27h-27Z"/>
+    <path style="stroke:var(--pt-soft)" d="M38 75h16" stroke-width="2.5" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="ivl-pubtype-book" viewBox="0 0 160 100">
+    <path style="fill:var(--pt-ink)" d="M23 84 31 28h98l8 56H90c-2.5 4-7 6-10 6s-7.5-2-10-6Z"/>
+    <path style="fill:var(--pt-paper);stroke:var(--pt-ink)" d="M36 77 40 27c13-7 28-7 39 2v50c-11-8-27-7-43-2Z" stroke-width="2.5" stroke-linejoin="round"/>
+    <path style="fill:var(--pt-paper);stroke:var(--pt-ink)" d="M124 77 120 27c-13-7-28-7-39 2v50c11-8 27-7 43-2Z" stroke-width="2.5" stroke-linejoin="round"/>
+    <g style="stroke:var(--pt-soft)" fill="none" stroke-width="2.6" stroke-linecap="round">
+      <path d="M47 36c9-3 17-2 25 2M46.5 44c9-3 17-2 25 2M46 52c9-3 17-2 25 2M45.5 60c9-3 17-2 25 2"/>
+      <path d="M88 62c8-4 16-5 25-2"/>
+    </g>
+    <path style="fill:var(--pt-accent)" d="M88 35c8-4 16-5 24-2v18c-8-3-16-2-24 2Z"/>
+  </symbol>
+
+  <symbol id="ivl-pubtype-preprint" viewBox="0 0 160 100">
+    <!-- a preprint: a manuscript with a folded corner and a pending (clock) badge, i.e. not yet in a venue -->
+    <path style="fill:var(--pt-soft)" d="M60 20h36l12 12v54H60Z" transform="translate(9 -4)"/>
+    <path style="fill:var(--pt-paper);stroke:var(--pt-ink)" d="M55 16h37l14 14v56H55Z" stroke-width="3" stroke-linejoin="round"/>
+    <path style="fill:var(--pt-accent);stroke:var(--pt-ink)" d="M92 16v14h14Z" stroke-width="3" stroke-linejoin="round"/>
+    <rect style="fill:var(--pt-ink)" x="62" y="25" width="24" height="3.8" rx="1.2"/>
+    <rect style="fill:var(--pt-ink)" x="62" y="32" width="18" height="3.8" rx="1.2"/>
+    <g style="fill:var(--pt-soft)">
+      <rect x="62" y="43" width="37" height="2.6" rx="1.3"/>
+      <rect x="62" y="49" width="37" height="2.6" rx="1.3"/>
+      <rect x="62" y="55" width="37" height="2.6" rx="1.3"/>
+      <rect x="62" y="61" width="28" height="2.6" rx="1.3"/>
+      <rect x="62" y="67" width="20" height="2.6" rx="1.3"/>
+    </g>
+    <circle style="fill:var(--pt-accent);stroke:var(--pt-paper)" cx="104" cy="78" r="13" stroke-width="3"/>
+    <path style="stroke:var(--pt-paper)" d="M104 71v7.5l5 3" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="ivl-pubtype-patent" viewBox="0 0 160 100">
+    <!-- the object (a lens barrel) above its technical drawing: same parts, same x positions -->
+    <path d="M36 32h92" style="stroke:var(--pt-ink)" stroke-width="1.4" stroke-dasharray="4 3.5"/>
+    <ellipse cx="52" cy="32" rx="3.5" ry="10" style="fill:var(--pt-ink)"/>
+    <rect x="52" y="22" width="16" height="20" style="fill:var(--pt-ink)"/>
+    <ellipse cx="68" cy="32" rx="3.5" ry="10" style="fill:var(--pt-soft)"/>
+    <ellipse cx="77" cy="32" rx="6" ry="16" style="fill:var(--pt-accent)"/>
+    <ellipse cx="75.2" cy="28" rx="1.6" ry="8" style="fill:var(--pt-paper)" opacity="0.55"/>
+    <ellipse cx="86" cy="32" rx="3" ry="8" style="fill:var(--pt-ink)"/>
+    <rect x="86" y="24" width="22" height="16" style="fill:var(--pt-ink)"/>
+    <ellipse cx="108" cy="32" rx="3" ry="8" style="fill:var(--pt-soft)"/>
+    <rect x="108" y="27" width="5" height="10" style="fill:var(--pt-ink)"/>
+    <ellipse cx="113" cy="32" rx="2" ry="5" style="fill:var(--pt-accent)"/>
+    <path d="M26 95 36 60h88l10 35Z" style="fill:var(--pt-paper);stroke:var(--pt-ink)" stroke-width="2.4" stroke-linejoin="round"/>
+    <g fill="none" style="stroke:var(--pt-ink)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M50 76h68" stroke-dasharray="3 3" stroke-width="1.1"/>
+      <rect x="52" y="71" width="16" height="10"/>
+      <ellipse cx="77" cy="76" rx="3" ry="8"/>
+      <rect x="86" y="72" width="22" height="8"/>
+      <rect x="108" y="73.5" width="5" height="5"/>
+      <path d="M52 88h61M52 88l3.5-2.2M52 88l3.5 2.2M113 88l-3.5-2.2M113 88l-3.5 2.2"/>
+      <path d="M45 71v10M45 71l-2 3M45 71l2 3M45 81l-2-3M45 81l2-3"/>
+    </g>
+  </symbol>
+
+  <symbol id="ivl-pubtype-other" viewBox="0 0 160 100">
+    <rect style="fill:var(--pt-paper);stroke:var(--pt-ink)" x="46" y="16" width="44" height="54" rx="1.5" transform="rotate(-7 68 43)" stroke-width="2.5"/>
+    <rect style="fill:var(--pt-soft);stroke:var(--pt-ink)" x="74" y="20" width="42" height="52" rx="1.5" transform="rotate(8 95 46)" stroke-width="2.5"/>
+    <path style="stroke:var(--pt-accent)" d="M52 30h24M52 37h20" stroke-width="2.6" stroke-linecap="round" transform="rotate(-7 68 43)"/>
+    <path style="fill:var(--pt-ink)" d="M38 92V55q0-6 6-6h22l5-6h18l5 6h22q6 0 6 6v37Z"/>
+    <rect style="fill:var(--pt-soft)" x="64" y="64" width="32" height="4" rx="2" opacity="0.6"/>
+  </symbol>
+</svg>

@@ -1,0 +1,31 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/hierarchical-car-classification/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Hierarchical car classification
+description: We address the task of classifying car images at multiple levels of detail, ranging from the top-level car type, down to the specific car make, model, and…
+participants:
+- Marco Buzzelli
+publication_tag: hierarchical-car-classification
+render_with_liquid: false
+---
+<p>We address the task of classifying car images at multiple levels of detail, ranging from the top-level car type, down to the specific car make, model, and year (MMY). We show that convolutional neural networks achieve an accuracy above 90% on the finest-level classification task of the CompCars dataset. This high performance, however, is scarcely representative of real-world situations, as it is evaluated on a biased training/test split. We revisit the CompCars dataset by first defining a new training/test split, which better represents real-world scenarios by setting a more realistic baseline at 61% accuracy on the new test set. We also propagate the existing (but limited) type-level annotation to the entire dataset, and we finally provide a car-tight bounding box for each image, automatically defined through an ad hoc car detector.</p>
+<p><img alt="" height="298" src="../../wp-content/uploads/2021/01/cars.webp" width="1604"/></p>
+<p>You first need to download the full CompCars dataset from its <a href="http://mmlab.ie.cuhk.edu.hk/datasets/comp_cars/index.html">original source</a>.<br/>
+You can then download our scripts and data <a href="https://drive.google.com/drive/folders/1fa3JMm4U880ic2wXbEBh9SgnAXe4LHi-?usp=sharing">here</a>.<br/>
+With these you can generate car-tight crops and/or training-test split, access type-level annotations for all the car models in the dataset, and reproduce the tables and plots from our paper.</p>
+<p><img alt="" height="611" src="../../wp-content/uploads/2021/01/cars2.png" width="1525"/></p>
+<p>To evaluate this revisited dataset, we designed and implemented three different approaches to car classification, two of which exploit the hierarchical nature of car annotations. Our experiments show that higher-level classification in terms of car type positively impacts classification at a finer grain, now reaching 70% accuracy. The achieved performance constitutes a baseline benchmark for future research.</p>
+<p>If you use this data in your research, please cite, along with the original dataset:</p>
+<pre tabindex="0">@article{buzzelli2021revisiting,
+  title={Revisiting the CompCars Dataset for Hierarchical Car Classification: New Annotations, Experiments, and Results},
+  author={Buzzelli, Marco and Segantin, Luca},
+  journal={Sensors},
+  volume={21},
+  year={2021},
+  number={2},
+  article-number={596},
+  ISSN = {1424-8220},
+  publisher={Multidisciplinary Digital Publishing Institute},
+  doi = {10.3390/s21020596}
+}</pre>

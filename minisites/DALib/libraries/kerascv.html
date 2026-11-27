@@ -1,0 +1,2962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> DALib | KerasCV </title>
+
+  <link rel="icon" href="../assets/logo.svg">
+  <link href="../assets/vendor/bootstrap@5.2.3/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons@1.9.1/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/prism.css"/>
+
+  <script src="../assets/vendor/jquery@3.7.0/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<style media="screen">
+
+  .language-plaintext {
+    background-color: var(--dark) !important;
+    color: var(--pink) !important;
+  }
+
+  td {
+    border: none;
+    padding-top: 16px !important;
+    padding-bottom: 0px !important;
+  }
+
+  #collapseCard {
+    background-color: var(--light-dark);
+  }
+
+  /*
+  #collapseCardTableBorder {
+    border-left: 5px solid #F8F9FA;
+  }
+  */
+
+  #collapseCardTable {
+    /* border-left: 5px solid transparent; */
+    margin-bottom: 0px;
+  }
+
+  #collapseCardTable td {
+    padding-top: 0px;
+    padding-bottom: 1rem;
+
+  }
+
+  #collapseCardTable pre {
+    background-color: var(--medium-dark);
+    margin-bottom: 0px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  #collapseCardTable th {
+    padding-top: 0px;
+  }
+
+  #disabled {
+    pointer-events: none;
+  }
+
+  #requirements {
+    max-height: 400px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  #diagram-container {
+    background-color: var(--medium-dark);
+  }
+
+  .alert {
+    background-color: var(--medium-dark);
+  }
+
+  .nav-tabs {
+    border-color: white;
+  }
+
+  .nav-tabs .nav-link {
+    color: white;
+  }
+
+  .nav-tabs .nav-link.active {
+    color: white;
+    background-color: var(--dark);
+    border-color: white;
+    border-bottom: none;
+  }
+
+  .nav-tabs .nav-link:hover {
+    color: var(--dark);
+    background-color: white;
+    border-color: white;
+    border-bottom: 1px solid white;
+  }
+
+  .nav-tabs .nav-link.active:hover {
+    color: white;
+    background-color: var(--dark);
+    border-color: white;
+    border-bottom: none;
+  }
+
+</style>
+
+<body>
+
+  <a href="../" class="text-decoration-none">
+
+  <div class="bg-dark text-secondary px-4 py-5 my-5 text-center">
+
+    <img id="logo2" src="../assets/logo2.svg" alt="DALib">
+    <div class="col-lg-6 mx-auto">
+      <p class="fs-5 text-light mb-4">A collection of information about Data Augmentation libraries for Image Processing.</p>
+    </div>
+  </div>
+
+</a>
+
+
+  <!-- grid -->
+  <div class="container text-center">
+
+    <div class="row">
+
+      <!-- menu -->
+      <div class="col-3">
+        <ul id="menu" class="dropdown-menu dropdown-menu-dark bg-dark position-static d-grid gap-1 p-2 rounded-3 mx-0 border-0">
+
+  <!-- libraries -->
+  <li><h6 id="label"><strong>Libraries</strong></h6></li>
+  
+    <li><a class="dropdown-item rounded-2" href="albumentations.html">Albumentations</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="augly.html">AugLy</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="augmentor.html">Augmentor</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="augraphy.html">Augraphy</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="automold.html">Automold</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="clodsa.html">CLoDSA</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="imgaug.html">imgaug</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="kerascv.html">KerasCV</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="kornia.html">Kornia</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="solt.html">solt</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="torchvision.html">torchvision</a></li>
+  
+
+  <!-- divider -->
+  <!--li><hr class="dropdown-divider opacity-0"></li-->
+
+  <!-- notes -->
+  <!--li><h6 id="label"><strong>Notes</strong></h6></li-->
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+</ul>
+
+      </div>
+
+      <!-- descrizione libreria -->
+      <div class="col-9 text-bg-dark">
+
+        <div class="container">
+          <h1 class="text-white text-end">KerasCV</h1>
+
+          
+            <p class="text-end text-muted"><small>last updated on 10/10/2023</small></p>
+          
+
+        </div>
+
+        <style media="screen">
+
+  .btn-dark {
+    background-color: var(--light-dark);
+    border: 2px solid var(--light-dark);
+  }
+
+  .btn-dark:hover {
+    background-color: var(--medium-dark);
+    border: 2px solid var(--medium-dark);
+  }
+
+  .btn-dark:active {
+    background-color: var(--light-dark) !important;
+    border: 2px solid var(--light-dark) !important;
+  }
+
+  .btn-dark:focus {
+    background-color: var(--light-dark) !important;
+    border: 2px solid var(--light-dark) !important;
+  }
+
+  .btn-dark.dropdown-toggle.show {
+    background-color: var(--light-dark);
+    border: 2px solid var(--light-dark);
+  }
+
+  #links .dropdown-menu-dark {
+    background-color: var(--light-dark);
+    border: 1px solid var(--light-dark) !important;
+  }
+
+  #links .dropdown-item:active {
+    color: var(--bs-dropdown-link-hover-color);
+    background-color: var(--bs-dropdown-link-hover-bg);
+  }
+
+</style>
+
+<!-- useful links -->
+<div id="links" class="container py-2 text-end">
+
+  <!-- repo button -->
+  
+    <a href="https://github.com/keras-team/keras-cv" class="btn btn-outline-light m-1">Repository</a>
+  
+
+  <!-- doc button -->
+  
+    <a href="https://keras.io/api/keras_cv/" class="btn btn-outline-light m-1">Documentation</a>
+  
+
+  <!-- transformation list button -->
+  
+    <a href="https://keras.io/api/keras_cv/layers/" class="btn btn-dark m-1">Transformations</a>
+  
+
+  <!-- paper button -->
+  
+
+</div>
+
+
+        <!-- info -->
+<div class="container text-start text-white my-4">
+  <dl class="row">
+
+    <dt class="col-sm-3">Supported languages:</dt>
+    <dd class="col-sm-9">
+      <ul class="list-inline">
+        
+          <li class="list-inline-item">
+              <div id="info" class="my-1 px-2 py-1">Python (3.7+)</div>
+          </li>
+        
+      </ul>
+    </dd>
+
+    
+    <dt class="col-sm-3">Supported ML libraries:</dt>
+    <dd class="col-sm-9">
+      <ul class="list-inline">
+        
+          <li class="list-inline-item">
+              <div id="info" class="my-1 px-2 py-1">Keras</div>
+          </li>
+        
+      </ul>
+    </dd>
+    
+
+    
+
+  </dl>
+</div>
+
+
+  <div id="diagram-container" class="container text-start my-3 py-3 rounded-3">
+    <?xml version="1.0" encoding="UTF-8"?>
+<!-- Do not edit this file with editors other than diagrams.net -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="411px" height="211px" viewBox="-0.5 -0.5 411 211" content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2023-03-04T12:30:28.778Z&quot; agent=&quot;5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36&quot; version=&quot;20.8.23&quot; etag=&quot;OZT5Cnodk4Zcc6KmluTx&quot;&gt;&lt;diagram name=&quot;Pagina-1&quot; id=&quot;29NQohhJBW1C5CfoHw2N&quot;&gt;7ZpZc9owEIB/Da8ZHxjsx0BCO9N0JpPMtOmjsIWtRliMLHPk13dly6dMS1pDEsoLSOvVYe23613DwJ4ut584WkVfWYDpwDKC7cC+GViWObSH8CUlu1wyHilByEmglCrBI3nBSmgoaUoCnDQUBWNUkFVT6LM4xr5oyBDnbNNUWzDaXHWFQqwJHn1Edel3Eogol7rWuJJ/xiSMipXNkZdfWaJCWd1JEqGAbWoi+3ZgTzljIm8tt1NM5eEV55KPm+25Wm6M41gcMsBS2xC74t5wALequoyLiIUsRvS2kk4q6R1jK1AzQfgTC7FTlkKpYCCKxJKqq3hLxFOt/QPaxpWjejcSDKPo7IpOLPjuqd6pjZLdaljWK8YlgrNnPGWU8eyObMOYupOb8kphMbmXBYuF2rQ5VP2ukTgOriU3II5ZjHPJjFCq1vRTvsZBbdIZWhIqd/TA5iw7jWwplnJfLhYJAahajn0NH2Ac+SEVkquQsZBitCLJlc+W2QU/yVRni3xOaLZmVdZSSEkDNmhIilWhaytvQTzEChBHZ8YsSQQXxmyJ4XxBhWOKBFk3Z0fKl8JSr8INGoq4bvrUbtaIpmrSL5ijZPpNo5KzNA7KE95ERODHFcruagMxpkkb4r4yqiONswA7NYzqu/NAA0XZ9Q9EWCZYxAM5RXNMJ8h/DrOtdc1SmuW0SOiUq1PGXODtYF+c2GPzYkARsFTEdl3V31Txz1OiqBb6hsa/UzLUKBlYIwoLTAKyhmYomxNpBRKHoDhn2yyoc4i2iVw7DuAzFYQSQeCxoQbDsrXxRyNOEfHaqNSl2UVVnVVESRhDxwejYi6nhg3DmdzhhXgDEHvAznKa2Hm2jl3JWN/cORp3WSaTXFD5CKh0RSj3SKSMOiJUO63SMogaE8dJWf4ufXq77KWVRu3JZuqpi3cwJDUInA4ICtnBGY5a4Z4RWLhisPWU9IwWXHkqpkbV0/LWRKbXnMg0zNZM+TFoMwFjaFdTW0mF5PAdu3ajXoBGPmPlBuWhHuQZ4zPyjHed5NfdYniublEG8OK9gXMar/Ccfr3C1Z3gUnWfcdXt6T5qHp7g9F52e1pQvkM7zI+X2F6q7p5yWvN0OW2xVI2S6zRcws4BRhbDFXoCaBoxpLNO+k01VGLz/1VD9rj1pBzp5JijY6Fjaujcc7zizMdJkr+jubDzcdjpijrHY8e6VAynrxgKC7+bksEedtelry4ZbLOVyrch7alkaG947PZbMpj6byUXvziKX5yhD7QDunsaH3D79gH9l6AHHKYUcfJyoqT08oq+z8TiiEkpdKt/UeSsVf9FsW9/AQ==&lt;/diagram&gt;&lt;/mxfile&gt;"><defs><style type="text/css">@import url(../assets/vendor/google-fonts/roboto.css);&#xa;</style></defs><g><path d="M 90 140 Q 90 140 130 140" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="0" y="120" width="90" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 88px; height: 1px; padding-top: 140px; margin-left: 1px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">KerasCV</div></div></div></foreignObject><text x="45" y="144" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">KerasCV</text></switch></g><rect x="130" y="170" width="240" height="40" rx="20" ry="20" fill="none" stroke="#00c8bd" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 238px; height: 1px; padding-top: 190px; margin-left: 131px;"><div data-drawio-colors="color: #00C8BD; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(0, 200, 189); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><div>Bounding box formats and utilities</div></div></div></div></foreignObject><text x="250" y="194" fill="#00C8BD" font-family="Roboto" font-size="14px" text-anchor="middle">Bounding box formats and utilities</text></switch></g><rect x="130" y="120" width="80" height="40" rx="20" ry="20" fill="none" stroke="#00c8bd" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 140px; margin-left: 131px;"><div data-drawio-colors="color: #00C8BD; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(0, 200, 189); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Models</div></div></div></foreignObject><text x="170" y="144" fill="#00C8BD" font-family="Roboto" font-size="14px" text-anchor="middle">Models</text></switch></g><path d="M 100 140 Q 100 70 130 70" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 100 140 Q 100 190 130 190" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 210 70 Q 210 70 250 70" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="130" y="50" width="80" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 70px; margin-left: 131px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Layers</div></div></div></foreignObject><text x="170" y="74" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">Layers</text></switch></g><rect x="250" y="0" width="160" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 158px; height: 1px; padding-top: 20px; margin-left: 251px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Augmentation layers</div></div></div></foreignObject><text x="330" y="24" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">Augmentation layers</text></switch></g><rect x="250" y="50" width="160" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 158px; height: 1px; padding-top: 70px; margin-left: 251px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Preprocessing layers</div></div></div></foreignObject><text x="330" y="74" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">Preprocessing layers</text></switch></g><path d="M 220 70 Q 220 20 250 20" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 220 70 Q 220 120 250 120" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="250" y="100" width="160" height="40" rx="20" ry="20" fill="none" stroke="#00c8bd" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 158px; height: 1px; padding-top: 120px; margin-left: 251px;"><div data-drawio-colors="color: #00C8BD; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(0, 200, 189); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Regularization layers</div></div></div></foreignObject><text x="330" y="124" fill="#00C8BD" font-family="Roboto" font-size="14px" text-anchor="middle">Regularization layers</text></switch></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/><a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a></switch></svg>
+
+  </div>
+
+
+<!-- description -->
+
+
+
+        <!-- list of transforms -->
+        
+            
+            <style media="screen">
+
+  #tag { color: white; background: var(--light-dark); }
+  #tag1 { background: #ED27CF; }
+  #tag2 { background: #815DFF; }
+  #tag3 { background: #3266FF; }
+  #tag4 { background: #279AF1; }
+  #tag5 { background: #F6AE2D; }
+  #tag6 { background: #FF6700; }
+  #tag7 { background: #EF233C; }
+  #tag8 { background: #EE2586; }
+
+
+</style>
+
+<!-- transformation table -->
+<div id="TransfTable" class="table-responsive my-2">
+  <table class="table table-dark text-start align-middle">
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col">Transformations</th>
+        <th scope="col">Description</th>
+        <th scope="col">Tags</th>
+      </tr>
+    </thead>
+
+      <tbody>
+
+      
+      
+
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="AugMix">
+            <td><small class="text-muted">1.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAugMix" aria-expanded="false" aria-controls="collapseAugMix">
+                  
+                  AugMix
+                </button>
+              </td>
+            
+
+            <td><p><p>Performs the <a href="https://arxiv.org/pdf/1912.02781.pdf">AugMix</a> data augmentation technique.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseAugMix">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/AugMix_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/AugMix_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.AugMix(
+  value_range=(0, 255),
+  severity=0.3,
+  num_chains=3,
+  chain_depth=[1, 3],
+  alpha=1.0,
+  seed=None
+)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="AutoContrast">
+            <td><small class="text-muted">2.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAutoContrast" aria-expanded="false" aria-controls="collapseAutoContrast">
+                  
+                  AutoContrast
+                </button>
+              </td>
+            
+
+            <td><p><p>Performs the AutoContrast operation on the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseAutoContrast">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/028.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/AutoContrast.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.AutoContrast([0,255])
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="ChannelShuffle">
+            <td><small class="text-muted">3.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseChannelShuffle" aria-expanded="false" aria-controls="collapseChannelShuffle">
+                  
+                  ChannelShuffle
+                </button>
+              </td>
+            
+
+            <td><p><p>Shuffle channels of the input image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseChannelShuffle">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/ChannelShuffle_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/ChannelShuffle_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.ChannelShuffle(groups=3, seed=None)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="CutMix">
+            <td><small class="text-muted">4.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCutMix" aria-expanded="false" aria-controls="collapseCutMix">
+                  
+                  CutMix
+                </button>
+              </td>
+            
+
+            <td><p><p>Implements the <a href="https://arxiv.org/pdf/1905.04899.pdf">CutMix</a> data augmentation technique.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag4" class="badge">MIXED SAMPLE</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseCutMix">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/CutMix_1.jpg" alt=""></td>
+                        </tr>
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/025.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/CutMix_2.jpg" alt=""></td>
+                        </tr>
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/025.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python"># images
+img_1 = tf.keras.utils.load_img(path + '024.jpg')
+img_2 = tf.keras.utils.load_img(path + '025.jpg')
+
+img_1 = tf.keras.utils.img_to_array(img_1)
+img_2 = tf.keras.utils.img_to_array(img_2)
+
+images = np.array([img_1, img_2])
+labels = np.array([[0], [1]])
+
+labels = tf.one_hot(labels.squeeze(), 2)
+
+# aug
+cutmix = keras_cv.layers.preprocessing.cut_mix.CutMix(10)
+output = cutmix({"images": images[:2], "labels": labels[:2]})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Equalization">
+            <td><small class="text-muted">5.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEqualization" aria-expanded="false" aria-controls="collapseEqualization">
+                  
+                  Equalization
+                </button>
+              </td>
+            
+
+            <td><p><p>Performs histogram equalization on a channel-wise basis.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseEqualization">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/Equalization.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.Equalization(value_range=(0, 255), bins=256)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="FourierMix">
+            <td><small class="text-muted">6.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourierMix" aria-expanded="false" aria-controls="collapseFourierMix">
+                  
+                  FourierMix
+                </button>
+              </td>
+            
+
+            <td><p><p>Implements the <a href="https://arxiv.org/pdf/2002.12047.pdf7">FMix</a> data augmentation technique.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag4" class="badge">MIXED SAMPLE</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseFourierMix">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/FourierMix_1.jpg" alt=""></td>
+                        </tr>
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/025.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/FourierMix_2.jpg" alt=""></td>
+                        </tr>
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/025.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python"># images
+img_1 = tf.keras.utils.load_img(path + '024.jpg')
+img_2 = tf.keras.utils.load_img(path + '025.jpg')
+
+img_1 = tf.keras.utils.img_to_array(img_1)
+img_2 = tf.keras.utils.img_to_array(img_2)
+
+images = np.array([img_1, img_2])
+labels = np.array([[0], [1]])
+
+labels = tf.one_hot(labels.squeeze(), 2)
+
+# aug
+fourier_mix = keras_cv.layers.preprocessing.FourierMix(0.5)
+output = fourier_mix({"images": images[:2], "labels": labels[:2]})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Grayscale">
+            <td><small class="text-muted">7.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGrayscale" aria-expanded="false" aria-controls="collapseGrayscale">
+                  
+                  Grayscale
+                </button>
+              </td>
+            
+
+            <td><p><p>Transforms RGB images to Grayscale images.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseGrayscale">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/Grayscale.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.Grayscale(output_channels=1)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="GridMask">
+            <td><small class="text-muted">8.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGridMask" aria-expanded="false" aria-controls="collapseGridMask">
+                  
+                  GridMask
+                </button>
+              </td>
+            
+
+            <td><p><p>Implements <a href="https://arxiv.org/pdf/2001.04086.pdf">GridMask</a> augmentation.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag4" class="badge">DROPOUT</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseGridMask">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/GridMask.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.GridMask(
+  ratio_factor=(0, 0.5),
+  rotation_factor=0.15,
+  fill_mode="constant",
+  fill_value=200,
+  seed=None,
+)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="JitteredResize">
+            <td><small class="text-muted">9.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJitteredResize" aria-expanded="false" aria-controls="collapseJitteredResize">
+                  
+                  JitteredResize
+                </button>
+              </td>
+            
+
+            <td><p><p>Implements resize with scale distortion.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseJitteredResize">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/JitteredResize.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.JitteredResize(
+  target_size=(1000,800),
+  scale_factor=(0.8, 1.25),
+  crop_size=None,
+  bounding_box_format=None,
+  interpolation="bilinear",
+  seed=None
+)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="MixUp">
+            <td><small class="text-muted">10.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMixUp" aria-expanded="false" aria-controls="collapseMixUp">
+                  
+                  MixUp
+                </button>
+              </td>
+            
+
+            <td><p><p>Performs the MixUp data augmentation technique. References: <a href="https://arxiv.org/pdf/1710.09412.pdf">“mixup: Beyond Empirical Risk Minimization”</a>, <a href="https://arxiv.org/pdf/1902.04103.pdf">“Bag of Freebies for Training Object Detection Neural Networks”</a>.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag4" class="badge">MIXED SAMPLE</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseMixUp">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/MixUp_1.jpg" alt=""></td>
+                        </tr>
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/025.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/MixUp_2.jpg" alt=""></td>
+                        </tr>
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/025.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python"># images
+img_1 = tf.keras.utils.load_img(path + '024.jpg')
+img_2 = tf.keras.utils.load_img(path + '025.jpg')
+
+img_1 = tf.keras.utils.img_to_array(img_1)
+img_2 = tf.keras.utils.img_to_array(img_2)
+
+images = np.array([img_1, img_2])
+labels = np.array([[0], [1]])
+
+labels = tf.one_hot(labels.squeeze(), 2)
+
+# aug
+mixup = keras_cv.layers.preprocessing.MixUp(10)
+output = mixup({"images": images[:2], "labels": labels[:2]})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Posterization">
+            <td><small class="text-muted">11.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePosterization" aria-expanded="false" aria-controls="collapsePosterization">
+                  
+                  Posterization
+                </button>
+              </td>
+            
+
+            <td><p><p>Reduces the number of bits for each color channel. References: <a href="https://arxiv.org/pdf/1805.09501.pdf">“AutoAugment”</a>, <a href="https://arxiv.org/pdf/1909.13719.pdf">“RandAugment”</a>.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">STYLE FILTER</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapsePosterization">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/Posterization.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.Posterization(value_range=(0, 255), 4)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandAugment">
+            <td><small class="text-muted">12.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandAugment" aria-expanded="false" aria-controls="collapseRandAugment">
+                  
+                  RandAugment
+                </button>
+              </td>
+            
+
+            <td><p><p>Performs the <a href="https://arxiv.org/pdf/1909.13719.pdf">Rand Augment</a> operation on the input image.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandAugment">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandAugment_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandAugment_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandAugment(
+  value_range=(0, 255),
+  augmentations_per_image=3,
+  magnitude=0.5,
+  magnitude_stddev=0.15,
+  rate=0.9090909090909091,
+  geometric=True,
+  seed=None
+)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomAugmentationPipeline">
+            <td><small class="text-muted">13.</small></td>
+            
+
+            
+              <td>
+                <button id="disabled" class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomAugmentationPipeline" aria-expanded="false" aria-controls="collapseRandomAugmentationPipeline">
+                  
+                  RandomAugmentationPipeline
+                </button></td>
+            
+
+            <td><p><p>Constructs a pipeline based on provided arguments.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomChannelShift">
+            <td><small class="text-muted">14.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomChannelShift" aria-expanded="false" aria-controls="collapseRandomChannelShift">
+                  
+                  RandomChannelShift
+                </button>
+              </td>
+            
+
+            <td><p><p>Randomly shifts values for each channel of the input image(s).</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomChannelShift">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomChannelShift_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomChannelShift_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandomChannelShift(value_range=[0, 255], factor=(0.2, 0.2), channels=3, seed=None)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomColorDegeneration">
+            <td><small class="text-muted">15.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomColorDegeneration" aria-expanded="false" aria-controls="collapseRandomColorDegeneration">
+                  
+                  RandomColorDegeneration
+                </button>
+              </td>
+            
+
+            <td><p><p>Randomly performs the color degeneration operation. The sharpness operation first converts an image to gray scale, then back to color. It then takes a weighted average between original image and the degenerated image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomColorDegeneration">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomColorDegeneration.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandomColorDegeneration(factor=(0.4, 0.4), seed=None)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomCutout">
+            <td><small class="text-muted">16.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomCutout" aria-expanded="false" aria-controls="collapseRandomCutout">
+                  
+                  RandomCutout
+                </button>
+              </td>
+            
+
+            <td><p><p>Randomly cuts out rectangles from images and fills them.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag4" class="badge">DROPOUT</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomCutout">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomCutout_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandomCutout(height_factor=0.1, width_factor=0.3, fill_mode="constant",
+                             fill_value=200, seed=None)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomCutout_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandomCutout(height_factor=0.1, width_factor=0.3, fill_mode='gaussian_noise',
+                             fill_value=0.0, seed=None)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomHue">
+            <td><small class="text-muted">17.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomHue" aria-expanded="false" aria-controls="collapseRandomHue">
+                  
+                  RandomHue
+                </button>
+              </td>
+            
+
+            <td><p><p>Randomly adjusts the hue.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomHue">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomHue.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandomHue(factor=0.3, value_range=[0,255], seed=None)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomSaturation">
+            <td><small class="text-muted">18.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomSaturation" aria-expanded="false" aria-controls="collapseRandomSaturation">
+                  
+                  RandomSaturation
+                </button>
+              </td>
+            
+
+            <td><p><p>Randomly adjusts the saturation.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomSaturation">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomSaturation_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandomSaturation(factor=(0.4, 0.4), seed=None)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomSaturation_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandomSaturation(factor=(0.7, 0.7), seed=None)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomSharpness">
+            <td><small class="text-muted">19.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomSharpness" aria-expanded="false" aria-controls="collapseRandomSharpness">
+                  
+                  RandomSharpness
+                </button>
+              </td>
+            
+
+            <td><p><p>Randomly performs the sharpness operation. This operation first performs a blur operation, then blends between the original image and the blurred image. It makes the edges of an image less sharp than they were in the original image. Reference: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageEnhance.html">ImageEnhance</a>.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">SHARPNESS</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomSharpness">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomSharpness.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandomSharpness(factor=(1, 1), value_range=[0, 255], seed=None)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomShear">
+            <td><small class="text-muted">20.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomShear" aria-expanded="false" aria-controls="collapseRandomShear">
+                  
+                  RandomShear
+                </button>
+              </td>
+            
+
+            <td><p><p>A preprocessing layer which randomly shears images during training. This layer will apply random shearings to each image, filling empty space according to <code class="language-plaintext highlighter-rouge">fill_mode</code>.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomShear">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomShear_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandomShear(
+  x_factor=(0.3, 0.3),
+  y_factor=None,
+  interpolation="bilinear",
+  fill_mode="reflect",
+  fill_value=0.0,
+  bounding_box_format=None,
+  seed=None
+)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/RandomShear_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.RandomShear(
+  x_factor=None,
+  y_factor=0.4,
+  interpolation="bilinear",
+  fill_mode="wrap",
+  fill_value=0.0,
+  bounding_box_format=None,
+  seed=None
+)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Resizing">
+            <td><small class="text-muted">21.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResizing" aria-expanded="false" aria-controls="collapseResizing">
+                  
+                  Resizing
+                </button>
+              </td>
+            
+
+            <td><p><p>A preprocessing layer which resizes the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseResizing">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/Resizing.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.Resizing(
+  height=300,
+  width=400,
+  interpolation="bilinear",
+  crop_to_aspect_ratio=False,
+  pad_to_aspect_ratio=False,
+  bounding_box_format=None,
+)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Solarization">
+            <td><small class="text-muted">22.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolarization" aria-expanded="false" aria-controls="collapseSolarization">
+                  
+                  Solarization
+                </button>
+              </td>
+            
+
+            <td><p><p>Applies <code class="language-plaintext highlighter-rouge">(max_value - pixel + min_value)</code> for each pixel in the image. When created without <code class="language-plaintext highlighter-rouge">threshold</code> parameter, the layer performs solarization to all values. When created with specified <code class="language-plaintext highlighter-rouge">threshold</code> the layer only augments pixels that are above the <code class="language-plaintext highlighter-rouge">threshold</code> value. References: <a href="https://arxiv.org/pdf/1805.09501.pdf">AutoAugment</a>, <a href="https://arxiv.org/pdf/1909.13719.pdf">RandAugment</a>.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseSolarization">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/KSCV/Solarization.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">keras_cv.layers.Solarization(value_range=(0,255), addition_factor=0.0, threshold_factor=0.0, seed=None)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+
+      </tbody>
+
+  </table>
+</div>
+
+        
+
+      </div>
+    </div>
+  </div>
+
+  <!-- button top -->
+  <style media="screen">
+
+  .btntop {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: opacity 1s;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .show {
+    opacity: 1;
+  }
+
+  .fixed_button{
+    position: absolute !important;
+    bottom: auto !important;
+  }
+
+</style>
+
+<a id="btn-top" class="hide" href="#top" aria-label="Back to top">
+  <i id="btn-top-icon" class="bi bi-arrow-up-circle-fill fs-2"></i>
+</a>
+
+<script type="text/javascript">
+
+  btn = document.getElementById("btn-top");
+
+  var scrollFun = function() {
+    var y = window.scrollY;
+    var h = 134; /*footer height*/
+
+    if (y >= 200) {
+      btn.className = "btntop text-light mx-4 my-3 show"
+    } else {
+      btn.className = "btntop text-light mx-4 my-3 hide"
+    }
+
+    if (y + $(window).height() > $(document).height() - h) {
+      $('#btn-top').addClass('fixed_button');
+    } else{
+      $('#btn-top').removeClass('fixed_button');
+    }
+
+  };
+
+  window.addEventListener("scroll", scrollFun);
+
+</script>
+
+
+  <style media="screen">
+
+  .footer .container-fluid {
+    background-color: var(--dm-dark) !important;
+  }
+
+</style>
+
+<footer class="footer my-5 pt-4">
+  <div class="container-fluid py-5">
+
+    <div class="container">
+      <a href="https://forms.gle/rXxcYwguwwHyVnBS8">
+        <button role="button" class="btn btn-primary">
+          <i class="bi bi-lightbulb-fill"></i>
+          Any suggestions?
+        </button>
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="../assets/vendor/bootstrap@5.2.3/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/prism.js"></script>
+
+</body>
+</html>

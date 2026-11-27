@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DALib</title>
+
+  <link rel="icon" href="assets/logo.svg">
+  <link href="assets/vendor/bootstrap@5.2.3/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons@1.9.1/bootstrap-icons.css">
+
+  <script src="assets/vendor/jquery@3.7.0/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<style media="screen">
+
+  #taxonomy-card {
+    background-color: var(--medium-dark);
+  }
+
+  #taxonomy-card a.nav-link {
+    color: white;
+  }
+
+  #taxonomy-card a.nav-link.active {
+    color: white;
+    background-color: var(--dark);
+    border-color: var(--dark);
+  }
+
+  #taxonomy-card a.nav-link:hover {
+    color: white !important;
+    background-color: var(--dark);
+    border-color: var(--dark);
+  }
+
+</style>
+
+<body>
+
+  <a href="./" class="text-decoration-none">
+
+  <div class="bg-dark text-secondary px-4 py-5 my-5 text-center">
+
+    <img id="logo2" src="assets/logo2.svg" alt="DALib">
+    <div class="col-lg-6 mx-auto">
+      <p class="fs-5 text-light mb-4">A collection of information about Data Augmentation libraries for Image Processing.</p>
+    </div>
+  </div>
+
+</a>
+
+
+  <!-- grid -->
+  <div class="container text-center">
+    <div class="row">
+
+      <!-- menu -->
+      <div class="col-3">
+        <ul id="menu" class="dropdown-menu dropdown-menu-dark bg-dark position-static d-grid gap-1 p-2 rounded-3 mx-0 border-0">
+
+  <!-- libraries -->
+  <li><h6 id="label"><strong>Libraries</strong></h6></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/albumentations.html">Albumentations</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/augly.html">AugLy</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/augmentor.html">Augmentor</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/augraphy.html">Augraphy</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/automold.html">Automold</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/clodsa.html">CLoDSA</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/imgaug.html">imgaug</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/kerascv.html">KerasCV</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/kornia.html">Kornia</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/solt.html">solt</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/torchvision.html">torchvision</a></li>
+  
+
+  <!-- divider -->
+  <!--li><hr class="dropdown-divider opacity-0"></li-->
+
+  <!-- notes -->
+  <!--li><h6 id="label"><strong>Notes</strong></h6></li-->
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+</ul>
+
+      </div>
+
+      <div class="col-9 text-bg-dark">
+
+        <!-- taxonomy -->
+        
+
+          <div class="container">
+            <h1 class="text-white text-end pb-3">Taxonomy</h1>
+          </div>
+
+          <div class="container">
+            <div id="taxonomy-card" class="card text-center">
+
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+      <li class="nav-item"><a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#general">General</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#geometry">Geometry</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#photometry">Photometry</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#quality">Quality</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#misc">Misc</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#weather">Weather</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#street">Street</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#paperdocs">Paperdocs</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#social">Social Network</a></li>
+    </ul>
+  </div>
+
+  <div class="card-body tab-content">
+    <div id="general" class="tab-pane active">  <img src="assets/images/taxonomy/taxonomy.png" class="card-img" alt="Taxonomy diagram: overview"></div>
+    <div id="geometry" class="tab-pane">        <img src="assets/images/taxonomy/taxonomy-geometry.png" class="card-img" alt="Taxonomy diagram: geometry"></div>
+    <div id="photometry" class="tab-pane">      <img src="assets/images/taxonomy/taxonomy-photometry.png" class="card-img" style="width:40%" alt="Taxonomy diagram: photometry"></div>
+    <div id="misc" class="tab-pane">            <img src="assets/images/taxonomy/taxonomy-misc.png" class="card-img" style="width:80%" alt="Taxonomy diagram: misc"></div>
+    <div id="quality" class="tab-pane">         <img src="assets/images/taxonomy/taxonomy-quality.png" class="card-img" style="width:80%" alt="Taxonomy diagram: quality"></div>
+    <div id="weather" class="tab-pane">         <img src="assets/images/taxonomy/taxonomy-weather.png" class="card-img" style="width:20%" alt="Taxonomy diagram: weather"></div>
+    <div id="street" class="tab-pane">          <img src="assets/images/taxonomy/taxonomy-street.png" class="card-img" style="width:20%" alt="Taxonomy diagram: street"></div>
+    <div id="paperdocs" class="tab-pane">       <img src="assets/images/taxonomy/taxonomy-paperdocs.png" class="card-img" style="width:40%" alt="Taxonomy diagram: paperdocs"></div>
+    <div id="social" class="tab-pane">          <img src="assets/images/taxonomy/taxonomy-social.png" class="card-img" style="width:40%" alt="Taxonomy diagram: social"></div>
+  </div>
+</div>
+
+          </div>
+
+        <!-- summary of libraries -->
+        
+
+      </div>
+    </div>
+  </div>
+
+  <!-- button top -->
+  <style media="screen">
+
+  .btntop {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: opacity 1s;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .show {
+    opacity: 1;
+  }
+
+  .fixed_button{
+    position: absolute !important;
+    bottom: auto !important;
+  }
+
+</style>
+
+<a id="btn-top" class="hide" href="#top" aria-label="Back to top">
+  <i id="btn-top-icon" class="bi bi-arrow-up-circle-fill fs-2"></i>
+</a>
+
+<script type="text/javascript">
+
+  btn = document.getElementById("btn-top");
+
+  var scrollFun = function() {
+    var y = window.scrollY;
+    var h = 134; /*footer height*/
+
+    if (y >= 200) {
+      btn.className = "btntop text-light mx-4 my-3 show"
+    } else {
+      btn.className = "btntop text-light mx-4 my-3 hide"
+    }
+
+    if (y + $(window).height() > $(document).height() - h) {
+      $('#btn-top').addClass('fixed_button');
+    } else{
+      $('#btn-top').removeClass('fixed_button');
+    }
+
+  };
+
+  window.addEventListener("scroll", scrollFun);
+
+</script>
+
+
+  <style media="screen">
+
+  .footer .container-fluid {
+    background-color: var(--dm-dark) !important;
+  }
+
+</style>
+
+<footer class="footer my-5 pt-4">
+  <div class="container-fluid py-5">
+
+    <div class="container">
+      <a href="https://forms.gle/rXxcYwguwwHyVnBS8">
+        <button role="button" class="btn btn-primary">
+          <i class="bi bi-lightbulb-fill"></i>
+          Any suggestions?
+        </button>
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="assets/vendor/bootstrap@5.2.3/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!--script>
+    let activePopover = null;
+
+    const list = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+
+    list.forEach((el) => {
+      let opts = {
+        animation: false,
+      };
+
+      if (el.hasAttribute('data-bs-content-id')) {
+        opts.content = document.getElementById(el.getAttribute('data-bs-content-id')).innerHTML;
+        opts.html = true;
+      }
+
+      const popover = new bootstrap.Popover(el, opts);
+
+      el.addEventListener('click', () => {
+        if (activePopover && activePopover !== popover) {
+          activePopover.hide();
+        }
+
+        if (popover._activeTrigger.click) {
+          popover.hide();
+        } else {
+          popover.show();
+        }
+
+        activePopover = popover;
+      });
+    });
+  </script-->
+
+  <script>
+    let activePopover = null;
+
+    const list = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+
+    list.forEach((el) => {
+      let opts = {
+        animation: false,
+      };
+
+      if (el.hasAttribute('data-bs-content-id')) {
+        opts.content = document.getElementById(el.getAttribute('data-bs-content-id')).innerHTML;
+        opts.html = true;
+      }
+
+      const popover = new bootstrap.Popover(el, opts);
+
+      el.addEventListener('click', () => {
+        if (activePopover && activePopover !== popover) {
+          activePopover.hide();
+        }
+
+        if (popover._activeTrigger.click) {
+          popover.hide();
+        } else {
+          popover.show();
+        }
+
+        activePopover = popover;
+      });
+
+      const checkButtonVisibility = (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            popover.hide();
+            activePopover = null;
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(checkButtonVisibility);
+      observer.observe(el);
+    });
+
+  </script>
+
+
+  <!-- searchbar -->
+  <!--script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script-->
+  <script src="assets/js/search.js"></script>
+
+  <script>
+
+  var srt = `
+    <a id="element-result" class="list-group-item list-group-item-action my-1 py-1 px-2 rounded-2" href="{url}">
+      <div class="container">
+
+        <div class="row">
+          <div class="col">
+            <p id="element-result-1" class="text-start text-truncate m-0 fw-bold pt-2">{transformation}</p>
+          </div>
+          <div class="col">
+            <p id="element-result-2" class="text-end m-0 ms-3 "><small class="fw-bold">{library}</small></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <p id="element-result-4" class="text-start text-truncate">{description}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <p id="element-result-3" class="text-start m-0"><small>{tags}</small></p>
+          </div>
+        </div>
+
+      </div>
+    </a>
+  `;
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: './search.json',
+      searchResultTemplate: srt,
+      limit: 1000,
+      debounceTime: 1000,
+      noResultsText: 'No result',
+      templateMiddleware: function(prop, value, template) {
+        if (prop === 'tags') {
+          return value.replace('', '')
+        }
+      }
+    })
+
+  </script>
+
+  <!-- change caret icon in taxonomy tree -->
+  <!--script type="text/javascript">
+    document.addEventListener('shown.bs.collapse', function (event) {
+      var button = event.target.previousElementSibling;
+      var icon = button.querySelector('i');
+
+      if (icon) {
+        if (event.target.classList.contains('show')) {
+          icon.classList.remove('bi-caret-right-fill');
+          icon.classList.add('bi-caret-down-fill');
+        } else {
+          icon.classList.remove('bi-caret-down-fill');
+          icon.classList.add('bi-caret-right-fill');
+        }
+      }
+    });
+
+    document.addEventListener('hidden.bs.collapse', function (event) {
+      var button = event.target.previousElementSibling;
+      var icon = button.querySelector('i');
+
+      if (icon) {
+        if (event.target.classList.contains('show')) {
+          icon.classList.remove('bi-caret-right-fill');
+          icon.classList.add('bi-caret-down-fill');
+        } else {
+          icon.classList.remove('bi-caret-down-fill');
+          icon.classList.add('bi-caret-right-fill');
+        }
+      }
+    });
+  </script-->
+
+  <!-- expand taxonomy -->
+  <!--script>
+    document.getElementById("expand-all-btn").addEventListener("click", function() {
+      expandAll();
+    });
+
+    function expandAll() {
+      var collapseList = document.querySelectorAll('.collapse');
+      for (var i = 0; i < collapseList.length; i++) {
+        var collapse = collapseList[i];
+        if (!collapse.classList.contains('show')) {
+          collapse.classList.add('show');
+        }
+      }
+    }
+  </script-->
+
+  <!--script type="text/javascript">
+    window.onload = expandAll();
+  </script-->
+
+  <!-- collapse taxonomy -->
+  <!--script>
+    document.getElementById("collapse-all-btn").addEventListener("click", function() {
+      collapseAll();
+    });
+
+    function collapseAll() {
+      var collapseList = document.querySelectorAll('.collapse');
+      for (var i = 0; i < collapseList.length; i++) {
+        var collapse = collapseList[i];
+        if (collapse.classList.contains('show')) {
+          collapse.classList.remove('show');
+        }
+      }
+    }
+  </script-->
+
+  <!-- tag color -->
+  <script type="text/javascript">
+      var tags = document.querySelectorAll('.badge');
+
+      for (var i = 0; i < tags.length; i++) {
+        var tag = tags[i];
+        var tagContent = tag.innerHTML;
+
+        if (tagContent === 'BASIC GEOMETRY' ||
+            tagContent === 'DISTORTION' ) {
+          tag.style.backgroundColor = '#ED27CF';
+
+        } else if (tagContent === 'PHOTOMETRY') {
+          tag.style.backgroundColor = '#815DFF';
+
+        } else if (tagContent === 'BLUR' ||
+                   tagContent === 'SHARPNESS' ||
+                   tagContent === 'MORPHOLOGY' ||
+                   tagContent === 'STYLE FILTER' ||
+                   tagContent === 'WORSENING' ||
+                   tagContent === 'NOISE' ||
+                   tagContent === 'TESSELLATION') {
+          tag.style.backgroundColor = '#3266FF';
+
+        } else if (tagContent === 'DROPOUT' ||
+                   tagContent === 'COMPOSITION' ||
+                   tagContent === 'MIXED SAMPLE' ) {
+          tag.style.backgroundColor = '#279AF1';
+
+        } else if (tagContent === 'WEATHER') {
+          tag.style.backgroundColor = '#F6AE2D';
+
+        } else if (tagContent === 'STREET') {
+          tag.style.backgroundColor = '#FF6700';
+
+        } else if (tagContent === 'PAPERDOCS') {
+          tag.style.backgroundColor = '#EF233C';
+
+        } else if (tagContent === 'SOCIAL NETWORK') {
+          tag.style.backgroundColor = '#EE2586';
+        }
+      }
+  </script>
+
+  <script type="text/javascript">
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,4342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> DALib | CLoDSA </title>
+
+  <link rel="icon" href="../assets/logo.svg">
+  <link href="../assets/vendor/bootstrap@5.2.3/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons@1.9.1/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/prism.css"/>
+
+  <script src="../assets/vendor/jquery@3.7.0/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<style media="screen">
+
+  .language-plaintext {
+    background-color: var(--dark) !important;
+    color: var(--pink) !important;
+  }
+
+  td {
+    border: none;
+    padding-top: 16px !important;
+    padding-bottom: 0px !important;
+  }
+
+  #collapseCard {
+    background-color: var(--light-dark);
+  }
+
+  /*
+  #collapseCardTableBorder {
+    border-left: 5px solid #F8F9FA;
+  }
+  */
+
+  #collapseCardTable {
+    /* border-left: 5px solid transparent; */
+    margin-bottom: 0px;
+  }
+
+  #collapseCardTable td {
+    padding-top: 0px;
+    padding-bottom: 1rem;
+
+  }
+
+  #collapseCardTable pre {
+    background-color: var(--medium-dark);
+    margin-bottom: 0px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  #collapseCardTable th {
+    padding-top: 0px;
+  }
+
+  #disabled {
+    pointer-events: none;
+  }
+
+  #requirements {
+    max-height: 400px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  #diagram-container {
+    background-color: var(--medium-dark);
+  }
+
+  .alert {
+    background-color: var(--medium-dark);
+  }
+
+  .nav-tabs {
+    border-color: white;
+  }
+
+  .nav-tabs .nav-link {
+    color: white;
+  }
+
+  .nav-tabs .nav-link.active {
+    color: white;
+    background-color: var(--dark);
+    border-color: white;
+    border-bottom: none;
+  }
+
+  .nav-tabs .nav-link:hover {
+    color: var(--dark);
+    background-color: white;
+    border-color: white;
+    border-bottom: 1px solid white;
+  }
+
+  .nav-tabs .nav-link.active:hover {
+    color: white;
+    background-color: var(--dark);
+    border-color: white;
+    border-bottom: none;
+  }
+
+</style>
+
+<body>
+
+  <a href="../" class="text-decoration-none">
+
+  <div class="bg-dark text-secondary px-4 py-5 my-5 text-center">
+
+    <img id="logo2" src="../assets/logo2.svg" alt="DALib">
+    <div class="col-lg-6 mx-auto">
+      <p class="fs-5 text-light mb-4">A collection of information about Data Augmentation libraries for Image Processing.</p>
+    </div>
+  </div>
+
+</a>
+
+
+  <!-- grid -->
+  <div class="container text-center">
+
+    <div class="row">
+
+      <!-- menu -->
+      <div class="col-3">
+        <ul id="menu" class="dropdown-menu dropdown-menu-dark bg-dark position-static d-grid gap-1 p-2 rounded-3 mx-0 border-0">
+
+  <!-- libraries -->
+  <li><h6 id="label"><strong>Libraries</strong></h6></li>
+  
+    <li><a class="dropdown-item rounded-2" href="albumentations.html">Albumentations</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="augly.html">AugLy</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="augmentor.html">Augmentor</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="augraphy.html">Augraphy</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="automold.html">Automold</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="clodsa.html">CLoDSA</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="imgaug.html">imgaug</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="kerascv.html">KerasCV</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="kornia.html">Kornia</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="solt.html">solt</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="torchvision.html">torchvision</a></li>
+  
+
+  <!-- divider -->
+  <!--li><hr class="dropdown-divider opacity-0"></li-->
+
+  <!-- notes -->
+  <!--li><h6 id="label"><strong>Notes</strong></h6></li-->
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+</ul>
+
+      </div>
+
+      <!-- descrizione libreria -->
+      <div class="col-9 text-bg-dark">
+
+        <div class="container">
+          <h1 class="text-white text-end">CLoDSA</h1>
+
+          
+            <p class="text-end text-muted"><small>last updated on 10/10/2023</small></p>
+          
+
+        </div>
+
+        <style media="screen">
+
+  .btn-dark {
+    background-color: var(--light-dark);
+    border: 2px solid var(--light-dark);
+  }
+
+  .btn-dark:hover {
+    background-color: var(--medium-dark);
+    border: 2px solid var(--medium-dark);
+  }
+
+  .btn-dark:active {
+    background-color: var(--light-dark) !important;
+    border: 2px solid var(--light-dark) !important;
+  }
+
+  .btn-dark:focus {
+    background-color: var(--light-dark) !important;
+    border: 2px solid var(--light-dark) !important;
+  }
+
+  .btn-dark.dropdown-toggle.show {
+    background-color: var(--light-dark);
+    border: 2px solid var(--light-dark);
+  }
+
+  #links .dropdown-menu-dark {
+    background-color: var(--light-dark);
+    border: 1px solid var(--light-dark) !important;
+  }
+
+  #links .dropdown-item:active {
+    color: var(--bs-dropdown-link-hover-color);
+    background-color: var(--bs-dropdown-link-hover-bg);
+  }
+
+</style>
+
+<!-- useful links -->
+<div id="links" class="container py-2 text-end">
+
+  <!-- repo button -->
+  
+    <a href="https://github.com/joheras/CLoDSA" class="btn btn-outline-light m-1">Repository</a>
+  
+
+  <!-- doc button -->
+  
+    <a href="https://github.com/joheras/CLoDSA/tree/master/docs" class="btn btn-outline-light m-1">Documentation</a>
+  
+
+  <!-- transformation list button -->
+  
+    <a href="https://github.com/joheras/CLoDSA#list-of-augmentation-techniques" class="btn btn-dark m-1">Transformations</a>
+  
+
+  <!-- paper button -->
+  
+    <a href="https://link.springer.com/content/pdf/10.1186/s12859-019-2931-1.pdf" class="btn btn-outline-light m-1">Paper</a>
+  
+
+</div>
+
+
+        <!-- info -->
+<div class="container text-start text-white my-4">
+  <dl class="row">
+
+    <dt class="col-sm-3">Supported languages:</dt>
+    <dd class="col-sm-9">
+      <ul class="list-inline">
+        
+          <li class="list-inline-item">
+              <div id="info" class="my-1 px-2 py-1">Python (2.7, 3.6)</div>
+          </li>
+        
+      </ul>
+    </dd>
+
+    
+    <dt class="col-sm-3">Supported ML libraries:</dt>
+    <dd class="col-sm-9">
+      <ul class="list-inline">
+        
+          <li class="list-inline-item">
+              <div id="info" class="my-1 px-2 py-1">Keras</div>
+          </li>
+        
+      </ul>
+    </dd>
+    
+
+    
+    <dt class="col-sm-3">Requirements:</dt>
+    <dd class="col-sm-9">
+      <ul id="requirements" class="list-inline">
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">absl-py==0.11.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">argon2-cffi==20.1.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">astunparse==1.6.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">async-generator==1.10</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">attrs==20.3.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">backcall==0.2.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">bleach==3.3.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">cached-property==1.5.2</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">cachetools==4.2.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">certifi==2020.12.5</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">cffi==1.14.4</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">chardet==4.0.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">clodsa==1.2.42</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">colorama==0.4.4</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">commentjson==0.9.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">cycler==0.10.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">decorator==4.4.2</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">defusedxml==0.6.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">entrypoints==0.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">flatbuffers==1.12</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">future==0.18.2</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">gast==0.3.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">google-auth==1.24.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">google-auth-oauthlib==0.4.2</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">google-pasta==0.2.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">grpcio==1.32.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">h5py==2.10.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">idna==2.10</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">imageio==2.9.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">imgaug==0.4.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">importlib-metadata==3.3.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">imutils==0.5.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">ipykernel==5.4.2</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">ipython==7.19.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">ipython-genutils==0.2.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">ipywidgets==7.5.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">jedi==0.17.2</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">Jinja2==2.11.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">joblib==1.0.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">jsonschema==3.2.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">jupyter==1.0.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">jupyter-client==6.1.7</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">jupyter-console==6.2.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">jupyter-core==4.7.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">jupyterlab-pygments==0.1.2</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">Keras==2.4.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">Keras-Preprocessing==1.1.2</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">kiwisolver==1.3.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">lark-parser==0.7.8</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">mahotas==1.4.11</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">Markdown==3.3.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">MarkupSafe==1.1.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">matplotlib==3.3.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">mistune==0.8.4</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">nbclient==0.5.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">nbconvert==6.0.7</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">nbformat==5.0.8</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">nest-asyncio==1.4.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">networkx==2.5</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">notebook==6.1.6</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">numpy==1.19.2</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">oauthlib==3.1.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">opencv-python==4.4.0.46</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">opt-einsum==3.3.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">packaging==20.8</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pandas==1.1.5</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pandocfilters==1.4.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">parso==0.7.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pickleshare==0.7.5</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">Pillow==8.1.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">progressbar2==3.53.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">prometheus-client==0.9.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">prompt-toolkit==3.0.8</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">protobuf==3.14.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pyasn1==0.4.8</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pyasn1-modules==0.2.8</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pycparser==2.20</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">Pygments==2.7.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pyparsing==2.4.7</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pyrsistent==0.17.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">python-dateutil==2.8.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">python-utils==2.4.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pytz==2020.4</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">PyWavelets==1.1.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pywin32==300</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pywinpty==0.5.7</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">PyYAML==5.4</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">pyzmq==20.0.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">qtconsole==5.0.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">QtPy==1.9.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">requests==2.25.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">requests-oauthlib==1.3.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">rsa==4.6</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">scikit-image==0.18.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">scikit-learn==0.24.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">scipy==1.5.4</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">Send2Trash==1.5.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">Shapely==1.7.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">six==1.15.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">tensorboard==2.4.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">tensorboard-plugin-wit==1.7.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">tensorflow==2.4.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">tensorflow-estimator==2.4.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">termcolor==1.1.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">terminado==0.9.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">testpath==0.4.4</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">threadpoolctl==2.1.0</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">tifffile==2020.12.8</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">tornado==6.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">traitlets==5.0.5</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">typing-extensions==3.7.4.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">urllib3==1.26.3</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">wcwidth==0.2.5</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">webencodings==0.5.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">Werkzeug==1.0.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">widgetsnbextension==3.5.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">wrapt==1.12.1</div>
+          </li>
+        
+          <li class="list-inline-item">
+            <div id="info" class="my-1 px-2 py-1">zipp==3.4.0</div>
+          </li>
+        
+      </ul>
+    </dd>
+    
+
+  </dl>
+</div>
+
+
+
+<!-- description -->
+
+<div class="alert text-start mb-5 mt-3" role="alert">
+  <div class="d-flex pt-3">
+    <div class="me-3">
+      <i class="bi bi-info-circle-fill"></i>
+    </div>
+    <div class="">
+      <p>CLoDSA is an open-source image augmentation library for object classification, localization, detection, semantic segmentation and instance segmentation.</p>
+
+    </div>
+  </div>
+</div>
+
+
+
+        <!-- list of transforms -->
+        
+            
+            <style media="screen">
+
+  #tag { color: white; background: var(--light-dark); }
+  #tag1 { background: #ED27CF; }
+  #tag2 { background: #815DFF; }
+  #tag3 { background: #3266FF; }
+  #tag4 { background: #279AF1; }
+  #tag5 { background: #F6AE2D; }
+  #tag6 { background: #FF6700; }
+  #tag7 { background: #EF233C; }
+  #tag8 { background: #EE2586; }
+
+
+</style>
+
+<!-- transformation table -->
+<div id="TransfTable" class="table-responsive my-2">
+  <table class="table table-dark text-start align-middle">
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col">Transformations</th>
+        <th scope="col">Description</th>
+        <th scope="col">Tags</th>
+      </tr>
+    </thead>
+
+      <tbody>
+
+      
+      
+
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Average blurring">
+            <td><small class="text-muted">1.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAverage-blurring" aria-expanded="false" aria-controls="collapseAverage-blurring">
+                  
+                  Average blurring
+                </button>
+              </td>
+            
+
+            <td><p><p>Smoothes the image using an average filter.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">BLUR</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseAverage-blurring">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/average_blurring_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("average_blurring", {"kernel": 5})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/average_blurring_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("average_blurring", {"kernel": 11})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Bilateral blurring">
+            <td><small class="text-muted">2.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBilateral-blurring" aria-expanded="false" aria-controls="collapseBilateral-blurring">
+                  
+                  Bilateral blurring
+                </button>
+              </td>
+            
+
+            <td><p><p>Applies bilateral blurring to the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">BLUR</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseBilateral-blurring">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/bilateral_blurring.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("bilateral_blurring", {"diameter": 17,
+                                 "sigmaColor": 31, "sigmaSpace": 11})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Blurring">
+            <td><small class="text-muted">3.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBlurring" aria-expanded="false" aria-controls="collapseBlurring">
+                  
+                  Blurring
+                </button>
+              </td>
+            
+
+            <td><p><p>Blurs an image using the normalized box filter.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">BLUR</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseBlurring">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/blurring_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("blurring", {"ksize": 5})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/blurring_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("blurring", {"ksize": 11})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Crop">
+            <td><small class="text-muted">4.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCrop" aria-expanded="false" aria-controls="collapseCrop">
+                  
+                  Crop
+                </button>
+              </td>
+            
+
+            <td><p><p>Crops pixels at the sides of the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseCrop">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/crop.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("crop",{"percentage": 0.7,
+                                 "startFrom": "TOPRIGHT"})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Dropout">
+            <td><small class="text-muted">5.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDropout" aria-expanded="false" aria-controls="collapseDropout">
+                  
+                  Dropout
+                </button>
+              </td>
+            
+
+            <td><p><p>Sets some pixels in the image to zero.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag4" class="badge">DROPOUT</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseDropout">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/023.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/dropout_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("dropout",{"percentage": 0.05})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/023.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/dropout_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("dropout",{"percentage": 0.5})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Elastic deformation">
+            <td><small class="text-muted">6.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseElastic-deformation" aria-expanded="false" aria-controls="collapseElastic-deformation">
+                  
+                  Elastic deformation
+                </button>
+              </td>
+            
+
+            <td><p><p>Applies elastic deformation as explained in the paper <a href="https://cognitivemedium.com/assets/rmnist/Simard.pdf">P. Simard, D. Steinkraus, and J. C. Platt. Best practices for convolutional neural networks applied to visual document analysis. Proceedings of the 12th International Conference on Document Analysis and Recognition (ICDAR’03) vol. 2, pp. 958–964. IEEE Computer Society. 2003</a>.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">DISTORTION</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseElastic-deformation">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/022.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/elastic_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python"># alpha controlla l'intensità della deformazione
+# sigma è il coefficiente di elasticità
+transformation = createTechnique("elastic",{"alpha": 34,"sigma": 4})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/022.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/elastic_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/022.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/elastic_3.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("elastic",{"alpha": 34,"sigma": 3.5})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Equalize histogram">
+            <td><small class="text-muted">7.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEqualize-histogram" aria-expanded="false" aria-controls="collapseEqualize-histogram">
+                  
+                  Equalize histogram
+                </button>
+              </td>
+            
+
+            <td><p><p>Applies histogram equalization to the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseEqualize-histogram">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/equalize_histogram.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("equalize_histogram",{})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Flip">
+            <td><small class="text-muted">8.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFlip" aria-expanded="false" aria-controls="collapseFlip">
+                  
+                  Flip
+                </button>
+              </td>
+            
+
+            <td><p><p>Flips the image horizontally, vertically or both.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseFlip">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/025.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/flip_x.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("flip",{"flip": 0})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/025.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/flip_y.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("flip",{"flip": 1})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/025.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/flip_xy.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("flip",{"flip": -1})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Gamma correction">
+            <td><small class="text-muted">9.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGamma-correction" aria-expanded="false" aria-controls="collapseGamma-correction">
+                  
+                  Gamma correction
+                </button>
+              </td>
+            
+
+            <td><p><p>Applies gamma correction to the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseGamma-correction">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/023.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/gamma_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("gamma",{"gamma": 0.3})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/023.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/gamma_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("gamma",{"gamma": 1.7})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Gaussian blurring">
+            <td><small class="text-muted">10.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGaussian-blurring" aria-expanded="false" aria-controls="collapseGaussian-blurring">
+                  
+                  Gaussian blurring
+                </button>
+              </td>
+            
+
+            <td><p><p>Blurs an image using a Gaussian filter.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">BLUR</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseGaussian-blurring">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/gaussian_blur.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("gaussian_blur", {"kernel": 9})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Gaussian noise">
+            <td><small class="text-muted">11.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGaussian-noise" aria-expanded="false" aria-controls="collapseGaussian-noise">
+                  
+                  Gaussian noise
+                </button>
+              </td>
+            
+
+            <td><p><p>Adds Gaussian noise to the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">NOISE</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseGaussian-noise">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/gaussian_noise.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("gaussian_noise", {"mean": 0,"sigma": 30})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Invert">
+            <td><small class="text-muted">12.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInvert" aria-expanded="false" aria-controls="collapseInvert">
+                  
+                  Invert
+                </button>
+              </td>
+            
+
+            <td><p><p>Inverts all values in images, i.e. sets a pixel from value <code class="language-plaintext highlighter-rouge">v</code> to <code class="language-plaintext highlighter-rouge">255-v</code>.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseInvert">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/invert.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("invert",{})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Median blurring">
+            <td><small class="text-muted">13.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMedian-blurring" aria-expanded="false" aria-controls="collapseMedian-blurring">
+                  
+                  Median blurring
+                </button>
+              </td>
+            
+
+            <td><p><p>Blurs an image using the median filter.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">BLUR</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseMedian-blurring">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/median_blur.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("median_blur", {"kernel": 9})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Raise blue channel">
+            <td><small class="text-muted">14.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRaise-blue-channel" aria-expanded="false" aria-controls="collapseRaise-blue-channel">
+                  
+                  Raise blue channel
+                </button>
+              </td>
+            
+
+            <td><p><p>Modifies the values in the blue channel based on the provided parameter.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRaise-blue-channel">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_blue_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_blue", {"power": 0.26})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_blue_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_blue", {"power": 0.9})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_blue_3.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_blue", {"power": 4})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Raise green channel">
+            <td><small class="text-muted">15.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRaise-green-channel" aria-expanded="false" aria-controls="collapseRaise-green-channel">
+                  
+                  Raise green channel
+                </button>
+              </td>
+            
+
+            <td><p><p>Modifies the values in the green channel based on the provided parameter.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRaise-green-channel">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_green_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_green", {"power": 0.26})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_green_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_green", {"power": 0.9})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_green_3.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_green", {"power": 4})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Raise hue">
+            <td><small class="text-muted">16.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRaise-hue" aria-expanded="false" aria-controls="collapseRaise-hue">
+                  
+                  Raise hue
+                </button>
+              </td>
+            
+
+            <td><p><p>Raises the hue value.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRaise-hue">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_hue_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_hue", {"power": 0.26})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_hue_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_hue", {"power": 0.9})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_hue_3.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_hue", {"power": 4})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Raise red channel">
+            <td><small class="text-muted">17.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRaise-red-channel" aria-expanded="false" aria-controls="collapseRaise-red-channel">
+                  
+                  Raise red channel
+                </button>
+              </td>
+            
+
+            <td><p><p>Modifies the values in the red channel based on the provided parameter.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRaise-red-channel">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_red_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_red", {"power": 0.26})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_red_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_red", {"power": 0.9})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/019.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_red_3.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_red", {"power": 4})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Raise saturation">
+            <td><small class="text-muted">18.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRaise-saturation" aria-expanded="false" aria-controls="collapseRaise-saturation">
+                  
+                  Raise saturation
+                </button>
+              </td>
+            
+
+            <td><p><p>Modifies the saturation based on the provided parameter.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRaise-saturation">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/020.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_saturation_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_saturation", {"power": 0.26})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/020.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_saturation_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_saturation", {"power": 0.9})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/020.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_saturation_3.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_saturation", {"power": 4})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Raise value">
+            <td><small class="text-muted">19.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRaise-value" aria-expanded="false" aria-controls="collapseRaise-value">
+                  
+                  Raise value
+                </button>
+              </td>
+            
+
+            <td><p><p>Modifies the value based on the provided parameter.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRaise-value">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/021.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_value_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_value", {"power": 0.26})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/021.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_value_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_value", {"power": 0.9})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/021.png" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/raise_value_3.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("raise_value", {"power": 4})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Resize">
+            <td><small class="text-muted">20.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResize" aria-expanded="false" aria-controls="collapseResize">
+                  
+                  Resize
+                </button>
+              </td>
+            
+
+            <td><p><p>Resizes the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseResize">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/resize.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("resize", {"percentage" : 0.3,
+                                 "method":"INTER_NEAREST"})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Rotate">
+            <td><small class="text-muted">21.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRotate" aria-expanded="false" aria-controls="collapseRotate">
+                  
+                  Rotate
+                </button>
+              </td>
+            
+
+            <td><p><p>Rotates the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRotate">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/024.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/rotate.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("rotate", {"angle" : 45})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Salt and Pepper">
+            <td><small class="text-muted">22.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalt-and-Pepper" aria-expanded="false" aria-controls="collapseSalt-and-Pepper">
+                  
+                    <span style="background-color: var(--red); color: var(--dark)"class="badge rounded-pill">!</span>
+                  
+                  Salt and Pepper
+                </button>
+              </td>
+            
+
+            <td><p><p>Adds salt and pepper noise to the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">NOISE</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseSalt-and-Pepper">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/026.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/salt_and_pepper_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("salt_and_pepper", {"low": 50,"up": 0})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/026.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/salt_and_pepper_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("salt_and_pepper", {"low": 0,"up": 50})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/026.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/salt_and_pepper_3.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("salt_and_pepper", {"low": 50,"up": 50})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Sharpen">
+            <td><small class="text-muted">23.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSharpen" aria-expanded="false" aria-controls="collapseSharpen">
+                  
+                  Sharpen
+                </button>
+              </td>
+            
+
+            <td><p><p>Sharpens the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">SHARPNESS</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseSharpen">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/sharpen.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("sharpen", {})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Shearing">
+            <td><small class="text-muted">24.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShearing" aria-expanded="false" aria-controls="collapseShearing">
+                  
+                  Shearing
+                </button>
+              </td>
+            
+
+            <td><p><p>Shears the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseShearing">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/shearing_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("shearing", {"a": 0.5})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/shearing_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("shearing", {"a": -0.3})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Shift channels">
+            <td><small class="text-muted">25.</small></td>
+            
+
+            
+              <td>
+                <button id="disabled" class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShift-channels" aria-expanded="false" aria-controls="collapseShift-channels">
+                  
+                    <span style="background-color: var(--red); color: var(--dark)"class="badge rounded-pill">!</span>
+                  
+                  Shift channels
+                </button></td>
+            
+
+            <td><p><p>Shifts input image channels in the range given (value between 0 and 1).</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Translation">
+            <td><small class="text-muted">26.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTranslation" aria-expanded="false" aria-controls="collapseTranslation">
+                  
+                  Translation
+                </button>
+              </td>
+            
+
+            <td><p><p>Translates the image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseTranslation">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/translation_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("translation", {"x": 40,"y": 10})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/CLDS/translation_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">transformation = createTechnique("translation", {"x": -100,"y": -300})
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+
+      </tbody>
+
+  </table>
+</div>
+
+        
+
+      </div>
+    </div>
+  </div>
+
+  <!-- button top -->
+  <style media="screen">
+
+  .btntop {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: opacity 1s;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .show {
+    opacity: 1;
+  }
+
+  .fixed_button{
+    position: absolute !important;
+    bottom: auto !important;
+  }
+
+</style>
+
+<a id="btn-top" class="hide" href="#top" aria-label="Back to top">
+  <i id="btn-top-icon" class="bi bi-arrow-up-circle-fill fs-2"></i>
+</a>
+
+<script type="text/javascript">
+
+  btn = document.getElementById("btn-top");
+
+  var scrollFun = function() {
+    var y = window.scrollY;
+    var h = 134; /*footer height*/
+
+    if (y >= 200) {
+      btn.className = "btntop text-light mx-4 my-3 show"
+    } else {
+      btn.className = "btntop text-light mx-4 my-3 hide"
+    }
+
+    if (y + $(window).height() > $(document).height() - h) {
+      $('#btn-top').addClass('fixed_button');
+    } else{
+      $('#btn-top').removeClass('fixed_button');
+    }
+
+  };
+
+  window.addEventListener("scroll", scrollFun);
+
+</script>
+
+
+  <style media="screen">
+
+  .footer .container-fluid {
+    background-color: var(--dm-dark) !important;
+  }
+
+</style>
+
+<footer class="footer my-5 pt-4">
+  <div class="container-fluid py-5">
+
+    <div class="container">
+      <a href="https://forms.gle/rXxcYwguwwHyVnBS8">
+        <button role="button" class="btn btn-primary">
+          <i class="bi bi-lightbulb-fill"></i>
+          Any suggestions?
+        </button>
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="../assets/vendor/bootstrap@5.2.3/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/prism.js"></script>
+
+</body>
+</html>

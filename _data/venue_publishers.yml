@@ -1,0 +1,77 @@
+# Publisher / organization of each venue, used only by the "publisher" style of the publication fallback
+# thumbnails (pub_fallback_style in _config.yml; see _includes/pub-fallback.liquid).
+# The site shows the name as plain text: publisher logos must not be used.
+#   name       text shown on the thumbnail
+#   venues     venue abbreviations (the `abbr` field of the bib entries)
+#   publisher  words looked for in the entry's `publisher` field when its venue is not listed (books, chapters)
+- name: IEEE
+  venues: [ICCE-Berlin, ICIP, IEEE TIP, IEEE Access, RTSI, ICPR, ISDA, ISCT, IEEE TCE, ICCE, ICME, IEEE THMS, IEEE TPAMI,
+           IEEE TNNLS, IEEE SPL, IEEE TCI, IEEE TEVC, IEEE JBHI, IEEE GRSL, IEEE TSP, IEEE TCSVT, RadarConf, SERVICES,
+           IEEE CE WS, HICSS, CISIS, EUVIP, SIU, ICRA, BTAS, AVSS, CAMP, ISPA, MMSP, 3DPVT, CBMI, ISCAS, ICMCS, ICCVW]
+  publisher: [IEEE]
+- name: CVF · IEEE
+  venues: [CVPR, CVPRW]
+- name: Springer
+  venues: [CCIW, ICIAP, ICIAPW, VISUAL, MTAP, ICPRW, ECCVW, ECCV, IC3K, ICEIS, JMIV, AIxIA, BVAI, NCAA, JRIE, IJDL, AMR,
+           EvoIASP, MVA, IJCV, AI Review, GPEM, QMI, IJMLC, SIViP, JRTIP, ACIVS, ECIR, MCS, JAIHC, Sci. Data, EURASIP JASP]
+  publisher: [Springer]
+- name: Elsevier
+  venues: [PR, PRL, ESWA, CVIU, Data in Brief, Comput. Ind., DSP, IP&M, ISWA, Spectrochim. Acta A, Heliyon, ISPRS J.,
+           Comput. Geosci., RSASE, SoftwareX, Inf. Fusion, Neurocomputing, CHB, Inf. Syst., Inf. Sci., Vision Res., CIBM,
+           JVLC, IMAVIS, J. Cult. Herit.]
+  publisher: [Elsevier]
+- name: IS&T · SPIE
+  venues: [IS&T EI, JEI]
+- name: SPIE
+  venues: [ICMV, VCIP, Opt. Eng.]
+  publisher: [SPIE, Optics and Photonics]
+- name: IS&T
+  venues: [CIC, LIM, Archiving, JIST, CGIV]
+  publisher: [IS&T, Society for Imaging Science]
+- name: MDPI
+  venues: [Sensors, Appl. Sci., J. Imaging, Remote Sens.]
+  publisher: [MDPI, Multidisciplinary Digital]
+- name: Optica
+  venues: [JOSA A]
+- name: Wiley
+  venues: [Color Res. Appl., JASIST, CGF, CGIP]
+  publisher: [Wiley]
+- name: ACM
+  venues: [ACM TOMM, PervasiveHealth, SIGGRAPH, MIR, GECCO]
+  publisher: [ACM, Association for Computing]
+- name: SciTePress
+  venues: [VISAPP]
+- name: World Scientific
+  venues: [IJPRAI]
+  publisher: [World Scientific]
+- name: Taylor & Francis
+  venues: [IJRS, Digit. Creat.]
+  publisher: [Taylor, Routledge, CRC Press]
+- name: IOP
+  venues: [J. Phys. Conf. Ser.]
+- name: arXiv
+  venues: [arXiv]
+- name: AIC
+  venues: [AIC]
+- name: Gruppo del Colore
+  venues: [Color Conf.]
+- name: IET
+  venues: [Electron. Lett.]
+- name: SAGE
+  venues: [Inf. Vis.]
+- name: IOS Press
+  venues: [JAD]
+- name: PLOS
+  venues: [PLoS ONE]
+- name: Bentham
+  venues: [RPEE]
+- name: NeurIPS
+  venues: [NeurIPS]
+- name: ICLR
+  venues: [ICLR]
+- name: BMVA
+  venues: [BMVC]
+- name: AAAI
+  venues: [AAAI SSS]
+- name: CEUR-WS
+  venues: [IIR]

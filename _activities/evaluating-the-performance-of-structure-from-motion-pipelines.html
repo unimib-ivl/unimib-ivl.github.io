@@ -1,0 +1,59 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/evaluating-the-performance-of-structure-from-motion-pipelines/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Evaluating the performance of Structure from Motion Pipelines
+description: Structure from Motion (SfM) is a pipeline that allows three-dimensional reconstruction starting from a collection of images. How to choose the SfM pipeline…
+participants:
+- Davide Marelli
+- Simone Bianco
+- Gianluigi Ciocca
+publication_tag: evaluating-the-performance-of-structure-from-motion-pipelines
+render_with_liquid: false
+---
+<p><img alt="" height="1000" src="../../wp-content/uploads/2018/07/sfm.webp" width="2230"/>Structure from Motion (SfM) is a pipeline that allows three-dimensional reconstruction starting from a collection of images. How to choose the SfM pipeline best suited for a given task? We report a comparison of different state-of-the-art SfM pipelines in terms of their ability to reconstruct different scenes. We also propose an evaluation procedure that stresses the SfM pipelines using real dataset acquired with high-end devices as well as realistic synthetic dataset. To this end, we created a plug-in module for the Blender software to support the creation of synthetic datasets and the evaluation of the SfM pipeline. The use of synthetic data allows us to easily have arbitrarily large and diverse datasets with, in theory, infinitely precise ground truth. Our evaluation procedure considers both the reconstruction errors as well as the estimation errors of the camera poses used in the reconstruction.</p>
+<p>Here we made publicly available the synthetic datasets that we created for the evaluation of structure for motion pipelines.</p>
+<h2>DATASET IVL-SYNTHSFM</h2>
+<p>The dataset used in our paper is shown in the figure below. Models <em>a-e</em> are synthetic models. Model <em>f</em>  is a real statue.</p>
+<p><img alt="" height="324" src="../../wp-content/uploads/2018/07/SfmDSet.webp" width="1710"/></p>
+<p>Click here to download the dataset : <p>  <strong><a href="../../wp-content/files/IVL-SYNTHSFM.zip">IVL-SYNTHSFM.zip</a></strong> (298.6 MiB)</p></p>
+<p>If you use IVL-SYNTHSFM, please cite the following paper:</p>
+<pre tabindex="0"><code>@article{bianco-sfm2018,
+ author = {Bianco, Simone and Ciocca, Gianluigi and Marelli, Davide},
+ year = {2018},
+ title = {Evaluating the Performance of Structure from Motion Pipelines},
+ volume = {4},
+ number = {8},
+ journal = {Journal of Imaging},
+ doi = {10.3390/jimaging4080098}
+}</code></pre>
+<h2>DATASET IVL-SYNTHSFM-v2</h2>
+<p>This dataset is an extension of the IVL-SYNTHSFM. It contains the same models but the photos have been generated in different ways. Each model is placed in a reference scene and is rendered under different lighting and camera conditions. For each model, 8 scenes are created and for each scene 100 images are taken from different points of view. The dataset is thus composed of 8 sets as follows:</p>
+<p><img alt="" height="717" src="../../wp-content/uploads/2018/07/sets.png" width="1420"/></p>
+<p>The dataset can be downloaded from this Mendeley Data link: <a href="https://doi.org/10.17632/fnxy8z8894.1">Download IVL-SYNTHSFM-v2</a></p>
+<p>Details on data and acquisition setup can be found in the article: <a href="http://dx.doi.org/10.1016/j.dib.2019.105041">IVL-SYNTHSFM-v2: A synthetic dataset with exact ground truth for the evaluation of 3D reconstruction pipelines</a></p>
+<p>If you use IVL-SYNTHSFM-v2, please cite the following paper:</p>
+<pre tabindex="0"><code>@article{marelli2020IVLSYNTHSFMv2,
+ author = {Marelli, Davide and Bianco, Simone and Ciocca, Gianluigi},
+ year = {2020},
+ pages = {105041},
+ title = {IVL-SYNTHSFM-v2: A synthetic dataset with exact ground truth 
+          for the evaluation of 3D reconstruction pipelines},
+ journal = {Data in Brief},
+ doi = {10.1016/j.dib.2019.105041},
+ issn = {2352-3409}}</code></pre>
+<h2>SOFTWARE SFM FLOW (Blender Add-on)</h2>
+<p>SfM Flow is a comprehensive toolset for the evaluation of 3D reconstruction pipelines. It provides tools for the creation of datasets composed of synthetic images, the execution of 3D reconstruction Structure from Motion pipelines, and the evaluation of the obtained results. SfM Flow integrates all these features in the popular modeling and rendering software Blender.<br/>
+The IVL-SYNTHSFM-v2 dataset has been generated using SfM Flow, while the original IVL-SYNTHSFM used a preliminary version of the add-on.</p>
+<p>Read more about SfM Flow in the paper <a href="http://dx.doi.org/10.1016/j.softx.2021.100931">SfM Flow: A comprehensive toolset for the evaluation of 3D reconstruction pipelines</a>.</p>
+<p>Get the SfM Flow Blender add-on from <a href="https://github.com/davidemarelli/sfm_flow">GitHub</a>.</p>
+<p>If you use SfM Flow, please cite the following paper:</p>
+<pre tabindex="0"><code>@article{marelli2022sfmflow,
+ author = {Marelli, Davide and Bianco, Simone and Ciocca Gianluigi},
+ year = {2022},
+ pages = {100931},
+ title = {SfM Flow: A comprehensive toolset for the evaluation of 3D reconstruction pipelines},
+ volume = {17},
+ journal = {SoftwareX},
+ doi = {10.1016/j.softx.2021.100931},
+ issn = {2352-7110}}</code></pre>

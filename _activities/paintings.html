@@ -1,0 +1,25 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/paintings/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Multitask Painting Categorization by  Deep Multibranch Neural Network
+description: In this project we propose a new deep multibranch neural network to solve the tasks of artist, style, and genre categorization in a multitask formulation.…
+participants:
+- Simone Bianco
+- Davide Mazzini
+- Paolo Napoletano
+- Raimondo Schettini
+publication_tag: paintings
+render_with_liquid: false
+---
+<p>In this project we propose a new deep multibranch neural network to solve the tasks of artist, style, and genre categorization in a multitask formulation. In order to gather clues from low-level texture details and, at the same time, exploit the coarse layout of the painting, we propose a deep neural network composed of multiple branches fed with crops at different resolutions. We propose and compare two different crop strategies: the first one is a random-crop strategy that permits to manage the tradeoff between accuracy and speed; the second one is a smart extractor based on Spatial Transformer Networks trained to extract the most representative subregions. Furthermore, inspired by the results obtained in other domains, we experiment the joint use of hand-crafted features directly computed on the input images along with neural ones.</p>
+<hr/>
+<h2>Online Demo Available!</h2>
+<p>Try out our online demo: (<a href="http://ivldocker.disco.unimib.it/paintings/">link</a>)</p>
+<hr/>
+<h2>MultitaskPainting100k Dataset</h2>
+<p>The dataset used for the evaluation of our multitask deep multibranch neural network has been obtained from the Painter by Numbers Kaggle competition (<a href="https://www.kaggle.com/c/painter-by-numbers">link</a>). However the original split is not suitable for our task. To accomplish our task we select a subset of the original dataset such that there are at least 10 images in every class for a total of 1508 artists, 125 styles and 41 genres. We call this selection the MultitaskPainting100k dataset. The dataset is split in two parts: a random 70% belonging to the train set and the remaining 30% to the test set.</p>
+<p><img alt="" height="428" src="../../wp-content/uploads/2018/07/wikipaintingdataset.webp" width="1000"/><span>Paintings from the MultitaskPaintings100k dataset. Each row contains samples from a different artist. For each artist we show paintings with different genres and styles. Color coding is used to distinguish between genres and styles.</span></p>
+<p><img alt="" height="2616" src="../../wp-content/uploads/2018/07/artist_distribution.webp" width="9066"/> <img alt="" height="152" src="../../wp-content/uploads/2018/07/styles_distribution.webp" width="300"/> <img alt="" height="154" src="../../wp-content/uploads/2018/07/genres_distribution.webp" width="300"/></p>
+<p><span>Distributions of number of samples available for each of the 1508 artists, 41 genres and 125 styles within theMultitaskPaintings100k dataset. The names of classes are partially shown for lack of space.</span></p>
+<p>Link to <a href="https://drive.google.com/drive/folders/1M0qClDYCBAM1XzlYZiBZnNaBuPUL04e7?usp=sharing"><span>download</span></a> the dataset.</p>

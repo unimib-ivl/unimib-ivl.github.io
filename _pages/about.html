@@ -1,0 +1,122 @@
+---
+layout: default
+title: Home
+permalink: /
+---
+
+<main class="ivl-home">
+  <section class="ivl-hero" aria-labelledby="hero-title">
+    <div class="ivl-hero-inner">
+      <div class="ivl-hero-content">
+        <p class="ivl-hero-lab">Imaging and Vision Laboratory<br />University of Milano-Bicocca</p>
+        <h1 id="hero-title">Understanding the world through signals</h1>
+        <p class="ivl-hero-lead">
+          Founded in 2003 within the <a href="https://www.disco.unimib.it/">Department of Informatics, Systems and Communication</a> at the
+          <a href="https://www.unimib.it/">University of Milano-Bicocca</a>, the Imaging and Vision Laboratory (IVL) develops methods and systems for
+          capturing, enhancing, analyzing, and organizing visual information.
+        </p>
+        <a class="ivl-pill ivl-pill--lg" href="#research">Explore our research</a>
+      </div>
+      <div class="ivl-hero-media">{% include hero-chromaticity.svg %}</div>
+    </div>
+  </section>
+
+  <section id="research" class="ivl-home-section ivl-research" aria-labelledby="research-title">
+    <div class="ivl-section-inner">
+      <h2 id="research-title" class="ivl-node-heading"><span>Our research</span></h2>
+      <p class="ivl-section-lead">
+        Our work spans color and multispectral imaging, image quality and enhancement, computer and machine vision, and visual information management.
+        We pursue fundamental research alongside practical applications and maintain long-standing collaborations with international industry
+        partners.
+      </p>
+
+      <div class="ivl-areas">
+        {% for area in site.data.research_areas %} {% capture area_url %}{{ '/publications/' | relative_url }}?area={{ area.slug }}{% endcapture %}
+        <article class="ivl-area" id="area-{{ area.slug }}">
+          <a class="ivl-area-figure" href="{{ area_url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ area.image | relative_url }}" alt="{{ area.image_alt }}" loading="lazy" />
+          </a>
+          <div class="ivl-area-copy">
+            <span class="ivl-area-index">{{ forloop.index | prepend: '0' }}</span>
+            <h3>
+              <a href="{{ area_url }}">{{ area.title }}</a>
+            </h3>
+            <p>{{ area.description }}</p>
+            <ul class="ivl-tags" aria-label="{{ area.title }} topics">
+              {% for topic in area.topics %}
+              <li>
+                <a href="{{ '/publications/' | relative_url }}?topic={{ topic.slug }}"{% if topic.full %} title="{{ topic.full }}"{% endif %}>{{ topic.name }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+            <a class="ivl-arrow-link" href="{{ area_url }}">Browse publications</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {% comment %} Partners section: hidden while ivl_show_partners is false in _config.yml (content stays in _data/partners.yml). {% endcomment %}
+  {% assign partner_groups = site.data.partners %} {% if site.ivl_show_partners and partner_groups and partner_groups.size > 0 %}
+  <section id="partners" class="ivl-home-section ivl-partners" aria-labelledby="partners-title">
+    <div class="ivl-section-inner">
+      <h2 id="partners-title" class="ivl-node-heading"><span>Partners</span></h2>
+      <p class="ivl-section-lead">Companies, institutions, and funding bodies that have supported our research over the years.</p>
+
+    </div>
+
+    {%- comment -%}
+      One scrolling band per partner group, its name fixed on the left. Each track holds two identical sets moving
+      by -50% for a seamless loop; a set repeats the names until it is wider than any screen. Only the first copy is
+      exposed to assistive technology and keyboard; the repeats are aria-hidden and inert. Reduced motion: static,
+      wrapped list (see ivl.css).
+    {%- endcomment -%}
+    {% assign primary_groups = partner_groups | where: 'band', 'primary' %} {% assign secondary_groups = partner_groups | where: 'band', 'secondary' %}
+    <div class="ivl-marquees">
+      {% for tier in (1..2) %} {% if tier == 1 %}{% assign tier_groups = primary_groups %}{% assign tier_name = 'primary' %}{% else %}{% assign tier_groups = secondary_groups %}{% assign tier_name = 'secondary' %}{% endif %}
+      {% if tier_groups.size > 0 %}
+      <div class="ivl-marquee-block ivl-marquee-block--{{ tier_name }}">
+        {% for group in tier_groups %} {% assign band_count = group.partners.size %} {% assign band_reps = 26 | divided_by: band_count | plus: 1 %}
+        {% assign band_duration = band_count | times: band_reps | times: 3.8 | round %} {% assign band_id = group.group | slugify | prepend: 'partners-' %}
+        {% assign band_dir = forloop.index | plus: tier | modulo: 2 %}
+        <div class="ivl-marquee{% if band_dir == 1 %} is-reverse{% endif %}" style="--ivl-marquee-duration: {{ band_duration }}s">
+          <p class="ivl-marquee-label" id="{{ band_id }}">{{ group.group }}</p>
+          <div class="ivl-marquee-viewport">
+            <div class="ivl-marquee-track">
+              {% for set in (1..2) %}
+              <div class="ivl-marquee-set">
+                {% for rep in (1..band_reps) %} {% if set == 1 and rep == 1 %}{% assign filler = false %}{% else %}{% assign filler = true %}{% endif %}
+                <ul class="ivl-marquee-group{% if filler %} is-filler{% endif %}" {% if filler %}aria-hidden="true" inert{% else %}aria-labelledby="{{ band_id }}"{% endif %}>
+                  {% for partner in group.partners %}
+                  <li>
+                    {% if partner.url %}
+                    <a href="{{ partner.url }}" {% if partner.full %}title="{{ partner.full }}" aria-label="{{ partner.full }}" {% endif %}>{{ partner.name }}</a>
+                    {% else %}
+                    <span {% if partner.full %}title="{{ partner.full }}" {% endif %}>{{ partner.name }}</span>
+                    {% endif %}
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endfor %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="ivl-cta" aria-labelledby="cta-title">
+    <div class="ivl-cta-card">
+      <p class="ivl-eyebrow">Work with us</p>
+      <h2 id="cta-title">Interested in working with us?</h2>
+      <p>We welcome prospective students, researchers, and industry partners who share our interest in visual information.</p>
+      <a class="ivl-pill ivl-pill--dark ivl-pill--lg" href="{{ '/how-to-reach/' | relative_url }}">Get in touch</a>
+    </div>
+  </section>
+</main>

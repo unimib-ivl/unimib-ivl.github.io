@@ -1,0 +1,16 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/deep-image-quality/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Deep Learning for Blind Image Quality Assessment
+description: In this work we investigate the use of deep learning for distortion-generic blind image quality assessment. We report on different design choices, ranging…
+participants:
+- Simone Bianco
+- Luigi Celona
+- Paolo Napoletano
+- Raimondo Schettini
+publication_tag: deep-image-quality
+render_with_liquid: false
+---
+<p>In this work we investigate the use of deep learning for distortion-generic blind image quality assessment. We report on different design choices, ranging from the use of features extracted from pre-trained Convolutional Neural Networks (CNNs) as a generic image description, to the use of features extracted from a CNN fine-tuned for the image quality task. Our best proposal, named DeepBIQ, estimates the image quality by average-pooling the scores predicted on multiple sub-regions of the original image. The score of each sub-region is computed using a Support Vector Regression (SVR) machine taking as input features extracted using a CNN fine-tuned for category-based image quality assessment. Experimental results on the LIVE In the Wild Image Quality Challenge Database show that DeepBIQ outperforms the state-of-the-art methods compared, including those based on deep learning, having a Linear Correlation Coefficient (LCC) with human subjective scores of almost 0.91. These results are further confirmed also on four benchmark databases of synthetically distorted images: LIVE, CSIQ, TID2008 and TID2013. Furthermore, in most of the cases, the quality score predictions of DeepBIQ are closer to the average observer than those of a generic human observer.</p>
+<p>Click <a href="../../wp-content/uploads/2016/09/DeepIQExtended.pdf">here</a> to download an extended version of the paper with additional material</p>

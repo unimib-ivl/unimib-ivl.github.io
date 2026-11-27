@@ -1,0 +1,3505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> DALib | torchvision </title>
+
+  <link rel="icon" href="../assets/logo.svg">
+  <link href="../assets/vendor/bootstrap@5.2.3/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons@1.9.1/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/prism.css"/>
+
+  <script src="../assets/vendor/jquery@3.7.0/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<style media="screen">
+
+  .language-plaintext {
+    background-color: var(--dark) !important;
+    color: var(--pink) !important;
+  }
+
+  td {
+    border: none;
+    padding-top: 16px !important;
+    padding-bottom: 0px !important;
+  }
+
+  #collapseCard {
+    background-color: var(--light-dark);
+  }
+
+  /*
+  #collapseCardTableBorder {
+    border-left: 5px solid #F8F9FA;
+  }
+  */
+
+  #collapseCardTable {
+    /* border-left: 5px solid transparent; */
+    margin-bottom: 0px;
+  }
+
+  #collapseCardTable td {
+    padding-top: 0px;
+    padding-bottom: 1rem;
+
+  }
+
+  #collapseCardTable pre {
+    background-color: var(--medium-dark);
+    margin-bottom: 0px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  #collapseCardTable th {
+    padding-top: 0px;
+  }
+
+  #disabled {
+    pointer-events: none;
+  }
+
+  #requirements {
+    max-height: 400px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  #diagram-container {
+    background-color: var(--medium-dark);
+  }
+
+  .alert {
+    background-color: var(--medium-dark);
+  }
+
+  .nav-tabs {
+    border-color: white;
+  }
+
+  .nav-tabs .nav-link {
+    color: white;
+  }
+
+  .nav-tabs .nav-link.active {
+    color: white;
+    background-color: var(--dark);
+    border-color: white;
+    border-bottom: none;
+  }
+
+  .nav-tabs .nav-link:hover {
+    color: var(--dark);
+    background-color: white;
+    border-color: white;
+    border-bottom: 1px solid white;
+  }
+
+  .nav-tabs .nav-link.active:hover {
+    color: white;
+    background-color: var(--dark);
+    border-color: white;
+    border-bottom: none;
+  }
+
+</style>
+
+<body>
+
+  <a href="../" class="text-decoration-none">
+
+  <div class="bg-dark text-secondary px-4 py-5 my-5 text-center">
+
+    <img id="logo2" src="../assets/logo2.svg" alt="DALib">
+    <div class="col-lg-6 mx-auto">
+      <p class="fs-5 text-light mb-4">A collection of information about Data Augmentation libraries for Image Processing.</p>
+    </div>
+  </div>
+
+</a>
+
+
+  <!-- grid -->
+  <div class="container text-center">
+
+    <div class="row">
+
+      <!-- menu -->
+      <div class="col-3">
+        <ul id="menu" class="dropdown-menu dropdown-menu-dark bg-dark position-static d-grid gap-1 p-2 rounded-3 mx-0 border-0">
+
+  <!-- libraries -->
+  <li><h6 id="label"><strong>Libraries</strong></h6></li>
+  
+    <li><a class="dropdown-item rounded-2" href="albumentations.html">Albumentations</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="augly.html">AugLy</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="augmentor.html">Augmentor</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="augraphy.html">Augraphy</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="automold.html">Automold</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="clodsa.html">CLoDSA</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="imgaug.html">imgaug</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="kerascv.html">KerasCV</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="kornia.html">Kornia</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="solt.html">solt</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="torchvision.html">torchvision</a></li>
+  
+
+  <!-- divider -->
+  <!--li><hr class="dropdown-divider opacity-0"></li-->
+
+  <!-- notes -->
+  <!--li><h6 id="label"><strong>Notes</strong></h6></li-->
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+</ul>
+
+      </div>
+
+      <!-- descrizione libreria -->
+      <div class="col-9 text-bg-dark">
+
+        <div class="container">
+          <h1 class="text-white text-end">torchvision</h1>
+
+          
+            <p class="text-end text-muted"><small>last updated on 10/10/2023</small></p>
+          
+
+        </div>
+
+        <style media="screen">
+
+  .btn-dark {
+    background-color: var(--light-dark);
+    border: 2px solid var(--light-dark);
+  }
+
+  .btn-dark:hover {
+    background-color: var(--medium-dark);
+    border: 2px solid var(--medium-dark);
+  }
+
+  .btn-dark:active {
+    background-color: var(--light-dark) !important;
+    border: 2px solid var(--light-dark) !important;
+  }
+
+  .btn-dark:focus {
+    background-color: var(--light-dark) !important;
+    border: 2px solid var(--light-dark) !important;
+  }
+
+  .btn-dark.dropdown-toggle.show {
+    background-color: var(--light-dark);
+    border: 2px solid var(--light-dark);
+  }
+
+  #links .dropdown-menu-dark {
+    background-color: var(--light-dark);
+    border: 1px solid var(--light-dark) !important;
+  }
+
+  #links .dropdown-item:active {
+    color: var(--bs-dropdown-link-hover-color);
+    background-color: var(--bs-dropdown-link-hover-bg);
+  }
+
+</style>
+
+<!-- useful links -->
+<div id="links" class="container py-2 text-end">
+
+  <!-- repo button -->
+  
+    <a href="https://github.com/pytorch/vision" class="btn btn-outline-light m-1">Repository</a>
+  
+
+  <!-- doc button -->
+  
+    <a href="https://pytorch.org/vision/stable/index.html" class="btn btn-outline-light m-1">Documentation</a>
+  
+
+  <!-- transformation list button -->
+  
+    <a href="https://pytorch.org/vision/stable/transforms.html" class="btn btn-dark m-1">Transformations</a>
+  
+
+  <!-- paper button -->
+  
+
+</div>
+
+
+        <!-- info -->
+<div class="container text-start text-white my-4">
+  <dl class="row">
+
+    <dt class="col-sm-3">Supported languages:</dt>
+    <dd class="col-sm-9">
+      <ul class="list-inline">
+        
+          <li class="list-inline-item">
+              <div id="info" class="my-1 px-2 py-1">Python</div>
+          </li>
+        
+          <li class="list-inline-item">
+              <div id="info" class="my-1 px-2 py-1">C++</div>
+          </li>
+        
+          <li class="list-inline-item">
+              <div id="info" class="my-1 px-2 py-1">Java</div>
+          </li>
+        
+      </ul>
+    </dd>
+
+    
+    <dt class="col-sm-3">Supported ML libraries:</dt>
+    <dd class="col-sm-9">
+      <ul class="list-inline">
+        
+          <li class="list-inline-item">
+              <div id="info" class="my-1 px-2 py-1">PyTorch</div>
+          </li>
+        
+      </ul>
+    </dd>
+    
+
+    
+
+  </dl>
+</div>
+
+
+  <div id="diagram-container" class="container text-start my-3 py-3 rounded-3">
+    <?xml version="1.0" encoding="UTF-8"?>
+<!-- Do not edit this file with editors other than diagrams.net -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="491px" height="391px" viewBox="-0.5 -0.5 491 391" content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2023-04-18T07:20:33.502Z&quot; agent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36&quot; version=&quot;21.1.7&quot; etag=&quot;c59b7rSl7oL9jJru2EFF&quot; type=&quot;google&quot;&gt;&lt;diagram name=&quot;Pagina-1&quot; id=&quot;DCl1zU-PX0CX86zffEvE&quot;&gt;7ZpLk5s4EMc/jY+ZAuEXx7FnnD0kVamdrdrsUQYZtBFqlxB+7KdfCYmXgYknMdkdFxdbakkNUv/1Q24z8dbJ6aPA+/gzhIRNkBOeJt7TBCF36k3Vl7acjWUxt4ZI0NB2qgwv9B9ijY61ZjQkaaOjBGCS7pvGADgngWzYsBBwbHbbAWtedY8j0jK8BJi1rX/SUMbGukSLyv4boVFcXNmd+6Zli4NvkYCM2+tNkId8RDzPNCe48GUnmsY4hGPN5D1PvLUAkKaUnNaE6bUtls2M2/S0lvctCJfXDEBmwAGzzE79D4F5ugORUB7p1VQzUZ9ZlCiPxkQTNf3U3r88F2uWz5pov+7EWx1jKsnLHge69ahUomyxTJhtxiKwUZ85qrqjjK2BgchdeY4TLLfK0yqVAr6RooUDJ7ozcGkHu1Nbrw1GLpohX9kZ3hK2KgPS5cXevWPrG5xQpiX7O2xBQtELMpFPI5ZS6Q/NvEf1oZZUf+gO6UMEEDGC9zR9CCDJG4I077rZGZ+qWHk10yqUpdfDhoEISU69oXRLgaiNRyAhUijHjh0w9a2m7J5TqrSGYyVhd25tcU2+U2vDdtdEpe9KOapgxdMtJK+lBxKqLWWrIGQMEXDMnivrqrJ+AtjblfibSHm24cVZvlw13ZATlV9txHT5L11+mNna06nW9HS2laaIcnmtl6sn3Y2Hj5oWlSqUZUP1JPORQSYOpaL7ZGYmrmfbCFxaqEYv8NWxFIRhSQ9NV11xsUO/AFUeSw3MF5ca8C5iK7GIiLTDLsJb3sdVEZ/2oyPV8w8E3Uu8pYzK82CwsGHrD3F7q13EsezZBYQ6ZjCjEVeVQMWQCO1a3bAi4ieyk/8BQ25AjPkFMVzfm7WJsRyIGLORGP3EmN8jMeYtYnys62aww0QDBZ3keIUPZdRGPrj+ss0HfyA8LEY89ONheY94WLbwYFZnZMM7YANyOs4Oi4HY4P9/2fA9AvSz41ZsKH713Rccilk16JDsIaWSAh8Z8T4Y0XF+KLMUt4aE67ZUMVKiogS6S0q085mfaRqoTpgTyAZOWo6cuBEn3K48BBqKE2Pq8jVO3GXu0m0nL9fAlYjTIQ8TY7LyppD4pYeJMVv5GiTuMl3ptvOVjypgHx7Nn6F4/OHxbliBug4Us6FYMaYuX2PFXeYu3XbycoLmTM1vFdKDKka6uMl4oKmB9dD6v6Wmp7pIrfN4DHkfaOk6hgyV+HT9Dpldsqa1kevM4OqKX+uVGjV0tcJGXqslLN6enuihgdl1dvmuXv/a8naBu7ANzgzDshYz2p6mv44+5dtkb3niVDhxfu75U5SvS3xZ/Tlv1t8PJsyueCT9nDCvVty1m7zwUdvkEkQQH+igv07H9+5+7IngLS83esd7dzf6l1xVq3dDDSiqF3C9538B&lt;/diagram&gt;&lt;/mxfile&gt;"><defs><style type="text/css">@import url(../assets/vendor/google-fonts/roboto.css);&#xa;</style></defs><g><rect x="110" y="175" width="160" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 158px; height: 1px; padding-top: 195px; margin-left: 111px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Transforming and augmenting images</div></div></div></foreignObject><text x="190" y="199" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">Transforming and augmen...</text></switch></g><path d="M 310 20 Q 290 20 290 195" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="310" y="0" width="180" height="40" rx="20" ry="20" fill="none" stroke="#00c8bd" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 178px; height: 1px; padding-top: 20px; margin-left: 311px;"><div data-drawio-colors="color: #00C8BD; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(0, 200, 189); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Transforms scriptability</div></div></div></foreignObject><text x="400" y="24" fill="#00C8BD" font-family="Roboto" font-size="14px" text-anchor="middle">Transforms scriptability</text></switch></g><path d="M 310 70 Q 290 70 290 195" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="310" y="50" width="90" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 88px; height: 1px; padding-top: 70px; margin-left: 311px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Geometry</div></div></div></foreignObject><text x="355" y="74" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">Geometry</text></switch></g><path d="M 310 120 Q 290 120 290 195" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="310" y="100" width="70" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 68px; height: 1px; padding-top: 120px; margin-left: 311px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Color</div></div></div></foreignObject><text x="345" y="124" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">Color</text></switch></g><path d="M 310 170 Q 290 170 290 195" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="310" y="150" width="110" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 108px; height: 1px; padding-top: 170px; margin-left: 311px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Composition</div></div></div></foreignObject><text x="365" y="174" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">Composition</text></switch></g><path d="M 310 220 Q 290 220 290 195" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="310" y="200" width="120" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 220px; margin-left: 311px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Miscellaneous</div></div></div></foreignObject><text x="370" y="224" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">Miscellaneous</text></switch></g><path d="M 310 270 Q 290 270 290 195" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="310" y="250" width="110" height="40" rx="20" ry="20" fill="none" stroke="#00c8bd" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 108px; height: 1px; padding-top: 270px; margin-left: 311px;"><div data-drawio-colors="color: #00C8BD; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(0, 200, 189); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Conversion</div></div></div></foreignObject><text x="365" y="274" fill="#00C8BD" font-family="Roboto" font-size="14px" text-anchor="middle">Conversion</text></switch></g><path d="M 310 320 Q 290 320 290 195" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="310" y="300" width="150" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 148px; height: 1px; padding-top: 320px; margin-left: 311px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Auto-Augmentation</div></div></div></foreignObject><text x="385" y="324" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">Auto-Augmentation</text></switch></g><path d="M 310 370 Q 290 370 290 195" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="310" y="350" width="170" height="40" rx="20" ry="20" fill="none" stroke="#00c8bd" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 168px; height: 1px; padding-top: 370px; margin-left: 311px;"><div data-drawio-colors="color: #00C8BD; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(0, 200, 189); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><div>Functional Transforms</div></div></div></div></foreignObject><text x="395" y="374" fill="#00C8BD" font-family="Roboto" font-size="14px" text-anchor="middle">Functional Transforms</text></switch></g><path d="M 290 195 Q 290 195 270 195" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 90 195 L 110 195" fill="none" stroke="#00c8bd" stroke-miterlimit="10" pointer-events="stroke"/><rect x="0" y="175" width="90" height="40" rx="20" ry="20" fill="#00c8bd" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 88px; height: 1px; padding-top: 195px; margin-left: 1px;"><div data-drawio-colors="color: #212529; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 14px; font-family: Roboto; color: rgb(33, 37, 41); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">torchvision</div></div></div></foreignObject><text x="45" y="199" fill="#212529" font-family="Roboto" font-size="14px" text-anchor="middle">torchvision</text></switch></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/><a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a></switch></svg>
+
+  </div>
+
+
+<!-- description -->
+
+
+
+        <!-- list of transforms -->
+        
+            
+            <style media="screen">
+
+  #tag { color: white; background: var(--light-dark); }
+  #tag1 { background: #ED27CF; }
+  #tag2 { background: #815DFF; }
+  #tag3 { background: #3266FF; }
+  #tag4 { background: #279AF1; }
+  #tag5 { background: #F6AE2D; }
+  #tag6 { background: #FF6700; }
+  #tag7 { background: #EF233C; }
+  #tag8 { background: #EE2586; }
+
+
+</style>
+
+<!-- transformation table -->
+<div id="TransfTable" class="table-responsive my-2">
+  <table class="table table-dark text-start align-middle">
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col">Transformations</th>
+        <th scope="col">Description</th>
+        <th scope="col">Tags</th>
+      </tr>
+    </thead>
+
+      <tbody>
+
+      
+      
+
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="AugMix">
+            <td><small class="text-muted">1.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAugMix" aria-expanded="false" aria-controls="collapseAugMix">
+                  
+                  AugMix
+                </button>
+              </td>
+            
+
+            <td><p><p>Data augmentation method based on <a href="https://arxiv.org/pdf/1912.02781.pdf">AugMix</a>.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseAugMix">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/AugMix_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/AugMix_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/AugMix_3.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.AugMix(severity=3, mixture_width=3, chain_depth=-1,
+         alpha=1.0, all_ops=True,
+         interpolation=T.InterpolationMode.BILINEAR,
+         fill=None)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="AutoAugment">
+            <td><small class="text-muted">2.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAutoAugment" aria-expanded="false" aria-controls="collapseAutoAugment">
+                  
+                  AutoAugment
+                </button>
+              </td>
+            
+
+            <td><p><p>Data augmentation method based on <a href="https://arxiv.org/pdf/1805.09501.pdf">AutoAugment</a>.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseAutoAugment">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/AutoAugment.gif" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">policy = T.AutoAugmentPolicy.IMAGENET
+interpolation = T.InterpolationMode.NEAREST
+
+out_img = T.AutoAugment(policy, interpolation, fill=None)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="CenterCrop">
+            <td><small class="text-muted">3.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCenterCrop" aria-expanded="false" aria-controls="collapseCenterCrop">
+                  
+                  CenterCrop
+                </button>
+              </td>
+            
+
+            <td><p><p>Crops the given image at the center.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseCenterCrop">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/CenterCrop_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.CenterCrop(size=800)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/CenterCrop_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.CenterCrop(size=(800,1300))(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="ColorJitter">
+            <td><small class="text-muted">4.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseColorJitter" aria-expanded="false" aria-controls="collapseColorJitter">
+                  
+                  ColorJitter
+                </button>
+              </td>
+            
+
+            <td><p><p>Randomly changes the brightness, contrast, saturation and hue of an image.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseColorJitter">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/ColorJitter_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.ColorJitter(brightness=(0,1), contrast=0, saturation=0,
+                        hue=(0,0.5))(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/ColorJitter_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.ColorJitter(brightness=0, contrast=0.5, saturation=1,
+                        hue=0)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Compose">
+            <td><small class="text-muted">5.</small></td>
+            
+
+            
+              <td>
+                <button id="disabled" class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCompose" aria-expanded="false" aria-controls="collapseCompose">
+                  
+                  Compose
+                </button></td>
+            
+
+            <td><p><p>Composes several transforms together.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="FiveCrop">
+            <td><small class="text-muted">6.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiveCrop" aria-expanded="false" aria-controls="collapseFiveCrop">
+                  
+                  FiveCrop
+                </button>
+              </td>
+            
+
+            <td><p><p>Crops the given image into four corners and the central crop.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseFiveCrop">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/FiveCrop.png" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.FiveCrop((400,300))(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="GaussianBlur">
+            <td><small class="text-muted">7.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGaussianBlur" aria-expanded="false" aria-controls="collapseGaussianBlur">
+                  
+                  GaussianBlur
+                </button>
+              </td>
+            
+
+            <td><p><p>Blurs image with randomly chosen Gaussian blur.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">BLUR</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseGaussianBlur">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/GaussianBlur.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.GaussianBlur(19, sigma=(2.9, 3.0))(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Grayscale">
+            <td><small class="text-muted">8.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGrayscale" aria-expanded="false" aria-controls="collapseGrayscale">
+                  
+                  Grayscale
+                </button>
+              </td>
+            
+
+            <td><p><p>Converts image to grayscale.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseGrayscale">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/Grayscale.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.Grayscale(num_output_channels=1)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Pad">
+            <td><small class="text-muted">9.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePad" aria-expanded="false" aria-controls="collapsePad">
+                  
+                  Pad
+                </button>
+              </td>
+            
+
+            <td><p><p>Pads the given image on all sides with the given <code class="language-plaintext highlighter-rouge">pad</code> value.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapsePad">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/Pad_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.Pad((5,20,50,30), fill=(200,10,100),
+                padding_mode='constant')(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/Pad_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.Pad(30, fill=0, padding_mode='edge')(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/Pad_3.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.Pad(30, fill=0, padding_mode='reflect')(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandAugment">
+            <td><small class="text-muted">10.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandAugment" aria-expanded="false" aria-controls="collapseRandAugment">
+                  
+                  RandAugment
+                </button>
+              </td>
+            
+
+            <td><p><p>Data augmentation method based on <a href="https://arxiv.org/pdf/1909.13719.pdf">RandAugment</a>.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandAugment">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandAugment_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandAugment_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandAugment(num_ops=2, magnitude=9, num_magnitude_bins=31,
+              interpolation=T.InterpolationMode.NEAREST, fill=None)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomAdjustSharpness">
+            <td><small class="text-muted">11.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomAdjustSharpness" aria-expanded="false" aria-controls="collapseRandomAdjustSharpness">
+                  
+                  RandomAdjustSharpness
+                </button>
+              </td>
+            
+
+            <td><p><p>Adjusts the sharpness of the image randomly with a given probability.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">SHARPNESS</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomAdjustSharpness">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomAdjustSharpness.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomAdjustSharpness(4, p=1)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomAffine">
+            <td><small class="text-muted">12.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomAffine" aria-expanded="false" aria-controls="collapseRandomAffine">
+                  
+                  RandomAffine
+                </button>
+              </td>
+            
+
+            <td><p><p>Performs a random affine transformation of the image keeping center invariant.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomAffine">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomAffine_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomAffine(45, translate=(0.1,0.5), scale=None, shear=None,
+                         interpolation=T.InterpolationMode.NEAREST,
+                         fill=(0,200,100), center=None)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomAffine_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomAffine(0, translate=None, scale=(0.8,0.8),
+                         shear=(10,10,20,20),
+                         interpolation=T.InterpolationMode.NEAREST,
+                         fill=0, center=None)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomApply">
+            <td><small class="text-muted">13.</small></td>
+            
+
+            
+              <td>
+                <button id="disabled" class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomApply" aria-expanded="false" aria-controls="collapseRandomApply">
+                  
+                  RandomApply
+                </button></td>
+            
+
+            <td><p><p>Applies randomly a list of transformations with a given probability.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomAutocontrast">
+            <td><small class="text-muted">14.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomAutocontrast" aria-expanded="false" aria-controls="collapseRandomAutocontrast">
+                  
+                  RandomAutocontrast
+                </button>
+              </td>
+            
+
+            <td><p><p>Autocontrasts the pixels of the given image randomly with a given probability.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomAutocontrast">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/028.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomAutocontrast_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomAutocontrast(p=1)(img)
+
+print(img.histogram() == out_img.histogram())
+# >> False
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/029.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomAutocontrast_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomAutocontrast(p=1)(img)
+
+print(img.histogram() == out_img.histogram())
+# >> True
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomChoice">
+            <td><small class="text-muted">15.</small></td>
+            
+
+            
+              <td>
+                <button id="disabled" class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomChoice" aria-expanded="false" aria-controls="collapseRandomChoice">
+                  
+                  RandomChoice
+                </button></td>
+            
+
+            <td><p><p>Applies single transformation randomly picked from a list.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomCrop">
+            <td><small class="text-muted">16.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomCrop" aria-expanded="false" aria-controls="collapseRandomCrop">
+                  
+                  RandomCrop
+                </button>
+              </td>
+            
+
+            <td><p><p>Crops the given image at a random location.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomCrop">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomCrop.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomCrop(500, padding=None, pad_if_needed=False,
+                       fill=0, padding_mode='constant')(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomEqualize">
+            <td><small class="text-muted">17.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomEqualize" aria-expanded="false" aria-controls="collapseRandomEqualize">
+                  
+                  RandomEqualize
+                </button>
+              </td>
+            
+
+            <td><p><p>Equalizes the histogram of the given image randomly with a given probability.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomEqualize">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/028.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomEqualize_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/029.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomEqualize_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">print(img.histogram() == out_img.histogram())
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomErasing">
+            <td><small class="text-muted">18.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomErasing" aria-expanded="false" aria-controls="collapseRandomErasing">
+                  
+                  RandomErasing
+                </button>
+              </td>
+            
+
+            <td><p><p>Randomly selects a rectangle region in a torch.Tensor image and erases its pixels. See <a href="https://arxiv.org/pdf/1708.04896.pdf">here</a>.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag4" class="badge">DROPOUT</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomErasing">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomErasing.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">img = T.ToTensor()(img)
+out_img = T.RandomErasing(p=1, scale=(0.02, 0.33), ratio=(0.3, 3.3),
+                          value=0, inplace=False)(img)
+out_img = T.ToPILImage()(out_img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomGrayscale">
+            <td><small class="text-muted">19.</small></td>
+            
+
+            
+              <td>
+                <button id="disabled" class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomGrayscale" aria-expanded="false" aria-controls="collapseRandomGrayscale">
+                  
+                  RandomGrayscale
+                </button></td>
+            
+
+            <td><p><p>Randomly converts image to grayscale with a probability of <code class="language-plaintext highlighter-rouge">p</code>.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomHorizontalFlip">
+            <td><small class="text-muted">20.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomHorizontalFlip" aria-expanded="false" aria-controls="collapseRandomHorizontalFlip">
+                  
+                  RandomHorizontalFlip
+                </button>
+              </td>
+            
+
+            <td><p><p>Horizontally flips the given image randomly with a given probability.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomHorizontalFlip">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomHorizontalFlip.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomHorizontalFlip(p=1)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomInvert">
+            <td><small class="text-muted">21.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomInvert" aria-expanded="false" aria-controls="collapseRandomInvert">
+                  
+                  RandomInvert
+                </button>
+              </td>
+            
+
+            <td><p><p>Inverts the colors of the given image randomly with a given probability.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomInvert">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomInvert.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomInvert(p=1)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomOrder">
+            <td><small class="text-muted">22.</small></td>
+            
+
+            
+              <td>
+                <button id="disabled" class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomOrder" aria-expanded="false" aria-controls="collapseRandomOrder">
+                  
+                  RandomOrder
+                </button></td>
+            
+
+            <td><p><p>Applies a list of transformations in a random order.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomPerspective">
+            <td><small class="text-muted">23.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomPerspective" aria-expanded="false" aria-controls="collapseRandomPerspective">
+                  
+                  RandomPerspective
+                </button>
+              </td>
+            
+
+            <td><p><p>Performs a random perspective transformation of the given image with a given probability.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomPerspective">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomPerspective.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomPerspective(distortion_scale=0.5, p=1,
+                              interpolation=T.InterpolationMode.BILINEAR,
+                              fill=0)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomPosterize">
+            <td><small class="text-muted">24.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomPosterize" aria-expanded="false" aria-controls="collapseRandomPosterize">
+                  
+                  RandomPosterize
+                </button>
+              </td>
+            
+
+            <td><p><p>Posterizes the image randomly with a given probability by reducing the number of bits for each color channel.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag3" class="badge">STYLE FILTER</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomPosterize">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomPosterize.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomPosterize(3, p=1)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomResizedCrop">
+            <td><small class="text-muted">25.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomResizedCrop" aria-expanded="false" aria-controls="collapseRandomResizedCrop">
+                  
+                  RandomResizedCrop
+                </button>
+              </td>
+            
+
+            <td><p><p>Crops a random portion of image and resize it to a given size.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomResizedCrop">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomResizedCrop.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomResizedCrop((300,400), scale=(0.08, 1.0),
+                              ratio=(0.75, 1.33),
+                              interpolation=T.InterpolationMode.BILINEAR,
+                              antialias=None)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomRotation">
+            <td><small class="text-muted">26.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomRotation" aria-expanded="false" aria-controls="collapseRandomRotation">
+                  
+                  RandomRotation
+                </button>
+              </td>
+            
+
+            <td><p><p>Rotates the image by angle.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomRotation">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomRotation_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomRotation(90, interpolation=T.InterpolationMode.NEAREST,
+                           expand=False, center=None, fill=0)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomRotation_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomRotation(90, interpolation=T.InterpolationMode.NEAREST,
+                           expand=True, center=None, fill=0)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomSolarize">
+            <td><small class="text-muted">27.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomSolarize" aria-expanded="false" aria-controls="collapseRandomSolarize">
+                  
+                  RandomSolarize
+                </button>
+              </td>
+            
+
+            <td><p><p>Solarizes the image randomly with a given probability by inverting all pixel values above a threshold.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag2" class="badge">PHOTOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomSolarize">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomSolarize.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomSolarize(180, p=1)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="RandomVerticalFlip">
+            <td><small class="text-muted">28.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRandomVerticalFlip" aria-expanded="false" aria-controls="collapseRandomVerticalFlip">
+                  
+                  RandomVerticalFlip
+                </button>
+              </td>
+            
+
+            <td><p><p>Vertically flips the given image randomly with a given probability.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseRandomVerticalFlip">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/RandomVerticalFlip.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.RandomVerticalFlip(p=1)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="Resize">
+            <td><small class="text-muted">29.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResize" aria-expanded="false" aria-controls="collapseResize">
+                  
+                  Resize
+                </button>
+              </td>
+            
+
+            <td><p><p>Resizes the input image to the given size.</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseResize">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/Resize.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.Resize(300, interpolation=T.InterpolationMode.BILINEAR, max_size=None, antialias=None)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="TenCrop">
+            <td><small class="text-muted">30.</small></td>
+            
+
+            
+              <td>
+                <button id="disabled" class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTenCrop" aria-expanded="false" aria-controls="collapseTenCrop">
+                  
+                  TenCrop
+                </button></td>
+            
+
+            <td><p><p>Crops the given image into four corners and the central crop plus the flipped version of these (horizontal flipping is used by default).</p>
+</p></td>
+            <td>
+              
+
+              <!--
+              basic geometry
+              segmentation
+              distortion
+
+              photometry
+
+              blur
+              sharpness
+              morphology
+              style filter
+              worsening
+              noise
+              tessellation
+
+              dropout
+              composition
+              mixed sample
+
+              weather
+
+              street
+
+              paperdocs
+              -->
+
+              
+                <span id="tag1" class="badge">BASIC GEOMETRY</span>
+
+                
+
+              
+            </td>
+
+          </tr>
+
+          
+
+        </tr>
+      
+        <tr  class="border border-secondary border-opacity-10">
+
+          <tr id="TrivialAugmentWide">
+            <td><small class="text-muted">31.</small></td>
+            
+
+            
+              <td>
+                <button class="btn btn-outline-primary btn-sm text-nowrap fw-bolder px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTrivialAugmentWide" aria-expanded="false" aria-controls="collapseTrivialAugmentWide">
+                  
+                  TrivialAugmentWide
+                </button>
+              </td>
+            
+
+            <td><p><p>Dataset-independent data-augmentation with <a href="https://arxiv.org/pdf/2103.10158.pdf">TrivialAugment</a> Wide.</p>
+</p></td>
+            <td>
+              
+            </td>
+
+          </tr>
+
+          
+          <tr class="collapse" id="collapseTrivialAugmentWide">
+            <td colspan="4">
+              <div id="collapseCard" class="card card-body mb-3">
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/TrivialAugmentWide_1.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                  <div id="collapseCardTableBorder" class="my-3">
+                    <table id="collapseCardTable" class="table table-borderless text-light">
+
+                      
+                      <thead>
+                        <tr>
+                          <th>Original</th>
+                          <th>Augmented</th>
+                        </tr>
+                      </thead>
+                      
+
+                      <tbody>
+                        
+                        <tr>
+                          <td><img class="sample-img" src="../assets/images/dataset/027.jpg" alt=""></td>
+                          <td><img class="sample-img" src="../assets/images/TCHV/TrivialAugmentWide_2.jpg" alt=""></td>
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          <td colspan="2"><pre id="example-code"><code class="language-python">out_img = T.TrivialAugmentWide(num_magnitude_bins=31,
+                     interpolation=T.InterpolationMode.NEAREST,
+                     fill=None)(img)
+</code></pre></td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+              </div>
+            </td>
+          </tr>
+          
+
+        </tr>
+      
+
+      </tbody>
+
+  </table>
+</div>
+
+        
+
+      </div>
+    </div>
+  </div>
+
+  <!-- button top -->
+  <style media="screen">
+
+  .btntop {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: opacity 1s;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .show {
+    opacity: 1;
+  }
+
+  .fixed_button{
+    position: absolute !important;
+    bottom: auto !important;
+  }
+
+</style>
+
+<a id="btn-top" class="hide" href="#top" aria-label="Back to top">
+  <i id="btn-top-icon" class="bi bi-arrow-up-circle-fill fs-2"></i>
+</a>
+
+<script type="text/javascript">
+
+  btn = document.getElementById("btn-top");
+
+  var scrollFun = function() {
+    var y = window.scrollY;
+    var h = 134; /*footer height*/
+
+    if (y >= 200) {
+      btn.className = "btntop text-light mx-4 my-3 show"
+    } else {
+      btn.className = "btntop text-light mx-4 my-3 hide"
+    }
+
+    if (y + $(window).height() > $(document).height() - h) {
+      $('#btn-top').addClass('fixed_button');
+    } else{
+      $('#btn-top').removeClass('fixed_button');
+    }
+
+  };
+
+  window.addEventListener("scroll", scrollFun);
+
+</script>
+
+
+  <style media="screen">
+
+  .footer .container-fluid {
+    background-color: var(--dm-dark) !important;
+  }
+
+</style>
+
+<footer class="footer my-5 pt-4">
+  <div class="container-fluid py-5">
+
+    <div class="container">
+      <a href="https://forms.gle/rXxcYwguwwHyVnBS8">
+        <button role="button" class="btn btn-primary">
+          <i class="bi bi-lightbulb-fill"></i>
+          Any suggestions?
+        </button>
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="../assets/vendor/bootstrap@5.2.3/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/prism.js"></script>
+
+</body>
+</html>

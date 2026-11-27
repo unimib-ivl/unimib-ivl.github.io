@@ -1,0 +1,292 @@
+---
+---
+{%- comment -%}
+  IVL publication entry (local override of al_folio_core's bib layout).
+  - Thumbnail column with fixed width; the illustration keeps its original aspect ratio.
+    Thumbnails cannot be enlarged (no zoom), so preview images need not be wider than ~600px.
+  - Entries without their own `preview` get a drawing of their publication type (_includes/pub-fallback.liquid;
+    publisher logos must not be used). The page must include pub-fallback-sprite.svg once.
+  - `areas` / `topics` bib fields (see _data/research_areas.yml) are used only for filtering (not displayed).
+  - data-* attributes feed assets/js/publication-filters.js.
+{%- endcomment -%}
+
+{%- assign entry_areas = entry.areas | default: '' | replace: ',', ' ' | split: ' ' -%}
+{%- assign entry_topics = entry.topics | default: '' | replace: ',', ' ' | split: ' ' -%}
+
+{%- comment -%} Author keys ("lastname f") for author / current-member filters {%- endcomment -%}
+{%- capture author_keys -%}
+  {%- for author in entry.author_array -%}
+    {%- assign a_last = author.last | regex_replace: '[*∗†‡§¶‖&^{}]', '' | remove_accents | downcase | strip -%}
+    {%- assign a_first = author.first | remove_accents | downcase | strip | slice: 0 -%}
+    {{- a_last }} {{ a_first -}}
+    {%- unless forloop.last %};{% endunless -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- assign proceedings = 'inproceedings,conference,proceedings' | split: ',' -%}
+{%- assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' -%}
+{%- assign chapter_types = 'inbook,incollection' | split: ',' -%}
+
+{% capture venue_text %}
+  {% if entry.type == 'article' %}{{ entry.journal }}
+  {% elsif proceedings contains entry.type %}{{ entry.booktitle }}
+  {% elsif thesis contains entry.type %}{{ entry.school }}
+  {% elsif chapter_types contains entry.type %}{{ entry.booktitle | default: entry.publisher }}
+  {% elsif entry.type == 'book' %}{{ entry.publisher }}
+  {% elsif entry.type == 'patent' %}{{ entry.number | default: entry.howpublished }}
+  {% else %}{{ entry.howpublished | default: entry.journal | default: entry.booktitle }}{% endif %}
+{% endcapture %}
+{% assign venue_text = venue_text | strip %}
+
+{%- comment -%} Preprints: unpublished entries and papers whose venue is arXiv / CoRR (bib type unchanged). {%- endcomment -%}
+{%- assign venue_lc = venue_text | downcase -%}
+{%- assign is_preprint = false -%}
+{%- if entry.type == 'unpublished' or venue_lc contains 'arxiv' or venue_text contains 'CoRR' -%}{%- assign is_preprint = true -%}{%- endif -%}
+
+{%- if is_preprint -%}
+  {%- assign type_label = 'Preprint' -%}
+{%- elsif entry.type == 'article' -%}
+  {%- assign type_label = 'Journal article' -%}
+{%- elsif proceedings contains entry.type -%}
+  {%- assign type_label = 'Conference paper' -%}
+{%- elsif entry.type == 'book' -%}
+  {%- assign type_label = 'Book' -%}
+{%- elsif chapter_types contains entry.type -%}
+  {%- assign type_label = 'Book chapter' -%}
+{%- elsif entry.type == 'patent' -%}
+  {%- assign type_label = 'Patent' -%}
+{%- elsif thesis contains entry.type -%}
+  {%- assign type_label = 'Thesis' -%}
+{%- else -%}
+  {%- assign type_label = 'Publication' -%}
+{%- endif -%}
+
+
+
+<div
+  class="pub-entry{% if site.enable_publication_thumbnails %} pub-entry--thumb{% endif %}"
+  data-year="{{ entry.year }}"
+  data-type="{% if is_preprint %}preprint{% else %}{{ entry.type }}{% endif %}"
+  data-areas="{{ entry_areas | join: ' ' }}"
+  data-topics="{{ entry_topics | join: ' ' }}"
+  data-authors="{{ author_keys | strip | escape }}"
+>
+  {% if site.enable_publication_thumbnails %}
+    <div class="pub-thumb">
+      {% if entry.preview %}
+        {% assign preview_video_extensions = 'mp4,webm,ogg,mov' | split: ',' %}
+        {% assign preview_extension = entry.preview | split: '.' | last | split: '?' | first | downcase %}
+        {% if preview_video_extensions contains preview_extension %}
+          {% if entry.preview contains '://' %}
+            {% assign preview_path = entry.preview %}
+          {% else %}
+            {% assign preview_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
+          {% endif %}
+          {% include video.liquid path=preview_path class="preview" controls=true %}
+        {% elsif entry.preview contains '://' %}
+          <img class="preview" src="{{ entry.preview }}" alt="Illustration for {{ entry.title | strip_html | escape }}" loading="lazy">
+        {% else %}
+          {% assign preview_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
+          {% assign preview_alt = entry.title | strip_html | remove: '{' | remove: '}' | prepend: 'Illustration for ' %}
+          {%
+            include figure.liquid
+            loading="lazy"
+            path=preview_path
+            sizes="200px"
+            class="preview"
+            avoid_scaling=true
+            alt=preview_alt
+          %}
+        {% endif %}
+      {% else %}
+        {% include pub-fallback.liquid %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div id="{{ entry.key }}" class="pub-body">
+    <div class="title">{{ entry.title }}</div>
+    <div class="author">
+      {% assign author_array_size = entry.author_array | size %}
+      {% assign author_array_limit = author_array_size %}
+      {% if site.max_author_limit and author_array_size > site.max_author_limit %}
+        {% assign author_array_limit = site.max_author_limit %}
+      {% endif %}
+
+      {%- for author in entry.author_array limit: author_array_limit -%}
+        {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        {%- assign a_last = author.last | regex_replace: '[*∗†‡§¶‖&^{}]', '' | remove_accents | downcase | strip -%}
+        {%- assign a_first = author.first | remove_accents | downcase | strip | slice: 0 -%}
+        {%- assign member_url = null -%}
+        {%- for member in site.people -%}
+          {%- assign m_parts = member.name | remove_accents | downcase | split: ' ' -%}
+          {%- assign m_first = m_parts.first | slice: 0 -%}
+          {%- if m_parts.last == a_last and m_first == a_first -%}
+            {%- assign member_url = member.url -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- capture author_sep -%}
+          {%- if forloop.length > 1 -%}
+            {%- unless forloop.first -%}{%- if forloop.length > 2 -%},{%- endif -%}{%- endunless -%}
+            {%- if forloop.last and author_array_limit == author_array_size %} and{% endif -%}
+          {%- endif -%}
+        {%- endcapture -%}
+        {%- if member_url -%}
+          {%- capture author_html -%}<a class="pub-member" href="{{ member_url | relative_url }}">{{ author.first }} {{ author_last_html }}</a>{%- endcapture -%}
+        {%- else -%}
+          {%- capture author_html -%}{{ author.first }} {{ author_last_html }}{%- endcapture -%}
+        {%- endif -%}
+        {{- author_sep }}
+        {{ author_html -}}
+      {%- endfor -%}
+
+      {%- assign more_authors = author_array_size | minus: author_array_limit -%}
+      {%- if more_authors > 0 -%}
+        {%- assign more_authors_hide = more_authors | append: ' more author' -%}
+        {%- if more_authors > 1 -%}{%- assign more_authors_hide = more_authors_hide | append: 's' -%}{%- endif -%}
+        {%- assign more_authors_show = '' -%}
+        {%- for author in entry.author_array offset: author_array_limit -%}
+          {%- assign more_authors_show = more_authors_show | append: author.first | append: ' ' | append: author.last -%}
+          {%- unless forloop.last -%}{%- assign more_authors_show = more_authors_show | append: ', ' -%}{%- endunless -%}
+        {%- endfor -%}
+        {%- assign more_authors_show = more_authors_show | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        {{- ', and' }}
+        <button
+          type="button"
+          class="more-authors"
+          title="Show {{ more_authors_hide }}"
+          data-more="{{ more_authors_show | strip_html | escape }}"
+          data-less="{{ more_authors_hide }}"
+          onclick="this.textContent = this.textContent.trim() === this.dataset.less ? this.dataset.more : this.dataset.less;"
+        >
+          {{- more_authors_hide -}}
+        </button>
+      {% endif %}
+    </div>
+
+    <div class="periodical">
+      <span class="pub-type">{{ type_label }}</span>
+      {% if venue_text != '' -%}
+        <em>{{ venue_text }}</em>
+        {%- if entry.year %}, {% endif -%}
+      {%- endif -%}
+      {%- if entry.month %}{{ entry.month | capitalize }} {% endif -%}
+      {{- entry.year }}
+    </div>
+    {% if entry.note %}
+      <div class="periodical">{{ entry.note | strip }}</div>
+    {% endif %}
+
+    <div class="links">
+      {% if entry.abstract -%}
+        <a class="abstract" role="button" href="#">Abstract</a>
+      {%- endif %}
+      {% if entry.bibtex_show -%}
+        <a class="bibtex" role="button" href="#">BibTeX</a>
+      {%- endif %}
+      {% if entry.doi -%}
+        {% if entry.doi contains '://' %}
+          <a href="{{ entry.doi }}">DOI</a>
+        {% else %}
+          <a href="https://doi.org/{{ entry.doi }}">DOI</a>
+        {% endif %}
+      {%- endif %}
+      {% if entry.arxiv -%}
+        {% if entry.arxiv contains '://' %}
+          <a href="{{ entry.arxiv }}">arXiv</a>
+        {% else %}
+          <a href="https://arxiv.org/abs/{{ entry.arxiv }}">arXiv</a>
+        {% endif %}
+      {%- endif %}
+      {% if entry.html %}
+        {% if entry.html contains '://' %}
+          <a href="{{ entry.html }}">HTML</a>
+        {% else %}
+          <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}">HTML</a>
+        {% endif %}
+      {% endif %}
+      {% if entry.pdf %}
+        {% assign pdf_first_character = entry.pdf | slice: 0 %}
+        {% if entry.pdf contains '://' %}
+          <a href="{{ entry.pdf }}">PDF</a>
+        {% elsif pdf_first_character == '/' %}
+          <a href="{{ entry.pdf | relative_url }}">PDF</a>
+        {% else %}
+          <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}">PDF</a>
+        {% endif %}
+      {% endif %}
+      {% if entry.supp %}
+        {% if entry.supp contains '://' %}
+          <a href="{{ entry.supp }}">Supp</a>
+        {% else %}
+          <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}">Supp</a>
+        {% endif %}
+      {% endif %}
+      {% if entry.video %}
+        <a href="{{ entry.video }}">Video</a>
+      {% endif %}
+      {% if entry.blog %}
+        <a href="{{ entry.blog }}">Blog</a>
+      {% endif %}
+      {% if entry.code %}
+        <a href="{{ entry.code }}">Code</a>
+      {% endif %}
+      {% if entry.poster %}
+        {% if entry.poster contains '://' %}
+          <a href="{{ entry.poster }}">Poster</a>
+        {% else %}
+          <a href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}">Poster</a>
+        {% endif %}
+      {% endif %}
+      {% if entry.slides %}
+        {% if entry.slides contains '://' %}
+          <a href="{{ entry.slides }}">Slides</a>
+        {% else %}
+          <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}">Slides</a>
+        {% endif %}
+      {% endif %}
+      {%- comment -%}
+        "Project Page" links: an external project page (bib field project_page), and the research-activity pages
+        imported from the old website (_activities/) whose publication_tag is listed in the bib field projects.
+        Funded projects (_projects/) are not linked from here: their pages list their publications instead.
+      {%- endcomment -%}
+      {% if entry.project_page %}
+        <a href="{% if entry.project_page contains '://' %}{{ entry.project_page }}{% else %}{{ entry.project_page | relative_url }}{% endif %}">Project Page</a>
+      {% endif %}
+      {% if entry.projects %}
+        {% assign entry_project_tags = entry.projects | split: ',' %}
+        {% for project_tag in entry_project_tags %}
+          {%- comment -%} new variable: an assign cannot replace the loop variable inside the loop {%- endcomment -%}
+          {% assign clean_project_tag = project_tag | strip %}
+          {% assign project_page = site.activities | where: 'publication_tag', clean_project_tag | first %}
+          {% if project_page %}
+            <a href="{{ project_page.url | relative_url }}" title="{{ project_page.title | escape }}" data-project-link>Project Page</a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% assign web_link = entry.web | default: entry.website | default: entry.url %}
+      {% if web_link %}
+        <a href="{{ web_link }}">Web</a>
+      {% endif %}
+    </div>
+
+    {% if entry.abstract %}
+      <div class="abstract hidden">
+        <p>{{ entry.abstract }}</p>
+      </div>
+    {% endif %}
+
+    {% if entry.bibtex_show %}
+      {% comment %}
+        Plain text instead of server-side Rouge highlighting, which wrapped every token in a <span> and made up
+        half of the publications page HTML. publication-filters.js colours the block the first time it is opened.
+      {% endcomment %}
+      <div class="bibtex hidden">
+        <figure class="highlight">
+          <pre tabindex="0" aria-label="BibTeX citation"><code class="language-bibtex" data-lang="bibtex" data-pub-bibtex>{{ entry.bibtex | hideCustomBibtex | strip | escape }}</code></pre>
+        </figure>
+      </div>
+    {% endif %}
+  </div>
+</div>

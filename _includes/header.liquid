@@ -1,0 +1,59 @@
+{% include lab_styles.liquid %}
+<header class="ivl-site-header">
+  <nav
+    id="navbar"
+    class="navbar navbar-light ivl-navbar-expand {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}"
+    aria-label="Main navigation"
+  >
+    <div class="container ivl-nav-inner">
+      <a class="navbar-brand ivl-brand" href="{{ '/' | relative_url }}" aria-label="Imaging and Vision Laboratory home">
+        {% include ivl-logo.svg %}
+      </a>
+
+      <button
+        class="navbar-toggler collapsed navbar-toggler-main"
+        type="button"
+        data-nav-toggle="navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="navbar-collapse navbar-collapse-main" id="navbarNav">
+        <ul class="navbar-nav navbar-menu-list flex-nowrap">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/#research' | relative_url }}">Research</a>
+          </li>
+          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+          {% assign button_page = null %}
+          {% for p in sorted_pages %}
+            {% if p.nav and p.autogen == null %}
+              {% if p.nav_button %}
+                {% assign button_page = p %}
+              {% else %}
+                {% assign parent_link = p.permalink | remove: 'index.html' %}
+                <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
+                  <a class="nav-link" href="{{ p.url | relative_url }}">
+                    {{- p.nav_title | default: p.title -}}
+                    {% if page.url contains p.url -%}
+                      <span class="sr-only">(current)</span>
+                    {%- endif %}
+                  </a>
+                </li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          {% if button_page %}
+            <li class="nav-item ivl-nav-cta{% if page.url == button_page.url %} active{% endif %}">
+              <a class="ivl-pill" href="{{ button_page.url | relative_url }}">{{ button_page.nav_title | default: button_page.title }}</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

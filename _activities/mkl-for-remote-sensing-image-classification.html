@@ -1,0 +1,38 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/mkl-for-remote-sensing-image-classification/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: MKL for remote sensing image classification
+description: We propose a strategy for land use classification which exploits Multiple Kernel Learning (MKL) to automatically determine a suitable combination of a set…
+participants:
+- Claudio Cusano
+- Paolo Napoletano
+- Raimondo Schettini
+publication_tag: mkl-for-remote-sensing-image-classification
+render_with_liquid: false
+---
+<p>We propose a strategy for land use classification which exploits Multiple Kernel Learning (MKL) to automatically determine a suitable combination of a set of features without requiring any heuristic knowledge about the classification task. In this paper We present a novel procedure that allows MKL to achieve good performance in the case of small training sets. Experimental results on publicly available datasets demonstrate the feasibility of the proposed approach.</p>
+<figure><a href="../../wp-content/uploads/2016/09/figura_strategy31.webp"><img alt="Scheme of the four main steps that form the proposed heuristic for the selection of the kernels" height="116" src="../../wp-content/uploads/2016/09/figura_strategy31.webp" width="650"/></a><figcaption>Scheme of the four main steps that form the proposed heuristic for the selection of the kernels</figcaption></figure>
+<p><div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/09/21-class_weights_.png"><img alt="Full-size image: Weights selected by the heuristic MKL when trained on the 21-class data set. Numbers at the bottom indicate kernels: 1 for linear, 2–5 for RBFs , and 6–9 for chi-square" height="168" src="../../wp-content/uploads/2016/09/21-class_weights_.png" width="300"/></a>
+<figcaption>
+				Weights selected by the heuristic MKL when trained on the 21-class data set. Numbers at the bottom indicate kernels: 1 for linear, 2–5 for RBFs , and 6–9 for chi-square
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/09/19-class_weights_.png"><img alt="Full-size image: Weights selected by the heuristic MKL when trained on the 19-class data set. Numbers at the bottom indicate kernels: 1 for linear, 2–5 for RBFs , and 6–9 for chi-square" height="155" src="../../wp-content/uploads/2016/09/19-class_weights_.png" width="300"/></a>
+<figcaption>
+				Weights selected by the heuristic MKL when trained on the 19-class data set. Numbers at the bottom indicate kernels: 1 for linear, 2–5 for RBFs , and 6–9 for chi-square
+				</figcaption></figure>
+</div>
+<br/>
+<strong>Features</strong></p>
+<p>Each zip file (.zip) contains the features (in matlab format .mat) used for the classification of the 21-class and 19-class datasets: Bag of SIFT, Gist, Bag of LBP, LBP of dense moments.</p>
+<ul>
+<li><a href="../../wp-content/uploads/2016/09/21-class_features.zip">21-class (.zip)</a></li>
+<li><a href="../../wp-content/uploads/2016/09/19-class_features.zip">19-class (.zip)</a></li>
+</ul>
+<p><strong>Dataset Split</strong></p>
+<p>Each zip file contains the splits of both training and test data of the 21-class and 19-class datasets. Each matlab file (*_idx_100.mat) contains 100 splits at different percentages of the training and test set: 5, 10, 20, 50, 80, 90. The matlab file (labels.mat) contains the labels of each image.</p>
+<ul>
+<li>21-class (.zip) (no longer available)</li>
+<li>19-class (.zip) (no longer available)</li>
+</ul>

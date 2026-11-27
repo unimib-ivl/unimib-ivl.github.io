@@ -1,0 +1,118 @@
+---
+layout: default
+---
+{%- comment -%}
+  IVL project page (_projects/*.md). Front matter fields are described at the top of _projects/onfoods.md.
+  Description text on the left, image + information box (period, website, participants, funding) on the right,
+  publications below. The title "ACRONYM – Full name" is split on " – " so the full name can be set lighter.
+  Publications: every bib entry with  projects = {<publication_tag>}  (a comma-separated list of tags).
+  Also used for the activity pages imported from the old website (_activities/, see bin/import_ivl_activities.py).
+{%- endcomment -%}
+{%- assign title_parts = page.title | split: ' – ' -%}
+<div class="post">
+  <header class="post-header ivl-project-header">
+    <h1 class="post-title">
+      {%- if title_parts.size > 1 -%}
+        <span class="ivl-project-acronym">{{ title_parts.first }}</span>
+        <span class="ivl-project-fullname">{{ page.title | remove_first: title_parts.first | remove_first: ' – ' }}</span>
+      {%- else -%}
+        {{ page.title }}
+      {%- endif -%}
+    </h1>
+  </header>
+
+  <article class="ivl-project">
+    {% if page.banner %}
+      <figure class="ivl-project-banner">
+        <img src="{{ page.banner | relative_url }}" alt="{{ page.banner_alt | default: '' }}">
+      </figure>
+    {% endif %}
+
+    <div class="ivl-project-main">
+      <div class="ivl-project-body">
+        {{ content }}
+      </div>
+
+      <aside class="ivl-project-aside" aria-label="Project information">
+        {% if page.img and page.img_in_aside != false %}
+          <figure class="ivl-project-figure">
+            <img src="{{ page.img | relative_url }}" alt="{{ page.img_alt | default: '' }}">
+          </figure>
+        {% endif %}
+        <dl class="ivl-project-facts">
+          {% if page.period %}
+            <div>
+              <dt>Period</dt>
+              <dd>{{ page.period }}</dd>
+            </div>
+          {% endif %}
+          {% if page.website %}
+            <div>
+              <dt>Website</dt>
+              <dd>
+                <a href="{{ page.website }}">{{ page.website | remove: 'https://' | remove: 'http://' | remove: 'www.' | split: '/' | first }}</a>
+              </dd>
+            </div>
+          {% endif %}
+          {% if page.participants and page.participants.size > 0 %}
+            <div class="ivl-project-fact--wide">
+              <dt>Participants</dt>
+              <dd>
+                <ul class="ivl-project-people">
+                  {% for name in page.participants %}
+                    {% assign member = site.people | where: 'name', name | first %}
+                    <li>
+                      {%- if member -%}
+                        <a href="{{ member.url | relative_url }}">{{ name }}</a>
+                      {%- else -%}
+                        {{ name }}
+                      {%- endif -%}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </dd>
+            </div>
+          {% endif %}
+          {% if page.funding %}
+            <div class="ivl-project-fact--wide">
+              <dt>Supported by</dt>
+              <dd class="ivl-project-funding">{{ page.funding }}</dd>
+            </div>
+          {% endif %}
+        </dl>
+      </aside>
+    </div>
+
+    {%- if page.publication_tag -%}
+      {%- capture publication_count -%}{% bibliography_count --query @*[projects~=(?:^|\s){{ page.publication_tag }}(?!-)\b] %}{%- endcapture -%}
+    {%- endif -%}
+    {% if page.publication_tag and publication_count != '0' %}
+      <section class="ivl-person-section" aria-labelledby="project-publications-title">
+        <h2 id="project-publications-title" class="ivl-section-title">Publications</h2>
+        {% include pub-fallback-sprite.svg %}
+        <div class="publications lab-member-publications" data-pub-list data-page-size="10">
+          {%- comment -%} exact tag match ("smile" must not match "smile-detection"); no "<" or "=": the query parser splits on them {%- endcomment -%}
+          {% bibliography --query @*[projects~=(?:^|\s){{ page.publication_tag }}(?!-)\b] %}
+        </div>
+      </section>
+    {% endif %}
+  </article>
+</div>
+{%- comment -%} Imported pages: YouTube videos load only when the visitor clicks them (no request to YouTube before). {%- endcomment -%}
+{% if content contains 'data-video-load' %}
+  <script>
+    document.querySelectorAll("[data-video-load]").forEach((btn) =>
+      btn.addEventListener("click", () => {
+        const box = btn.closest("[data-video-id]");
+        const frame = document.createElement("iframe");
+        frame.title = "Video";
+        frame.src = "https://www.youtube-nocookie.com/embed/" + box.dataset.videoId + "?autoplay=1&rel=0";
+        frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        frame.allowFullscreen = true;
+        btn.replaceWith(frame);
+        const note = box.querySelector(".ivl-video__note");
+        if (note) note.hidden = true;
+      })
+    );
+  </script>
+{% endif %}

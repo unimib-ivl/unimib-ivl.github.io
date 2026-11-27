@@ -1,0 +1,70 @@
+<footer class="ivl-footer" role="contentinfo">
+  <div class="ivl-footer-split">
+    <div class="ivl-footer-dark">
+      <div class="ivl-footer-dark-inner">
+        <a class="ivl-footer-brand" href="{{ '/' | relative_url }}" aria-label="Imaging and Vision Laboratory home">
+          <img src="{{ '/assets/img/ivl/ivl-logo.svg' | relative_url }}" alt="" width="96" height="55">
+        </a>
+        <p class="ivl-footer-name">
+          Imaging and Vision<br>
+          Laboratory
+        </p>
+        <p class="ivl-footer-org">
+          <a class="ivl-footer-university-name" href="https://www.unimib.it/">University of Milano-Bicocca</a>
+          <a href="https://www.disco.unimib.it/">Department of Informatics, Systems and Communication</a>
+        </p>
+        <address>
+          Viale Sarca 336, Building U14<br>
+          20126 Milano, Italy
+        </address>
+        <ul class="ivl-footer-social" aria-label="Imaging and Vision Laboratory on social media">
+          <li>
+            <a href="https://www.linkedin.com/company/ivlab" aria-label="LinkedIn" title="LinkedIn" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/unimib-ivl" aria-label="GitHub" title="GitHub" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="ivl-footer-bottom">
+        <span>&copy; {{ site.time | date: '%Y' }} Imaging and Vision Laboratory. All rights reserved.</span>
+        <span class="ivl-footer-legal">
+          <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
+          · <a href="{{ '/accessibility/' | relative_url }}">Accessibility</a>
+          {%- if site.enable_cookie_consent %}
+            · <button type="button" class="ivl-footer-cookie-btn" data-cc="show-preferencesModal">Cookie settings</button>
+          {%- endif %}
+        </span>
+      </div>
+    </div>
+
+    <div class="ivl-footer-light">
+      <span class="ivl-node-line ivl-node-line--left" aria-hidden="true"></span>
+      <h2>Quick links</h2>
+      <ul class="ivl-footer-links">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+        <li><a href="{{ '/#research' | relative_url }}">Research</a></li>
+        <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+        {% if site.ivl_show_partners %}<li><a href="{{ '/#partners' | relative_url }}">Partners</a></li>{% endif %}
+        <li><a href="{{ '/people/' | relative_url }}">Team</a></li>
+        <li><a href="{{ '/how-to-reach/' | relative_url }}">Get in touch</a></li>
+      </ul>
+      <a class="ivl-footer-university" href="https://www.unimib.it/" aria-label="University of Milano-Bicocca">
+        <img src="{{ '/assets/img/ivl/branding/unimib-logo.png' | relative_url }}" alt="" width="62" height="67">
+      </a>
+    </div>
+  </div>
+</footer>
+{% if site.enable_cookie_consent %}
+  <script>
+    // The al_cookie gem's banner links "contact us" to /#contact; send that link to the privacy page instead.
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("#cc-main a.cc-link");
+      if (a && a.getAttribute("href").endsWith("/#contact")) {
+        e.preventDefault();
+        window.location.href = "{{ '/privacy/' | relative_url }}";
+      }
+    });
+  </script>
+{% endif %}

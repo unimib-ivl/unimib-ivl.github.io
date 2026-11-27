@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DALib</title>
+
+  <link rel="icon" href="assets/logo.svg">
+  <link href="assets/vendor/bootstrap@5.2.3/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons@1.9.1/bootstrap-icons.css">
+
+  <script src="assets/vendor/jquery@3.7.0/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<style media="screen">
+
+  #taxonomy-card {
+    background-color: var(--medium-dark);
+  }
+
+  #taxonomy-card a.nav-link {
+    color: white;
+  }
+
+  #taxonomy-card a.nav-link.active {
+    color: white;
+    background-color: var(--dark);
+    border-color: var(--dark);
+  }
+
+  #taxonomy-card a.nav-link:hover {
+    color: white !important;
+    background-color: var(--dark);
+    border-color: var(--dark);
+  }
+
+</style>
+
+<body>
+
+  <a href="./" class="text-decoration-none">
+
+  <div class="bg-dark text-secondary px-4 py-5 my-5 text-center">
+
+    <img id="logo2" src="assets/logo2.svg" alt="DALib">
+    <div class="col-lg-6 mx-auto">
+      <p class="fs-5 text-light mb-4">A collection of information about Data Augmentation libraries for Image Processing.</p>
+    </div>
+  </div>
+
+</a>
+
+
+  <!-- grid -->
+  <div class="container text-center">
+    <div class="row">
+
+      <!-- menu -->
+      <div class="col-3">
+        <ul id="menu" class="dropdown-menu dropdown-menu-dark bg-dark position-static d-grid gap-1 p-2 rounded-3 mx-0 border-0">
+
+  <!-- libraries -->
+  <li><h6 id="label"><strong>Libraries</strong></h6></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/albumentations.html">Albumentations</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/augly.html">AugLy</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/augmentor.html">Augmentor</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/augraphy.html">Augraphy</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/automold.html">Automold</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/clodsa.html">CLoDSA</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/imgaug.html">imgaug</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/kerascv.html">KerasCV</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/kornia.html">Kornia</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/solt.html">solt</a></li>
+  
+    <li><a class="dropdown-item rounded-2" href="libraries/torchvision.html">torchvision</a></li>
+  
+
+  <!-- divider -->
+  <!--li><hr class="dropdown-divider opacity-0"></li-->
+
+  <!-- notes -->
+  <!--li><h6 id="label"><strong>Notes</strong></h6></li-->
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+</ul>
+
+      </div>
+
+      <div class="col-9 text-bg-dark">
+
+        <!-- taxonomy -->
+        
+          <div class="container border border-light border-opacity-10 rounded-4 px-4 py-2">
+  <div class="table-responsive my-4">
+    <table class="table table-dark text-start align-middle">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Repo</th>
+          <th scope="col">Docs</th>
+          <th scope="col">Aug</th>
+          <th scope="col">Paper</th>
+          <th scope="col">Lang</th>
+          <th scope="col">ML lib</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/albumentations">Albumentations</a></th>
+
+          <!-- repo column -->
+          
+            <td><a href="https://github.com/albumentations-team/albumentations"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- docs column -->
+          
+            <td><a href="https://albumentations.ai/docs/"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- aug column -->
+          
+            <td><a href="https://albumentations.ai/docs/api_reference/augmentations/"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- paper column -->
+          
+            <td><a href="https://www.mdpi.com/2078-2489/11/2/125/htm"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python (3.6+)</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">PyTorch</div>
+                  </li>
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Keras</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+        </tr>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/augly.html">AugLy</a></th>
+
+          <!-- repo column -->
+          
+            <td><a href="https://github.com/facebookresearch/AugLy"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- docs column -->
+          
+            <td><a href="https://augly.readthedocs.io/en/latest/"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- aug column -->
+          
+            <td><a href="https://augly.readthedocs.io/en/latest/augly.image.html#module-augly.image.transforms"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- paper column -->
+          
+            <td><a href="https://arxiv.org/pdf/2201.06494.pdf"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python (3.6+)</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">PyTorch</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+        </tr>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/augmentor.html">Augmentor</a></th>
+
+          <!-- repo column -->
+          
+          <td>
+            
+              <a href="https://github.com/mdbloice/Augmentor"><i class="bi bi-link-45deg"></i><small>Python version</small></a>
+            
+              <a href="https://github.com/Evizero/Augmentor.jl"><i class="bi bi-link-45deg"></i><small>Julia version</small></a>
+            
+          </td>
+          
+
+          <!-- docs column -->
+          
+          <td>
+            
+              <a href="https://augmentor.readthedocs.io/en/stable/"><i class="bi bi-link-45deg"></i><small>Python version</small></a>
+            
+              <a href="https://evizero.github.io/Augmentor.jl/stable/"><i class="bi bi-link-45deg"></i><small>Julia version</small></a>
+            
+          </td>
+          
+
+          <!-- aug column -->
+          
+          <td>
+            
+              <a href="https://augmentor.readthedocs.io/en/stable/code.html"><i class="bi bi-link-45deg"></i><small>Python version</small></a>
+            
+              <a href="https://evizero.github.io/Augmentor.jl/stable/operations/"><i class="bi bi-link-45deg"></i><small>Julia version</small></a>
+            
+          </td>
+          
+
+          <!-- paper column -->
+          
+            <td><a href="https://arxiv.org/pdf/1708.04680.pdf"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python (2.7, 3.5, 3.6, 3.7, 3.8, 3.9)</div>
+                  </li>
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Julia</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">PyTorch</div>
+                  </li>
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Keras</div>
+                  </li>
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Flux</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+        </tr>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/augraphy.html">Augraphy</a></th>
+
+          <!-- repo column -->
+          
+            <td><a href="https://github.com/sparkfish/augraphy"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- docs column -->
+          
+            <td><a href="https://augraphy.readthedocs.io/en/latest/"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- aug column -->
+          
+            <td><a href="https://augraphy.readthedocs.io/en/latest/doc/source/list_of_augmentations.html"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- paper column -->
+          
+            <td><a href="https://arxiv.org/pdf/2208.14558.pdf"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python (3.7, 3.8, 3.9, 3.10)</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td></td>
+          
+
+        </tr>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/automold.html">Automold</a></th>
+
+          <!-- repo column -->
+          
+            <td><a href="https://github.com/UjjwalSaxena/Automold--Road-Augmentation-Library"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- docs column -->
+          
+            <td><a href="https://github.com/UjjwalSaxena/Automold--Road-Augmentation-Library/blob/master/Usage%20Guide.ipynb"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- aug column -->
+          
+            <td><a href="https://github.com/UjjwalSaxena/Automold--Road-Augmentation-Library"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- paper column -->
+          
+            <td></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td></td>
+          
+
+        </tr>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/clodsa.html">CLoDSA</a></th>
+
+          <!-- repo column -->
+          
+            <td><a href="https://github.com/joheras/CLoDSA"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- docs column -->
+          
+            <td><a href="https://github.com/joheras/CLoDSA/tree/master/docs"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- aug column -->
+          
+            <td><a href="https://github.com/joheras/CLoDSA#list-of-augmentation-techniques"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- paper column -->
+          
+            <td><a href="https://link.springer.com/content/pdf/10.1186/s12859-019-2931-1.pdf"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python (2.7, 3.6)</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Keras</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+        </tr>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/imgaug.html">imgaug</a></th>
+
+          <!-- repo column -->
+          
+            <td><a href="https://github.com/aleju/imgaug"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- docs column -->
+          
+            <td><a href="https://imgaug.readthedocs.io/en/latest/"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- aug column -->
+          
+            <td><a href="https://imgaug.readthedocs.io/en/latest/source/overview_of_augmenters.html"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- paper column -->
+          
+            <td></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python (2.7, 3.4, 3.5, 3.6, 3.7, 3.8)</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td></td>
+          
+
+        </tr>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/kerascv.html">KerasCV</a></th>
+
+          <!-- repo column -->
+          
+            <td><a href="https://github.com/keras-team/keras-cv"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- docs column -->
+          
+            <td><a href="https://keras.io/api/keras_cv/"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- aug column -->
+          
+            <td><a href="https://keras.io/api/keras_cv/layers/"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- paper column -->
+          
+            <td></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python (3.7+)</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Keras</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+        </tr>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/kornia.html">Kornia</a></th>
+
+          <!-- repo column -->
+          
+            <td><a href="https://github.com/kornia/kornia"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- docs column -->
+          
+            <td><a href="https://kornia.readthedocs.io/en/latest/"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- aug column -->
+          
+            <td><a href="https://github.com/kornia/kornia#overview"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- paper column -->
+          
+            <td><a href="https://arxiv.org/pdf/2011.09832v1.pdf"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">PyTorch</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+        </tr>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/solt.html">solt</a></th>
+
+          <!-- repo column -->
+          
+            <td><a href="https://github.com/Oulu-IMEDS/solt"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- docs column -->
+          
+            <td><a href="https://oulu-imeds.github.io/solt/"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- aug column -->
+          
+            <td><a href="https://oulu-imeds.github.io/solt/transforms.html"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- paper column -->
+          
+            <td></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">PyTorch</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+        </tr>
+
+        
+        <tr>
+          <th scope="row"><a href="libraries/torchvision.html">torchvision</a></th>
+
+          <!-- repo column -->
+          
+            <td><a href="https://github.com/pytorch/vision"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- docs column -->
+          
+            <td><a href="https://pytorch.org/vision/stable/index.html"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- aug column -->
+          
+            <td><a href="https://pytorch.org/vision/stable/transforms.html"><i class="bi bi-link-45deg"></i></a></td>
+          
+
+          <!-- paper column -->
+          
+            <td></td>
+          
+
+          <!-- lang column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Python</div>
+                  </li>
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">C++</div>
+                  </li>
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">Java</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+          <!-- ml column -->
+          
+            <td>
+              <ul class="list-inline">
+                
+                  <li class="list-inline-item">
+                      <div id="info" class="my-1 px-2 py-1">PyTorch</div>
+                  </li>
+                
+              </ul>
+            </td>
+          
+
+        </tr>
+
+        
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+        <!-- transformations overview -->
+        
+
+      </div>
+    </div>
+  </div>
+
+  <!-- button top -->
+  <style media="screen">
+
+  .btntop {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: opacity 1s;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .show {
+    opacity: 1;
+  }
+
+  .fixed_button{
+    position: absolute !important;
+    bottom: auto !important;
+  }
+
+</style>
+
+<a id="btn-top" class="hide" href="#top" aria-label="Back to top">
+  <i id="btn-top-icon" class="bi bi-arrow-up-circle-fill fs-2"></i>
+</a>
+
+<script type="text/javascript">
+
+  btn = document.getElementById("btn-top");
+
+  var scrollFun = function() {
+    var y = window.scrollY;
+    var h = 134; /*footer height*/
+
+    if (y >= 200) {
+      btn.className = "btntop text-light mx-4 my-3 show"
+    } else {
+      btn.className = "btntop text-light mx-4 my-3 hide"
+    }
+
+    if (y + $(window).height() > $(document).height() - h) {
+      $('#btn-top').addClass('fixed_button');
+    } else{
+      $('#btn-top').removeClass('fixed_button');
+    }
+
+  };
+
+  window.addEventListener("scroll", scrollFun);
+
+</script>
+
+
+  <style media="screen">
+
+  .footer .container-fluid {
+    background-color: var(--dm-dark) !important;
+  }
+
+</style>
+
+<footer class="footer my-5 pt-4">
+  <div class="container-fluid py-5">
+
+    <div class="container">
+      <a href="https://forms.gle/rXxcYwguwwHyVnBS8">
+        <button role="button" class="btn btn-primary">
+          <i class="bi bi-lightbulb-fill"></i>
+          Any suggestions?
+        </button>
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="assets/vendor/bootstrap@5.2.3/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!--script>
+    let activePopover = null;
+
+    const list = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+
+    list.forEach((el) => {
+      let opts = {
+        animation: false,
+      };
+
+      if (el.hasAttribute('data-bs-content-id')) {
+        opts.content = document.getElementById(el.getAttribute('data-bs-content-id')).innerHTML;
+        opts.html = true;
+      }
+
+      const popover = new bootstrap.Popover(el, opts);
+
+      el.addEventListener('click', () => {
+        if (activePopover && activePopover !== popover) {
+          activePopover.hide();
+        }
+
+        if (popover._activeTrigger.click) {
+          popover.hide();
+        } else {
+          popover.show();
+        }
+
+        activePopover = popover;
+      });
+    });
+  </script-->
+
+  <script>
+    let activePopover = null;
+
+    const list = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+
+    list.forEach((el) => {
+      let opts = {
+        animation: false,
+      };
+
+      if (el.hasAttribute('data-bs-content-id')) {
+        opts.content = document.getElementById(el.getAttribute('data-bs-content-id')).innerHTML;
+        opts.html = true;
+      }
+
+      const popover = new bootstrap.Popover(el, opts);
+
+      el.addEventListener('click', () => {
+        if (activePopover && activePopover !== popover) {
+          activePopover.hide();
+        }
+
+        if (popover._activeTrigger.click) {
+          popover.hide();
+        } else {
+          popover.show();
+        }
+
+        activePopover = popover;
+      });
+
+      const checkButtonVisibility = (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            popover.hide();
+            activePopover = null;
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(checkButtonVisibility);
+      observer.observe(el);
+    });
+
+  </script>
+
+
+  <!-- searchbar -->
+  <!--script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script-->
+  <script src="assets/js/search.js"></script>
+
+  <script>
+
+  var srt = `
+    <a id="element-result" class="list-group-item list-group-item-action my-1 py-1 px-2 rounded-2" href="{url}">
+      <div class="container">
+
+        <div class="row">
+          <div class="col">
+            <p id="element-result-1" class="text-start text-truncate m-0 fw-bold pt-2">{transformation}</p>
+          </div>
+          <div class="col">
+            <p id="element-result-2" class="text-end m-0 ms-3 "><small class="fw-bold">{library}</small></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <p id="element-result-4" class="text-start text-truncate">{description}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <p id="element-result-3" class="text-start m-0"><small>{tags}</small></p>
+          </div>
+        </div>
+
+      </div>
+    </a>
+  `;
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: './search.json',
+      searchResultTemplate: srt,
+      limit: 1000,
+      debounceTime: 1000,
+      noResultsText: 'No result',
+      templateMiddleware: function(prop, value, template) {
+        if (prop === 'tags') {
+          return value.replace('', '')
+        }
+      }
+    })
+
+  </script>
+
+  <!-- change caret icon in taxonomy tree -->
+  <!--script type="text/javascript">
+    document.addEventListener('shown.bs.collapse', function (event) {
+      var button = event.target.previousElementSibling;
+      var icon = button.querySelector('i');
+
+      if (icon) {
+        if (event.target.classList.contains('show')) {
+          icon.classList.remove('bi-caret-right-fill');
+          icon.classList.add('bi-caret-down-fill');
+        } else {
+          icon.classList.remove('bi-caret-down-fill');
+          icon.classList.add('bi-caret-right-fill');
+        }
+      }
+    });
+
+    document.addEventListener('hidden.bs.collapse', function (event) {
+      var button = event.target.previousElementSibling;
+      var icon = button.querySelector('i');
+
+      if (icon) {
+        if (event.target.classList.contains('show')) {
+          icon.classList.remove('bi-caret-right-fill');
+          icon.classList.add('bi-caret-down-fill');
+        } else {
+          icon.classList.remove('bi-caret-down-fill');
+          icon.classList.add('bi-caret-right-fill');
+        }
+      }
+    });
+  </script-->
+
+  <!-- expand taxonomy -->
+  <!--script>
+    document.getElementById("expand-all-btn").addEventListener("click", function() {
+      expandAll();
+    });
+
+    function expandAll() {
+      var collapseList = document.querySelectorAll('.collapse');
+      for (var i = 0; i < collapseList.length; i++) {
+        var collapse = collapseList[i];
+        if (!collapse.classList.contains('show')) {
+          collapse.classList.add('show');
+        }
+      }
+    }
+  </script-->
+
+  <!--script type="text/javascript">
+    window.onload = expandAll();
+  </script-->
+
+  <!-- collapse taxonomy -->
+  <!--script>
+    document.getElementById("collapse-all-btn").addEventListener("click", function() {
+      collapseAll();
+    });
+
+    function collapseAll() {
+      var collapseList = document.querySelectorAll('.collapse');
+      for (var i = 0; i < collapseList.length; i++) {
+        var collapse = collapseList[i];
+        if (collapse.classList.contains('show')) {
+          collapse.classList.remove('show');
+        }
+      }
+    }
+  </script-->
+
+  <!-- tag color -->
+  <script type="text/javascript">
+      var tags = document.querySelectorAll('.badge');
+
+      for (var i = 0; i < tags.length; i++) {
+        var tag = tags[i];
+        var tagContent = tag.innerHTML;
+
+        if (tagContent === 'BASIC GEOMETRY' ||
+            tagContent === 'DISTORTION' ) {
+          tag.style.backgroundColor = '#ED27CF';
+
+        } else if (tagContent === 'PHOTOMETRY') {
+          tag.style.backgroundColor = '#815DFF';
+
+        } else if (tagContent === 'BLUR' ||
+                   tagContent === 'SHARPNESS' ||
+                   tagContent === 'MORPHOLOGY' ||
+                   tagContent === 'STYLE FILTER' ||
+                   tagContent === 'WORSENING' ||
+                   tagContent === 'NOISE' ||
+                   tagContent === 'TESSELLATION') {
+          tag.style.backgroundColor = '#3266FF';
+
+        } else if (tagContent === 'DROPOUT' ||
+                   tagContent === 'COMPOSITION' ||
+                   tagContent === 'MIXED SAMPLE' ) {
+          tag.style.backgroundColor = '#279AF1';
+
+        } else if (tagContent === 'WEATHER') {
+          tag.style.backgroundColor = '#F6AE2D';
+
+        } else if (tagContent === 'STREET') {
+          tag.style.backgroundColor = '#FF6700';
+
+        } else if (tagContent === 'PAPERDOCS') {
+          tag.style.backgroundColor = '#EF233C';
+
+        } else if (tagContent === 'SOCIAL NETWORK') {
+          tag.style.backgroundColor = '#EE2586';
+        }
+      }
+  </script>
+
+  <script type="text/javascript">
+
+  </script>
+</body>
+</html>

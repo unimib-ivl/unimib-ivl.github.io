@@ -1,0 +1,43 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/benchmarking-food-segmentation/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Benchmarking Algorithms for Food Localization and Semantic Segmentation
+description: The problem of food segmentation is quite challenging since food is characterized by intrinsic high intra-class variability. Also, segmentation of food…
+participants:
+- Sinem Aslan
+- Gianluigi Ciocca
+- Davide Mazzini
+- Raimondo Schettini
+publication_tag: benchmarking-food-segmentation
+render_with_liquid: false
+---
+<p>The problem of food segmentation is quite challenging since food is characterized by intrinsic high intra-class variability. Also, segmentation of food images taken in-the-wild may be characterized by acquisition artifacts, and that could be problematic for the segmentation algorithms. A proper evaluating of segmentation algorithms is of paramount importance for the design and improvement of food analysis systems that can work in less-than-ideal real scenarios. In this paper, we evaluate the performance of different deep learning-based segmentation algorithms in the context of food. Due to the lack of large-scale food segmentation datasets, we initially use a dataset composed of 5,000 images of 50 diverse food categories [1]. The images are then accurately annotated with pixel-wise annotations. Concerning testing the algorithms under different conditions, the dataset is augmented with the same images but rendered under different acquisition distortions that comprise illuminant change, JPEG compression, Gaussian noise, and Gaussian blur. The final dataset is composed of 120,000 images. Using standard benchmark measures, we conducted extensive experiments to evaluate ten state-of-the-art segmentation algorithms on two tasks: food localization and semantic food segmentation.</p>
+<p>[1] Chen, M. Y., Yang, Y. H., Ho, C. J., Wang, S. H., Liu, S. M., Chang, E., Ouhyoung, M. Automatic chinese food identification and quantity estimation. In SIGGRAPH Asia 2012 Technical Briefs (p. 29). ACM.</p>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2020/04/localization.jpg"><img alt="Full-size image: Segmentation examples of the dataset resulting from our manual annotation. Regions are shown in white for readability, but different foods have different labels." height="414" src="../../wp-content/uploads/2020/04/localization.jpg" width="800"/></a>
+<figcaption>
+				Segmentation examples of the dataset resulting from our manual annotation. Regions are shown in white for readability, but different foods have different labels.
+				</figcaption></figure>
+</div>
+<h2>DATASET</h2>
+<p>Here we provide the ZIP file with the data needed to reproduce the dataset used in the paper. It can be downloaded from this link:<p>  <strong><a href="../../wp-content/files/Benchmarking-segmentation-algorithms-dataset.zip">Benchmarking-segmentation-algorithms-dataset.zip</a></strong> (20.6 MiB)</p></p>
+<p>The original dataset must be requested to the owners [1].</p>
+<p>Please send a mail at <a href="mailto:gianluigi.ciocca@unimib.it">this</a>address and the password will be sent to you.</p>
+<p>The file contains:</p>
+<ul>
+<li>The binary masks for the food localization</li>
+<li>The masks for the semantic food segmentation</li>
+<li>The file with the labels</li>
+<li>The file with the list of the images in the test set</li>
+<li>The codes to generate the augmented images</li>
+<li>The code for the evaluation of the segmentation results</li>
+</ul>
+<p><strong>If you download the dataset, it is assumed that you agree to the following copyright notice:</strong></p>
+<p>———–COPYRIGHT NOTICE STARTS WITH THIS LINE————<br/>
+Copyright (c) 2020 Imaging and Vision Laboratory, University of Milano-Bicocca All rights reserved.</p>
+<p>Permission is hereby granted, without written agreement and without license or royalty fees, to use, copy, modify, and distribute this dataset (the images, the results, and the source files) and its documentation for research purpose, provided that the copyright notice in its entirety appear in all copies of this dataset, and the original source of this dataset, The Imaging and Vision Laboratory (IVL, http://www.ivl.disco.disco.unimib.it) at the University of Milano-Bicocca(UNIMIB, http://www.unimib.it ), and the authors are acknowledged in any publication that reports research using this dataset.</p>
+<p><span>THIS DATASET CANNOT BE USED FOR COMMERCIAL PURPOSES.</span></p>
+<p>The original images belong to:</p>
+<p>Chen, M.Y., Yang, Y.H., Ho, C.J., Wang, S.H., Liu, S.M., Chang, E., Yeh, C.H., Ouhyoung, M.: Automatic Chinese food identification and quantity estimation. In: SIGGRAPH Asia 2012 Technical Briefs, p. 29. ACM (2012)</p>
+<p>———–COPYRIGHT NOTICE ENDS WITH THIS LINE————</p>

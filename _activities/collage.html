@@ -1,0 +1,149 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/collage/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: User Preferences Modeling and Learning for Pleasing Photo Collage Generation
+description: 'We consider the problem of how to automatically create pleasing photo collages: given a set of photos and a canvas area, we want to arrange the photos on…'
+participants:
+- Simone Bianco
+- Gianluigi Ciocca
+publication_tag: collage
+render_with_liquid: false
+---
+<p>We consider the problem of how to automatically create pleasing photo collages: given a set of photos and a canvas area, we want to arrange the photos on the canvas in a pleasant unsupervised manner. Assuming that the size of the canvas area is smaller than the sum of the sizes of the photos to be displayed, two main issues arise. The first is that photos may occlude themselves, the second is that photos may be partially outside the canvas area. To address these issues, taking into account the pleasantness of the resulting collage, we must consider the order with which the images are placed on the canvas, and their spatial arrangement. Usually, the most important photos are placed at the top of the less important ones in order to minimize the risk of being severely occluded, and composition properties related to photo contents, geometric constraints and aesthetic consideration are taken into account to maximize the pleasantness of the resulting collage. The criteria that define what is important in a photo and what composition properties should be satisfied may vary from user to user. Moreover the single criteria may compete against each other. To be used in an automatic system for photo collage generation, the pleasantness criteria and their relative importance must be properly quantified using suitable algorithms. A the end of this process a fitness function can be defined whose value represents the overall degree of pleasantness of a photo collage. To obtain the most pleasant collage, an automatic algorithm must search the best arrangement of the images by maximizing the value of the fitness function. To this end an optimization algorithm is usually exploited. Several formulations of some of the above criteria have been proposed in the literature but none of the exiting works performed an user study in order to actually determine what are the criteria that made a photo important, what constraints must be satisfied in order to have a collage balanced, or what hints users pay attention to in judging the pleasantness of a photo collage. We argue that if we could elicit the criteria by modeling the users’ preferences, we would be able to create more pleasant photo collages.</p>
+<h2>Example Images</h2>
+<p>The first three images are collages created using a single informativeness map and the basic criteria. The fourth image shows the collage created with the learned informativeness map and criteria.</p>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/burst_saliency_DS14_4x.webp"><img alt="Full-size image: BURST. Saliency map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/burst_saliency_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				BURST. Saliency map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/burst_quality_DS14_4x.webp"><img alt="Full-size image: BURST. Quality map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/burst_quality_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				BURST. Quality map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/burst_harmony_DS14_4x.webp"><img alt="Full-size image: BURST. Harmony map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/burst_harmony_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				BURST. Harmony map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/burst_learned_DS14_4x.webp"><img alt="Full-size image: BURST. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/burst_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				BURST. Learned map and criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/fashion_saliency_DS14_4x.webp"><img alt="Full-size image: FASHION. Saliency map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/fashion_saliency_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				FASHION. Saliency map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/fashion_quality_DS14_4x.webp"><img alt="Full-size image: FASHION. Quality map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/fashion_quality_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				FASHION. Quality map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/fashion_harmony_DS14_4x.webp"><img alt="Full-size image: FASHION. Harmony map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/fashion_harmony_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				FASHION. Harmony map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/fashion_learned_DS14_4x.webp"><img alt="Full-size image: FASHION. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/fashion_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				FASHION. Learned map and criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/land_saliency_DS14_4x.webp"><img alt="Full-size image: LAND. Saliency map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/land_saliency_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				LAND. Saliency map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/land_quality_DS14_4x.webp"><img alt="Full-size image: LAND. Qualiry map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/land_quality_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				LAND. Qualiry map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/land_harmony_DS14_4x.webp"><img alt="Full-size image: LAND. Harmony map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/land_harmony_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				LAND. Harmony map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/land_learned_DS14_4x.webp"><img alt="Full-size image: LAND. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/land_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				LAND. Learned map and criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/self_saliency_DS14_4x.webp"><img alt="Full-size image: SELF. Saliency map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/self_saliency_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				SELF. Saliency map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/self_quality_DS14_4x.webp"><img alt="Full-size image: SELF. Quality map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/self_quality_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				SELF. Quality map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/self_harmony_DS14_4x.webp"><img alt="Full-size image: SELF. Harmony map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/self_harmony_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				SELF. Harmony map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/self_learned_DS14_4x.webp"><img alt="Full-size image: SELF. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/self_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				SELF. Learned map and criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/zen_saliency_DS14_4x.webp"><img alt="Full-size image: ZEN. Saliency map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/zen_saliency_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				ZEN. Saliency map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/zen_quality_DS14_4x.webp"><img alt="Full-size image: ZEN. Quality map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/zen_quality_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				ZEN. Quality map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/zen_harmony_DS14_4x.webp"><img alt="Full-size image: ZEN. Harmony map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/zen_harmony_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				ZEN. Harmony map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/zen_learned_DS14_4x.webp"><img alt="Full-size image: ZEN. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/zen_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				ZEN. Learned map and criteria.
+				</figcaption></figure>
+</div>
+<h2>Generalization of the learned criteria</h2>
+<p>These collages have been created using the already learned criteria of the previous images. Top: collages created with a single informativeness map and basic criteria. Bottom: collages craeted with the learned informativeness map and criteria.</p>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/pixels_saliency_DS14_4x.webp"><img alt="Full-size image: PIXELS. Saliency map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/pixels_saliency_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				PIXELS. Saliency map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/pixels_learned_DS14_4x.webp"><img alt="Full-size image: PIXELS. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/pixels_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				PIXELS. Learned map and criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/primary_saliency_DS14_4x.webp"><img alt="Full-size image: PRIMARY. Saliency map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/primary_saliency_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				PRIMARY. Saliency map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/primary_learned_DS14_4x.webp"><img alt="Full-size image: PRIMARY. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/primary_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				PRIMARY. Learned map and criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/red_saliency_DS14_4x.webp"><img alt="Full-size image: RED. Saliency map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/red_saliency_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				RED. Saliency map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/red_learned_DS14_4x.webp"><img alt="Full-size image: RED. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/red_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				RED. Learned map and criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/selfie_quality_DS14_4x.webp"><img alt="Full-size image: SELFIE. Quality map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/selfie_quality_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				SELFIE. Quality map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/selfie_learned_DS14_4x.webp"><img alt="Full-size image: SELFIE. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/selfie_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				SELFIE. Learned map and criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/shallow_saliency_DS14_4x.webp"><img alt="Full-size image: SHALLOW. Saliency map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/shallow_saliency_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				SHALLOW. Saliency map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/shallow_learned_DS14_4x.webp"><img alt="Full-size image: SHALLOW. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/shallow_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				SHALLOW. Learned map and criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/silhouettes_saliency_DS14_4x.webp"><img alt="Full-size image: SILHOUETTES. Saliency map. Basic criteria." height="150" src="../../wp-content/uploads/2016/01/silhouettes_saliency_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				SILHOUETTES. Saliency map. Basic criteria.
+				</figcaption></figure><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/01/silhouettes_learned_DS14_4x.webp"><img alt="Full-size image: SILHOUETTES. Learned map and criteria." height="150" src="../../wp-content/uploads/2016/01/silhouettes_learned_DS14_4x-150x150.png" width="150"/></a>
+<figcaption>
+				SILHOUETTES. Learned map and criteria.
+				</figcaption></figure>
+</div>

@@ -1,0 +1,68 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/monitoring-elderly-people/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Monitoring Elderly People
+description: A large number of elderly people requires regular assistance for their daily living and healthcare. There is an increased awareness in developing and…
+participants:
+- Marco Buzzelli
+- Alessio Albé
+- Gianluigi Ciocca
+- Raimondo Schettini
+publication_tag: monitoring-elderly-people
+render_with_liquid: false
+---
+<p>A large number of elderly people requires regular assistance for their daily living and healthcare. There is an increased awareness in developing and implementing efficient and cost-effective strategies and systems, in order to provide affordable healthcare and monitoring services particularly aimed at the aging population. Aging in place is the ability to live in one’s own home and community safely, independently, and comfortably, regardless of age, income, or ability level. For elderly people, moving in with the family or entering a nursing home or assisted living facility could be cause of psychological stress, that can lead to health issues and lowering their quality of life.</p>
+<p><img alt="" height="519" src="../../wp-content/uploads/2019/12/sofia_middle.png" width="636"/></p>
+<p>We propose a monitoring system designed to be as unobtrusive as possible, by exploiting computer vision techniques and visual sensors such as RGB cameras. We perform a thorough analysis of existing video datasets for action recognition, and show that no single dataset can be considered adeguate in terms of classes or cardinality. We curate a taxonomy of human actions, derived from different sources in the literature, and provide considerations about the mutual-exclusivity and commonalities of said actions. This leads us to the collection of ALMOND: an aggregated dataset to be used as the training set for a vision-based monitoring approach.</p>
+<p><strong>The ALMOND dataset is available at this <a href="https://drive.google.com/drive/folders/1JB6CUwuZqxXvwApg56_7G3fTp8Swn2n-?usp=sharing">link</a>.</strong><br/>
+Please, keep in mind that ALMOND is an aggregated dataset, built on top of 5 existing datasets. We do not re-upload the video sequences of the original datasets, due to licensing issues. We instead publish our selection and re-grouping of sequences in textual/link format, as well as scripts for conversion of the original datasets into a common format. You will need to download the original datasets autonomously, preprocess them with the scripts provided by us, and use ALMOND as a pointer.</p>
+<div class="ivl-legacy-table"><table>
+<tbody>
+<tr>
+<th>Dataset</th>
+<th>Links</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>IXMAS</td>
+<td><a href="https://web.archive.org/web/20190921113004/http://4drepository.inrialpes.fr/public/viewgroup/6">Project page</a><br/>
+<a href="https://mega.nz/file/3NsGDKJI#rlpIarVE5__FcARqEL_Sj2DUhe-WoW__M-DY2zrVBtk">[pictures 1/2]</a><br/>
+<a href="https://mega.nz/file/9T9Tga4S#LYyI70wkrSIpNLMKkpbTIoz9YDfQbSJjl94VmQa0sqM">[pictures 2/2]</a><br/>
+<a href="https://mega.nz/file/HZ0SCbKB#cwGj7dcW9lVfqPlU5TPULWu64tq4o4MVEd8Tgh0uEgc">[truth.txt]</a></td>
+<td>Dataset “<strong>INRIA Xmas Motion Acquisition Sequences</strong>“. Folders “*.pictures” and “truth.txt” are mandatory. As the original website has been down for some time, we also link to an existing mirror version of the dataset.</td>
+</tr>
+<tr>
+<td>MSR 3D</td>
+<td><a href="https://documents.uow.edu.au/~wanqing/index.htm">Project page</a> <a href="https://uowmailedu-my.sharepoint.com/personal/wanqing_uow_edu_au/_layouts/15/guestaccess.aspx?folderid=04c19872bc6e14aee9d2f47c323408323&amp;authkey=AcxChPQZ43zX-RkxqJv8TqM">OneDrive</a></td>
+<td>Dataset “<strong>MSR Daily Activity 3D Dataset</strong>” (caution: there is a different dataset with a similar name). The single-archive version is to be preferred, otherwise you must download and unzip all files inside a folder called: “MSRDailyActivity3D” (as expected by our preprocessing script).</td>
+</tr>
+<tr>
+<td>NTU</td>
+<td><a href="http://rose1.ntu.edu.sg/datasets/actionRecognition.asp">Project page</a></td>
+<td>Dataset “<strong>NTU RGB+D</strong>” (caution: not its extension “NTU RGB+D 120”). Authorization is required to download the dataset (at the end of the page).</td>
+</tr>
+<tr>
+<td>N‑UCLA</td>
+<td><a href="https://wangjiangb.github.io/my_data.html">Project page</a><br/>
+Parts: <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-aa">[1]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ab">[2]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ac">[3]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ad">[4]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ae">[5]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-af">[6]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ag">[7]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ah">[8]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ai">[9]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-aj">[10]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ak">[11]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-al">[12]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-am">[13]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-an">[14]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ao">[15]</a> <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ap">[16]</a>
+</td>
+<td>Dataset “<strong>Northwestern-UCLA Multiview Action 3D Dataset</strong>“. You need to download all parts from part-1 to part-16, unzip and reconstruct the original single folder. The authors also provide a rgb-only format, but in this case our preprocessing script must be adapted.</td>
+</tr>
+<tr>
+<td>UWA3D</td>
+<td><a href="https://staffhome.ecm.uwa.edu.au/~00053650/databases.html">Project page</a><br/><a href="https://staffhome.ecm.uwa.edu.au/~00053650/recogData/UWA3DII_RGB.zip">[RGB]</a><br/><a href="https://staffhome.ecm.uwa.edu.au/~00053650/recogData/UWA3DII_Skeleton.zip">[Skeleton]</a></td>
+<td>Dataset #13 “<strong>UWA 3D Multiview Activity II Database</strong>“. Files “UWA3DII_RGB.zip” and “UWA3DII_Skeleton.zip” are mandatory.</td>
+</tr>
+</tbody>
+</table></div>
+<p>If you use any of this material, please cite, along with the original sources:</p>
+<pre tabindex="0">@article{buzzelli2020vision,
+  author = {Buzzelli, Marco and Albe, Alessio and Ciocca, Gianluigi},
+  year = {2020},
+  title = {A Vision-Based System for Monitoring Elderly People at Home},
+  volume = {10},
+  publisher = {Multidisciplinary Digital Publishing Institute},
+  journal = {Applied Sciences},
+  doi = {10.3390/app10010374}
+}</pre>

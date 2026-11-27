@@ -1,0 +1,68 @@
+---
+# Imported from http://www.ivl.disco.unimib.it/activities/video-indexing-and-summarization/ by bin/import_ivl_activities.py.
+# Edit freely: re-running the import overwrites this file.
+layout: ivl-project
+title: Video Indexing and Summarization
+description: Very large databases of images and videos depend on efficient algorithms to enable fast browsing and access to the information pursued. In the case of…
+participants:
+- Gianluigi Ciocca
+- Raimondo Schettini
+publication_tag: video-indexing-and-summarization
+render_with_liquid: false
+---
+<p>Very large databases of images and videos depend on efficient algorithms to enable fast browsing and access to the information pursued. In the case of videos, in particular, much of the visual data offered is simply redundant, and a way to retain only the information strictly needed for functional browsing, querying and accessing must be found. This calls for automatic video analysis tools that can support human operators, alleviating and ultimately doing away with the slow, labor-intensive tasks of manual annotation and analysis that must usually be performed in video archives.</p>
+<h2>System Overview</h2>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/10/VideoRetrieval.gif"><img alt="Full-size image: The system architecture." height="510" src="../../wp-content/uploads/2016/10/VideoRetrieval.gif" width="735"/></a>
+<figcaption>
+				The system architecture.
+				</figcaption></figure>
+</div>
+<p>The Figure above shows the general framework of a video indexing application for video retrieval, evidencing the central role of the video analysis. Automatic video analysis, as can be seen, is a complex process that involves solving several problems:</p>
+<ul>
+<li>Representation of the video contents (feature extraction);</li>
+<li>Segmentation of the video in elementary units (structural analysis);</li>
+<li>Video summarization (video abstraction);</li>
+<li>Post-processing of results (Presentation of visual information).</li>
+</ul>
+<p>The video analysis process can be divided into three main modules: shot boundary detection, key frame extraction, and summary post-processing. Since each module may not be fully reliable in performing its required task, all the modules should cope with any problems introduced by a previous module. A video retrieval application can take advantage of all the low level data obtained by video analysis, using them to index the video contents. Low-level data can also be exploited in high level processing to extract semantic information, enhancing, for example, the informative contents of the visual table of contents.</p>
+<h2>Shot Boundary Detection</h2>
+<p>The basic structural unit of a video (apart from the frames themselves) is the shot. A shot consists of an uninterrupted sequence of frames taken with a single camera and in a unique location. At a higher level of the shot units are the scenes. A scene is a continuous sequence that is temporally and spatially cohesive in the real world, but not necessarily cohesive in the video. Scenes describe a story line in the video and are formed by one or more shots not necessarily contiguous. A shot boundary detection algorithm is based on the recognition of the editing effects (such as cuts, fades, dissolves, etc…) that identify the boundaries of the video sequences (shots). These effects must be characterized and suitable algorithms developed. Specialized detection algorithms, one for each effect that must be located, may be needed to maximize the performance of the shot detection algorithm.</p>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/10/structure.gif"><img alt="Full-size image: Graphical visualization of the video structure." height="265" src="../../wp-content/uploads/2016/10/structure.gif" width="544"/></a>
+<figcaption>
+				Graphical visualization of the video structure.
+				</figcaption></figure>
+</div>
+<h2>Key Frame Extraction</h2>
+<p>Generally, a video summary is a sequence of still or moving images, with or without audio. These images must preserve the overall contents of the video with a minimum of data. Still images chronologically arranged form a pictorial summary that can be assumed to be the equivalent of a video storyboard. Summarization utilizing moving images (and at times a corresponding audio abstract), is called video skimming; the product is similar to a video trailer or clip. Both approaches must present a summary of the important events recorded in the video. Although video skimming conveys pictorial, motion and, where used, audio information, still images (called Key Frames) can summarize the video contents in more rapid and compact way: users can grasp the overall contents more quickly from key frames than by watching a set of video sequences (even when brief). The extraction of key frames must be automatic, and content based so that they maintain the salient contents of the video while avoiding all redundancy.</p>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/10/KFExample.gif"><img alt="Full-size image: An example of key frame selection performed by our system." height="555" src="../../wp-content/uploads/2016/10/KFExample.gif" width="559"/></a>
+<figcaption>
+				An example of key frame selection performed by our system.
+				</figcaption></figure>
+</div>
+<p>The algorithm developed determines the complexity of the sequence in terms of changes in the visual contents expressed by different low-level frame descriptors. The algorithm is able to dynamically and rapidly select key frames within each shot (the number of key frames varies depending on the video complexity). The key frames are extracted as soon as a shot has been detected.</p>
+<p>Besides providing video browsing capability and content description, key frames act as video “bookmarks” that designate interesting events captured supplying direct access to video sub-sequences. Key frames, which visually represent the video contents, can also be used in the indexing process, where the same indexing and retrieval strategies developed for image retrieval to retrieve video sequences can be applied. Low level visual features can be used in indexing the key frames and thus the video sequences to which they belong.</p>
+<h2>Summary Post-Processing</h2>
+<p>The Figure below shows the three steps of the post-processing algorithm. A three-step post-processing algorithm has been designed to present users with easily accessible visual summaries that are exhaustive, but not redundant. The first step removes meaningless key frames. It utilizes a supervised classification strategy performed by a neural network on the basis of pictorial features derived directly from the frames, together with others derived from the processing of the frames by a visual attention model algorithm. The second step groups the key frames into similar clusters to provide for a multi-level summary presentation and remove redundant key frames. To perform the task, it utilizes both low level and high level features. The third step identifies the default summary level that is shown to the users: starting from this set of key frames, the users can then browse the video content at different level of detail.</p>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/10/pprocessing.gif"><img alt="Full-size image: The post-processing pipeline." height="408" src="../../wp-content/uploads/2016/10/pprocessing.gif" width="687"/></a>
+<figcaption>
+				The post-processing pipeline.
+				</figcaption></figure>
+</div>
+<p>As the post-processing algorithm does not use previous knowledge about the video contents, nor is any assumption made about the input data. The generic approaches used in the whole post processing pipeline, mean that it can easily be specialized to support domain specific applications by taking into account the appropriate pictorial and semantic properties. For example, the key frame removal stage could be extended with more pictorial quality features (both low level and high level) in order to better cover the many factors that can cause a user to reject a frame (e.g. wrong skin tone, half faces, etc…).</p>
+<h2>The Video Tool</h2>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/10/vparsing.gif"><img alt="Full-size image: The video analysis tool (segmentation and summarization)." height="410" src="../../wp-content/uploads/2016/10/vparsing.gif" width="456"/></a>
+<figcaption>
+				The video analysis tool (segmentation and summarization).
+				</figcaption></figure>
+</div>
+<div class="ivl-legacy-gallery"><figure class="ivl-legacy-gallery-item">
+<a href="../../wp-content/uploads/2016/10/pproc-tool.gif"><img alt="Full-size image: The summary post-processing tool (presentation)." height="458" src="../../wp-content/uploads/2016/10/pproc-tool.gif" width="594"/></a>
+<figcaption>
+				The summary post-processing tool (presentation).
+				</figcaption></figure>
+</div>

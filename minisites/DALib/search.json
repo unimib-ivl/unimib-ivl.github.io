@@ -1,0 +1,4306 @@
+[
+  
+    
+      
+        {
+          "transformation"  : "ChannelShuffle",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#ChannelShuffle",
+          "description"     : "from `albumentations.augmentations.transforms`Randomly rearranges channels of the input RGB image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "CLAHE",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#CLAHE",
+          "description"     : "from `albumentations.augmentations.transforms`Applies Contrast Limited Adaptive Histogram Equalization to the input image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "ColorJitter",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#ColorJitter",
+          "description"     : "from `albumentations.augmentations.transforms`Randomly changes the brightness, contrast, and saturation of an image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Downscale",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Downscale",
+          "description"     : "from `albumentations.augmentations.transforms`Decreases image quality by downscaling and upscaling back.",
+          "tags"            : "worsening"
+        } ,
+      
+        {
+          "transformation"  : "Emboss",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Emboss",
+          "description"     : "from `albumentations.augmentations.transforms`Emboss the input image and overlays the result with the original image.",
+          "tags"            : "sharpness"
+        } ,
+      
+        {
+          "transformation"  : "Equalize",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Equalize",
+          "description"     : "from `albumentations.augmentations.transforms`Equalizes the image histogram.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "FancyPCA",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#FancyPCA",
+          "description"     : "from `albumentations.augmentations.transforms`Augments RGB image using FancyPCA from Krizhevsky&#39;s paper [ImageNet Classification with Deep Convolutional Neural Networks](https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf).",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "GaussNoise",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#GaussNoise",
+          "description"     : "from `albumentations.augmentations.transforms`Applies gaussian noise to the input image.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "HueSaturationValue",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#HueSaturationValue",
+          "description"     : "from `albumentations.augmentations.transforms`Randomly changes hue, saturation and value of the input image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "ImageCompression",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#ImageCompression",
+          "description"     : "from `albumentations.augmentations.transforms`Decreases image quality by Jpeg, WebP compression of an image.",
+          "tags"            : "worsening"
+        } ,
+      
+        {
+          "transformation"  : "InvertImg",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#InvertImg",
+          "description"     : "from `albumentations.augmentations.transforms`Invert the input image by subtracting pixel values from 255.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "ISONoise",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#ISONoise",
+          "description"     : "from `albumentations.augmentations.transforms`Applies camera sensor noise.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "JpegCompression",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#JpegCompression",
+          "description"     : "from `albumentations.augmentations.transforms`Decreases image quality by Jpeg compression of an image.",
+          "tags"            : "worsening"
+        } ,
+      
+        {
+          "transformation"  : "MultiplicativeNoise",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#MultiplicativeNoise",
+          "description"     : "from `albumentations.augmentations.transforms`Multiplies image to random number or array of numbers.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "PixelDropout",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#PixelDropout",
+          "description"     : "from `albumentations.augmentations.transforms`Sets pixels to 0 with some probability.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Posterize",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Posterize",
+          "description"     : "from `albumentations.augmentations.transforms`Reduces the number of bits for each color channel.",
+          "tags"            : "style filter"
+        } ,
+      
+        {
+          "transformation"  : "RandomBrightness",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomBrightness",
+          "description"     : "from `albumentations.augmentations.transforms`Randomly changes brightness of the input image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomBrightnessContrast",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomBrightnessContrast",
+          "description"     : "from `albumentations.augmentations.transforms`Randomly changes brightness and contrast of the input image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomContrast",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomContrast",
+          "description"     : "from `albumentations.augmentations.transforms`Randomly changes contrast of the input image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomFog",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomFog",
+          "description"     : "from `albumentations.augmentations.transforms`Simulates fog for the image ([Automold](automold)).",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "RandomGamma",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomGamma",
+          "description"     : "from `albumentations.augmentations.transforms`",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomGravel",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomGravel",
+          "description"     : "from `albumentations.augmentations.transforms`Adds gravels ([Automold](automold)).",
+          "tags"            : "street"
+        } ,
+      
+        {
+          "transformation"  : "RandomGridShuffle",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomGridShuffle",
+          "description"     : "from `albumentations.augmentations.transforms`Random shuffles grid&#39;s cells on image.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandomRain",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomRain",
+          "description"     : "from `albumentations.augmentations.transforms`Adds rain effects ([Automold](automold)).",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "RandomShadow",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomShadow",
+          "description"     : "from `albumentations.augmentations.transforms`Simulates shadows for the image ([Automold](automold)).",
+          "tags"            : "street"
+        } ,
+      
+        {
+          "transformation"  : "RandomSnow",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomSnow",
+          "description"     : "from `albumentations.augmentations.transforms`Bleach out some pixel values simulating snow ([Automold](automold)).",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "RandomSunFlare",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomSunFlare",
+          "description"     : "from `albumentations.augmentations.transforms`Simulates Sun Flare for the image ([Automold](automold)).",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "RandomToneCurve",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomToneCurve",
+          "description"     : "from `albumentations.augmentations.transforms`Randomly changes the relationship between bright and dark areas of the image by manipulating its tone curve.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RGBShift",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RGBShift",
+          "description"     : "from `albumentations.augmentations.transforms`Randomly shifts values for each channel of the input RGB image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RingingOvershoot",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RingingOvershoot",
+          "description"     : "from `albumentations.augmentations.transforms`Creates ringing or overshoot artefacts by convolving image with 2D sinc filter. See [Reference](https://arxiv.org/pdf/2107.10833.pdf).",
+          "tags"            : "worsening"
+        } ,
+      
+        {
+          "transformation"  : "Sharpen",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Sharpen",
+          "description"     : "from `albumentations.augmentations.transforms`Sharpens the input image and overlays the result with the original image.",
+          "tags"            : "sharpness"
+        } ,
+      
+        {
+          "transformation"  : "Solarize",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Solarize",
+          "description"     : "from `albumentations.augmentations.transforms`Inverts all pixel values above a threshold.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Spatter",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Spatter",
+          "description"     : "from `albumentations.augmentations.transforms`Simulates corruption which can occlude a lens in the form of rain or mud. See [Reference](https://arxiv.org/pdf/1903.12261.pdf).",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Superpixels",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Superpixels",
+          "description"     : "from `albumentations.augmentations.transforms`Transforms images partially/completely to their superpixel representation.",
+          "tags"            : "tessellation"
+        } ,
+      
+        {
+          "transformation"  : "TemplateTransform",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#TemplateTransform",
+          "description"     : "from `albumentations.augmentations.transforms`Applies blending of input image with specified templates.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ToGray",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#ToGray",
+          "description"     : "from `albumentations.augmentations.transforms`Converts the input RGB image to grayscale. If the mean pixel value for the resulting image is greater than 127, inverts the resulting grayscale image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "ToSepia",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#ToSepia",
+          "description"     : "from `albumentations.augmentations.transforms`Applies sepia filter to the input RGB image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "UnsharpMask",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#UnsharpMask",
+          "description"     : "from `albumentations.augmentations.transforms`Sharpens the input image using Unsharp Masking processing and overlays the result with the original image. See [Reference](https://arxiv.org/pdf/2107.10833.pdf).",
+          "tags"            : "sharpness"
+        } ,
+      
+        {
+          "transformation"  : "AdvancedBlur",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#AdvancedBlur",
+          "description"     : "from `albumentations.augmentations.blur.transforms`Blurs the input image using a Generalized Normal filter with a randomly selected parameters. This transform also adds multiplicative noise to generated kernel before convolution. See [Reference](https://arxiv.org/pdf/2107.10833.pdf).",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "Blur",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Blur",
+          "description"     : "from `albumentations.augmentations.blur.transforms`Blurs the input image using a random-sized kernel.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "Defocus",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Defocus",
+          "description"     : "from `albumentations.augmentations.blur.transforms`Apply defocus transform. See [here](https://arxiv.org/pdf/1903.12261.pdf).",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "GaussianBlur",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#GaussianBlur",
+          "description"     : "from `albumentations.augmentations.blur.transforms`Blurs the input image using a Gaussian filter with a random kernel size.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "GlassBlur",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#GlassBlur",
+          "description"     : "from `albumentations.augmentations.blur.transforms`Applies glass noise to the input image. See [Reference](https://arxiv.org/pdf/1903.12261.pdf).",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "MedianBlur",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#MedianBlur",
+          "description"     : "from `albumentations.augmentations.blur.transforms`Blurs the input image using a median filter with a random aperture linear size.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "MotionBlur",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#MotionBlur",
+          "description"     : "from `albumentations.augmentations.blur.transforms`Applies motion blur to the input image using a random-sized kernel.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "ZoomBlur",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#ZoomBlur",
+          "description"     : "from `albumentations.augmentations.blur.transforms`Applies zoom blur transform. See [here](https://arxiv.org/pdf/1903.12261.pdf).",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "CenterCrop",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#CenterCrop",
+          "description"     : "from `albumentations.augmentations.crops.transforms`Crops the central part of the input.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Crop",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Crop",
+          "description"     : "from `albumentations.augmentations.crops.transforms`Crops region from image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "CropAndPad",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#CropAndPad",
+          "description"     : "from `albumentations.augmentations.crops.transforms`Crops and pads images by pixel amounts or fractions of image sizes. Cropping removes pixels at the sides (i.e. extracts a subimage from a given full image). Padding adds pixels to the sides (e.g. black pixels). This transformation will never crop images below a height or width of 1.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "CropNonEmptyMaskIfExists",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#CropNonEmptyMaskIfExists",
+          "description"     : "from `albumentations.augmentations.crops.transforms`Crops area with mask if mask is non-empty, else make random crop.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandomCrop",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomCrop",
+          "description"     : "from `albumentations.augmentations.crops.transforms`Crops a random part of the input.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomCropFromBorders",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomCropFromBorders",
+          "description"     : "from `albumentations.augmentations.crops.transforms`Crops bbox from image randomly cut parts from borders without resize at the end.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomCropNearBBox",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomCropNearBBox",
+          "description"     : "from `albumentations.augmentations.crops.transforms`Crops bbox from image with random shift by x,y coordinates.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomResizedCrop",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomResizedCrop",
+          "description"     : "from `albumentations.augmentations.crops.transforms`Torchvision&#39;s variant of crop a random part of the input and rescale it to some size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomSizedBBoxSafeCrop",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomSizedBBoxSafeCrop",
+          "description"     : "from `albumentations.augmentations.crops.transforms`Crops a random part of the input and rescale it to some size without loss of bboxes.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomSizedCrop",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomSizedCrop",
+          "description"     : "from `albumentations.augmentations.crops.transforms`Crops a random part of the input and rescale it to some size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "ChannelDropout",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#ChannelDropout",
+          "description"     : "from `albumentations.augmentations.dropout.channel_dropout`Randomly drops channels in the input image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "CoarseDropout",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#CoarseDropout",
+          "description"     : "from `albumentations.augmentations.dropout.coarse_dropout`CoarseDropout of the rectangular regions in the image. See [Reference](https://arxiv.org/pdf/1708.04552.pdf).",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "Cutout",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Cutout",
+          "description"     : "from `albumentations.augmentations.dropout.cutout`CoarseDropout of the square regions in the image. See [Reference](https://arxiv.org/pdf/1708.04552.pdf).",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "GridDropout",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#GridDropout",
+          "description"     : "from `albumentations.augmentations.dropout.grid_dropout`Drops out rectangular regions of an image and the corresponding mask in a grid fashion. See [GridMask](https://arxiv.org/pdf/2001.04086.pdf).",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "MaskDropout",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#MaskDropout",
+          "description"     : "from `albumentations.augmentations.dropout.mask_dropout`Image &amp; mask augmentation that zero out mask and image regions corresponding to randomly chosen object instance from mask. Mask must be single-channel image, zero values treated as background. Image can be any number of channels. Inspired by [Severstal: Steel Defect Detection discussion](https://www.kaggle.com/c/severstal-steel-defect-detection/discussion/114254).",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "LongestMaxSize",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#LongestMaxSize",
+          "description"     : "from `albumentations.augmentations.geometric.resize`Rescales an image so that maximum side is equal to `max_size`, keeping the aspect ratio of the initial image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomScale",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomScale",
+          "description"     : "from `albumentations.augmentations.geometric.resize`Randomly resizes the input. Output image size is different from the input image size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Resize",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Resize",
+          "description"     : "from `albumentations.augmentations.geometric.resize`Resizes the input to the given height and width.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "SmallestMaxSize",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#SmallestMaxSize",
+          "description"     : "from `albumentations.augmentations.geometric.resize`Rescales an image so that minimum side is equal to `max_size`, keeping the aspect ratio of the initial image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomRotate90",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#RandomRotate90",
+          "description"     : "from `albumentations.augmentations.geometric.rotate`Randomly rotates the input by 90 degrees zero or more times.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Rotate",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Rotate",
+          "description"     : "from `albumentations.augmentations.geometric.rotate`Rotates the input by an angle selected randomly from the uniform distribution.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "SafeRotate",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#SafeRotate",
+          "description"     : "from `albumentations.augmentations.geometric.rotate`Rotates the input inside the input&#39;s frame by an angle selected randomly from the uniform distribution.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Affine",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Affine",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`Augmentation to apply affine transformations to images. This is mostly a wrapper around the corresponding classes and functions in OpenCV. See [Reference](https://arxiv.org/pdf/2109.13488.pdf).",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "ElasticTransform",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#ElasticTransform",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`Elastic deformation of images as described in *Simard, Steinkraus and Platt, [&quot;Best Practices for Convolutional Neural Networks applied to Visual Document Analysis&quot;](https://cognitivemedium.com/assets/rmnist/Simard.pdf)*, in *Proc. of the International Conference on Document Analysis and Recognition, 2003* (with modifications).",
+          "tags"            : "distortion"
+        } ,
+      
+        {
+          "transformation"  : "Flip",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Flip",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`Flips the input either horizontally, vertically or both horizontally and vertically.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "GridDistortion",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#GridDistortion",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`",
+          "tags"            : "distortion"
+        } ,
+      
+        {
+          "transformation"  : "HorizontalFlip",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#HorizontalFlip",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`Flips the input horizontally around the y-axis.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "OpticalDistortion",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#OpticalDistortion",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`",
+          "tags"            : "distortion"
+        } ,
+      
+        {
+          "transformation"  : "PadIfNeeded",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#PadIfNeeded",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`Pads side of the image/max if side is less than desired number.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Perspective",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Perspective",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`Performs a random four point perspective transform of the input.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "PiecewiseAffine",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#PiecewiseAffine",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`Applies affine transformations that differ between local neighbourhoods. This augmentation places a regular grid of points on an image and randomly moves the neighbourhood of these point around via affine transformations. This leads to local distortions.",
+          "tags"            : "distortion"
+        } ,
+      
+        {
+          "transformation"  : "ShiftScaleRotate",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#ShiftScaleRotate",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`Randomly applies affine transforms: translates, scales and rotates the input.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Transpose",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#Transpose",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`Transposes the input by swapping rows and columns.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "VerticalFlip",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#VerticalFlip",
+          "description"     : "from `albumentations.augmentations.geometric.transforms`Flips the input vertically around the x-axis.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "FDA",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#FDA",
+          "description"     : "from `albumentations.augmentations.domain_adaptation`Augmenter from [Fourier Domain Adaptation](https://github.com/YanchaoYang/FDA) Simple &quot;style transfer&quot;.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "HistogramMatching",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#HistogramMatching",
+          "description"     : "from `albumentations.augmentations.domain_adaptation`Applies histogram matching. It manipulates the pixels of an input image so that its histogram matches the histogram of the reference image. If the images have multiple channels, the matching is done independently for each channel, as long as the number of channels is equal in the input image and the reference.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "PixelDistributionAdaptation",
+          "library"         : "Albumentations",
+          "url"             : "libraries/albumentations.html#PixelDistributionAdaptation",
+          "description"     : "from `albumentations.augmentations.domain_adaptation`Fits a simple transform (such as PCA, StandardScaler or MinMaxScaler) on both original and reference image, transforms original image with transform trained on this image and then performs inverse transformation using transform fitted on reference image.",
+          "tags"            : ""
+        } 
+      
+    
+    ,
+  
+    
+      
+        {
+          "transformation"  : "Blur",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Blur",
+          "description"     : "Blurs the image.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "Brightness",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Brightness",
+          "description"     : "Alters the brightness of the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "ChangeAspectRatio",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#ChangeAspectRatio",
+          "description"     : "Alters the aspect ratio of the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "ClipImageSize",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#ClipImageSize",
+          "description"     : "Scales the image up or down if necessary to fit in the given min and max resolution.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "ColorJitter",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#ColorJitter",
+          "description"     : "Adjust brightness, contrast, or saturation based on the provided parameters.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Contrast",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Contrast",
+          "description"     : "Alters the contrast of the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Crop",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Crop",
+          "description"     : "Crops the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "EncodingQuality",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#EncodingQuality",
+          "description"     : "Changes the JPEG encoding quality level.",
+          "tags"            : "worsening"
+        } ,
+      
+        {
+          "transformation"  : "Grayscale",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Grayscale",
+          "description"     : "Alters the image to be grayscale.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "HFlip",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#HFlip",
+          "description"     : "Horizontally flips the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "MaskedComposite",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#MaskedComposite",
+          "description"     : "Applies given augmentation function to the masked area of the image.",
+          "tags"            : "composition"
+        } ,
+      
+        {
+          "transformation"  : "MemeFormat",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#MemeFormat",
+          "description"     : "Creates a new image that looks like a meme, given text and an image.",
+          "tags"            : "composition, social network"
+        } ,
+      
+        {
+          "transformation"  : "Opacity",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Opacity",
+          "description"     : "Alters the opacity of the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "OverlayEmoji",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#OverlayEmoji",
+          "description"     : "Overlay an emoji onto the original image.",
+          "tags"            : "composition, social network"
+        } ,
+      
+        {
+          "transformation"  : "OverlayImage",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#OverlayImage",
+          "description"     : "Overlays an image onto another image at position `(width * x_pos, height * y_pos)`.",
+          "tags"            : "composition"
+        } ,
+      
+        {
+          "transformation"  : "OverlayOntoBackgroundImage",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#OverlayOntoBackgroundImage",
+          "description"     : "Overlays the image onto a given background image at position `(width * x_pos, height * y_pos)`.",
+          "tags"            : "composition"
+        } ,
+      
+        {
+          "transformation"  : "OverlayOntoScreenshot",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#OverlayOntoScreenshot",
+          "description"     : "Overlays the image onto a screenshot template so it looks like it was screenshotted on Instagram.",
+          "tags"            : "composition, social network"
+        } ,
+      
+        {
+          "transformation"  : "OverlayStripes",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#OverlayStripes",
+          "description"     : "Overlays stripe pattern onto the image (by default, stripes are horizontal).",
+          "tags"            : "composition"
+        } ,
+      
+        {
+          "transformation"  : "OverlayText",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#OverlayText",
+          "description"     : "Overlays text onto the image (by default, text is randomly overlaid).",
+          "tags"            : "composition, social network"
+        } ,
+      
+        {
+          "transformation"  : "Pad",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Pad",
+          "description"     : "Pads the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "PadSquare",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#PadSquare",
+          "description"     : "Pads the shorter edge of the image such that it is now square-shaped.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "PerspectiveTransform",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#PerspectiveTransform",
+          "description"     : "Applies a perspective transform to the image so it looks like it was taken as a photo from another device.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Pixelization",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Pixelization",
+          "description"     : "Pixelizes the image.",
+          "tags"            : "tessellation"
+        } ,
+      
+        {
+          "transformation"  : "RandomAspectRatio",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#RandomAspectRatio",
+          "description"     : "Randomly changes the aspect ratio of the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomBlur",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#RandomBlur",
+          "description"     : "Randomly blurs the image.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "RandomBrightness",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#RandomBrightness",
+          "description"     : "Randomly changes the brightness of the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomEmojiOverlay",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#RandomEmojiOverlay",
+          "description"     : "Overlays a random emoji onto the image.",
+          "tags"            : "composition"
+        } ,
+      
+        {
+          "transformation"  : "RandomNoise",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#RandomNoise",
+          "description"     : "Adds random noise to the image.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "RandomPixelization",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#RandomPixelization",
+          "description"     : "Randomly pixelizes the image.",
+          "tags"            : "tessellation"
+        } ,
+      
+        {
+          "transformation"  : "RandomRotation",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#RandomRotation",
+          "description"     : "Randomly rotates the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Resize",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Resize",
+          "description"     : "Resizes the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Rotate",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Rotate",
+          "description"     : "Rotates the image counterclockwise.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Saturation",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Saturation",
+          "description"     : "Alters the saturation.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Scale",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Scale",
+          "description"     : "Alters the resolution.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Sharpen",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Sharpen",
+          "description"     : "Alters the sharpness.",
+          "tags"            : "sharpness"
+        } ,
+      
+        {
+          "transformation"  : "ShufflePixels",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#ShufflePixels",
+          "description"     : "Shuffles the pixels of the image with respect to the shuffling factor. The factor denotes percentage of pixels to be shuffled and randomly selected.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "Skew",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#Skew",
+          "description"     : "Skews the image with respect to its x or y-axis.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "VFlip",
+          "library"         : "AugLy",
+          "url"             : "libraries/augly.html#VFlip",
+          "description"     : "Vertically flips the image.",
+          "tags"            : "basic geometry"
+        } 
+      
+    
+    ,
+  
+    
+      
+        {
+          "transformation"  : "Crop",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Crop",
+          "description"     : "It crops the images based on the passed parameters (width and height of the area to be cropped and whether the area to be cropped should be taken from the center of the image or from a random position within the image).",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "CropPercentage",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#CropPercentage",
+          "description"     : "Crops images by a percentage of their area.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "CropRandom",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#CropRandom",
+          "description"     : "It crops a random area from an image, based on the area specified in the `percent_area` parameter.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Distort",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Distort",
+          "description"     : "Performs randomised, elastic distortions on images.",
+          "tags"            : "distortion"
+        } ,
+      
+        {
+          "transformation"  : "Flip",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Flip",
+          "description"     : "Allows an image to be mirrored along either its x axis or its y axis, or randomly.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "GaussianDistortion",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#GaussianDistortion",
+          "description"     : "Performs randomised, elastic gaussian distortions on images.",
+          "tags"            : "distortion"
+        } ,
+      
+        {
+          "transformation"  : "Greyscale",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Greyscale",
+          "description"     : "Converts images into greyscale.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "HistogramEqualisation",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#HistogramEqualisation",
+          "description"     : "Performs histogram equalisation.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Invert",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Invert",
+          "description"     : "Inverts the values of the images.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomBrightness",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#RandomBrightness",
+          "description"     : "It randomly modifies (within given parameters) the brightness of the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomColor",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#RandomColor",
+          "description"     : "It randomly modifies (within given parameters) the saturation of the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomContrast",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#RandomContrast",
+          "description"     : "It randomly modifies (within given parameters) the contrast of the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomErasing",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#RandomErasing",
+          "description"     : "Performs a [Random Erasing](https://arxiv.org/pdf/1708.04896.pdf).",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "Resize",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Resize",
+          "description"     : "Resizes images by absolute values passed as parameters.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Rotate",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Rotate",
+          "description"     : "Performs rotations on images in multiples of 90 degrees. The rotation parameter must be one of 90, 180, 270 or -1 (rotates the image randomly by either 90, 180, or 270 degrees).",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RotateRange",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#RotateRange",
+          "description"     : "Performs rotations. The returned image has the same dimensions as the original one: after the rotation has been performed, the largest possible area of the same aspect ratio of the original image is cropped from the rotated image, and this is then resized to match the original image size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RotateStandard",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#RotateStandard",
+          "description"     : "Perform rotations without automatically cropping the images, as opposed to the `RotateRange` class.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Scale",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Scale",
+          "description"     : "This class is used to increase or decrease images in size by a certain factor, while maintaining the aspect ratio of the original image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Shear",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Shear",
+          "description"     : "Shears the images in a certain direction. The shearing can occur along the x or y axis and in both directions (i.e., left or right along the x axis, up or down along the y axis). This transformation returns an image of the same dimension as the input image. The shearing axis is randomized.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Skew",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Skew",
+          "description"     : "Performs perspective skewing.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Zoom",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#Zoom",
+          "description"     : "Zooms the images but returns a cropped region of the zoomed image of the same dimension as the original image. The amount of applied zoom is random, between `min_factor` and `max_factor`.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "ZoomGroundTruth",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#ZoomGroundTruth",
+          "description"     : "Zooms the images but returns a cropped region of the zoomed image of the same dimension as the original image. The amount of applied zoom is random, between `min_factor` and `max_factor`.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "ZoomRandom",
+          "library"         : "Augmentor",
+          "url"             : "libraries/augmentor.html#ZoomRandom",
+          "description"     : "Zooms into random areas of the image. Zooms into a random area of the image, rather than the centre of the image, as is done by `Zoom`. The zoom factor is fixed unless `randomise` is set to `True`.",
+          "tags"            : "basic geometry"
+        } 
+      
+    
+    ,
+  
+    
+      
+        {
+          "transformation"  : "BadPhotoCopy",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#BadPhotoCopy",
+          "description"     : "Adds noise to generate an effect of dirty copier.",
+          "tags"            : "paperdocs, noise"
+        } ,
+      
+        {
+          "transformation"  : "BindingsAndFasteners",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#BindingsAndFasteners",
+          "description"     : "Creates binding and fastener mark in the input image.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "BleedThrough",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#BleedThrough",
+          "description"     : "Emulates bleed through effect from the combination of ink bleed and gaussian blur operations.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "BookBinding",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#BookBinding",
+          "description"     : "Creates a book binding effect with shadow and curved lines.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "Brightness",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Brightness",
+          "description"     : "Adjusts the brightness of the whole image by a chosen multiplier.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "BrightnessTexturize",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#BrightnessTexturize",
+          "description"     : "Creates a random noise in the brightness channel to emulate paper textures.",
+          "tags"            : "noise, paperdocs, photometry"
+        } ,
+      
+        {
+          "transformation"  : "ColorPaper",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#ColorPaper",
+          "description"     : "Change color of input paper based on user input hue and saturation.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "ColorShift",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#ColorShift",
+          "description"     : "Shifts each BGR color channel by certain offsets.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "DelaunayTessellation",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#DelaunayTessellation",
+          "description"     : "Applies a Delaunay Tessellation.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "DirtyDrum",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#DirtyDrum",
+          "description"     : "Emulates dirty drum effect by creating stripes of vertical and horizontal noises.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "DirtyRollers",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#DirtyRollers",
+          "description"     : "Emulates an effect created by certain document scanners.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "Dithering",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Dithering",
+          "description"     : "Applies Ordered or Floyd Steinberg dithering to the input image.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "DotMatrix",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#DotMatrix",
+          "description"     : "Creates dot matrix effect by drawing dots of mean color within the detected contours.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Faxify",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Faxify",
+          "description"     : "Emulates faxify effect in the image.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "Folding",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Folding",
+          "description"     : "Emulates folding effect from perspective transformation.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "Gamma",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Gamma",
+          "description"     : "Adjusts the gamma of the whole image by a chosen multiplier.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Geometric",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Geometric",
+          "description"     : "Applies basic geometric transformations such as resizing, flips and rotation.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "GlitchEffect",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#GlitchEffect",
+          "description"     : "Generates a glitch effect by applying ColorShift and moving sections of the image either horizontally or vertically.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Hollow",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Hollow",
+          "description"     : "Generates a hollow impression by substituting identified outlines with edges. The identified outlines are eliminated through the application of a median filter operation.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "InkBleed",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#InkBleed",
+          "description"     : "Uses Sobel edge detection to create a mask of all edges, then applies random noise to those edges. When followed by a blur, this creates a fuzzy edge that emulates an ink bleed effect.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "InkColorSwap",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#InkColorSwap",
+          "description"     : "Swaps color of ink in the image based on detected ink contours.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "InkMottling",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#InkMottling",
+          "description"     : "Creates a random pattern effect in the detected ink by blending a layer of random Gaussian noise with the image.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "InkShifter",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#InkShifter",
+          "description"     : "Applies displacement map to an image.",
+          "tags"            : "paperdocs, distortion"
+        } ,
+      
+        {
+          "transformation"  : "Jpeg",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Jpeg",
+          "description"     : "Uses JPEG encoding to create compression artifacts in the image.",
+          "tags"            : "worsening"
+        } ,
+      
+        {
+          "transformation"  : "Letterpress",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Letterpress",
+          "description"     : "Produces regions of ink mimicking the effect of ink pressed unevenly onto paper.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "LightingGradient",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#LightingGradient",
+          "description"     : "Generates a decayed light mask generated by light strip given its position and direction, and applies it to the image as a lighting or brightness gradient.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "LinesDegradation",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#LinesDegradation",
+          "description"     : "Degrades lines by replacing lines formed by image gradients with a different value.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "LowInkPeriodicLines",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#LowInkPeriodicLines",
+          "description"     : "Creates a set of lines that repeat in a periodic fashion throughout the image.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "LowInkRandomLines",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#LowInkRandomLines",
+          "description"     : "Adds low ink lines randomly throughout the image.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "LowLightNoise",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#LowLightNoise",
+          "description"     : "Simulate low-light conditions in an image by applying various noise effects.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Markup",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Markup",
+          "description"     : "Uses contours detection to detect text lines and add a smooth text strikethrough, highlight or underline effect.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "NoiseTexturize",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#NoiseTexturize",
+          "description"     : "Creates a random noise based texture pattern to emulate paper textures. Consequently applies noise patterns to the original image from big to small.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "NoisyLines",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#NoisyLines",
+          "description"     : "Creates noisy lines by drawing horizontal or vertical lines in a fixed interval.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "PageBorder",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#PageBorder",
+          "description"     : "Add border effect to sides of input image.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "PatternGenerator",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#PatternGenerator",
+          "description"     : "Creates and overlays a pattern on the image.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "ReflectedLight",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#ReflectedLight",
+          "description"     : "Creates reflected light effect by drawing ellipses of different brightness.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "Scribbles",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Scribbles",
+          "description"     : "Applies random scribbles to image.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "SectionShift",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#SectionShift",
+          "description"     : "Shifts single or multiple sections of image in horizontal, vertical or both directions to create an effect of shifted image sections.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "ShadowCast",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#ShadowCast",
+          "description"     : "Emulates shadow effect on the surface of the paper.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "Squish",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#Squish",
+          "description"     : "Creates a squish effect by removing a fixed horizontal or vertical section of the image.",
+          "tags"            : "paperdocs"
+        } ,
+      
+        {
+          "transformation"  : "SubtleNoise",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#SubtleNoise",
+          "description"     : "Emulates the imperfections in scanning solid colors due to subtle lighting differences.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "WaterMark",
+          "library"         : "Augraphy",
+          "url"             : "libraries/augraphy.html#WaterMark",
+          "description"     : "Add watermark effect into input image.",
+          "tags"            : "paperdocs"
+        } 
+      
+    
+    ,
+  
+    
+      
+        {
+          "transformation"  : "brighten",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#brighten",
+          "description"     : "Increases the brightness of the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "darken",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#darken",
+          "description"     : "Decreases the brightness of the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "random_brightness",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#random_brightness",
+          "description"     : "Randomly changes the brightness of the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "add_shadow",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#add_shadow",
+          "description"     : "Simulates shadows.",
+          "tags"            : "street"
+        } ,
+      
+        {
+          "transformation"  : "add_snow",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#add_snow",
+          "description"     : "Simulates snow.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "add_rain",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#add_rain",
+          "description"     : "Simulates rain.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "add_fog",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#add_fog",
+          "description"     : "Simulates fog.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "add_gravel",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#add_gravel",
+          "description"     : "Simulates the presence of gravel on the road.",
+          "tags"            : "street"
+        } ,
+      
+        {
+          "transformation"  : "add_sun_flare",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#add_sun_flare",
+          "description"     : "Simulates sunflare.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "add_speed",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#add_speed",
+          "description"     : "Simulates an image captured in motion.",
+          "tags"            : "street, blur"
+        } ,
+      
+        {
+          "transformation"  : "add_autumn",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#add_autumn",
+          "description"     : "Simulates autumn colors.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "fliph",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#fliph",
+          "description"     : "Flips the image along the x-axis.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "flipv",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#flipv",
+          "description"     : "Flips the image along the y-axis.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "random_flip",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#random_flip",
+          "description"     : "Randomly flips the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "add_manhole",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#add_manhole",
+          "description"     : "Simulates the presence of a manhole on the road.",
+          "tags"            : "street"
+        } ,
+      
+        {
+          "transformation"  : "correct_exposure",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#correct_exposure",
+          "description"     : "Adjusts the exposure.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "augment_random",
+          "library"         : "Automold",
+          "url"             : "libraries/automold.html#augment_random",
+          "description"     : "Performs random transformations on the image.",
+          "tags"            : ""
+        } 
+      
+    
+    ,
+  
+    
+      
+        {
+          "transformation"  : "Average blurring",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Average blurring",
+          "description"     : "Smoothes the image using an average filter.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "Bilateral blurring",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Bilateral blurring",
+          "description"     : "Applies bilateral blurring to the image.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "Blurring",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Blurring",
+          "description"     : "Blurs an image using the normalized box filter.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "Crop",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Crop",
+          "description"     : "Crops pixels at the sides of the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Dropout",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Dropout",
+          "description"     : "Sets some pixels in the image to zero.",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "Elastic deformation",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Elastic deformation",
+          "description"     : "Applies elastic deformation as explained in the paper [P. Simard, D. Steinkraus, and J. C. Platt. Best practices for convolutional neural networks applied to visual document analysis. Proceedings of the 12th International Conference on Document Analysis and Recognition (ICDAR&#39;03) vol. 2, pp. 958--964. IEEE Computer Society. 2003](https://cognitivemedium.com/assets/rmnist/Simard.pdf).",
+          "tags"            : "distortion"
+        } ,
+      
+        {
+          "transformation"  : "Equalize histogram",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Equalize histogram",
+          "description"     : "Applies histogram equalization to the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Flip",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Flip",
+          "description"     : "Flips the image horizontally, vertically or both.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Gamma correction",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Gamma correction",
+          "description"     : "Applies gamma correction to the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Gaussian blurring",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Gaussian blurring",
+          "description"     : "Blurs an image using a Gaussian filter.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "Gaussian noise",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Gaussian noise",
+          "description"     : "Adds Gaussian noise to the image.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "Invert",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Invert",
+          "description"     : "Inverts all values in images, i.e. sets a pixel from value `v` to `255-v`.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Median blurring",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Median blurring",
+          "description"     : "Blurs an image using the median filter.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "Raise blue channel",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Raise blue channel",
+          "description"     : "Modifies the values in the blue channel based on the provided parameter.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Raise green channel",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Raise green channel",
+          "description"     : "Modifies the values in the green channel based on the provided parameter.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Raise hue",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Raise hue",
+          "description"     : "Raises the hue value.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Raise red channel",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Raise red channel",
+          "description"     : "Modifies the values in the red channel based on the provided parameter.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Raise saturation",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Raise saturation",
+          "description"     : "Modifies the saturation based on the provided parameter.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Raise value",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Raise value",
+          "description"     : "Modifies the value based on the provided parameter.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Resize",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Resize",
+          "description"     : "Resizes the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Rotate",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Rotate",
+          "description"     : "Rotates the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Salt and Pepper",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Salt and Pepper",
+          "description"     : "Adds salt and pepper noise to the image.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "Sharpen",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Sharpen",
+          "description"     : "Sharpens the image.",
+          "tags"            : "sharpness"
+        } ,
+      
+        {
+          "transformation"  : "Shift channels",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Shift channels",
+          "description"     : "Shifts input image channels in the range given (value between 0 and 1).",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Shearing",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Shearing",
+          "description"     : "Shears the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Translation",
+          "library"         : "CLoDSA",
+          "url"             : "libraries/clodsa.html#Translation",
+          "description"     : "Translates the image.",
+          "tags"            : "basic geometry"
+        } 
+      
+    
+    ,
+  
+    
+      
+        {
+          "transformation"  : "Add",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Add",
+          "description"     : "from `imgaug.augmenters.arithmetic`Adds a value to all pixels in an image.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AddElementwise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AddElementwise",
+          "description"     : "from `imgaug.augmenters.arithmetic`Adds values to the pixels of images with possibly different values for neighbouring pixels.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AdditiveGaussianNoise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AdditiveGaussianNoise",
+          "description"     : "from `imgaug.augmenters.arithmetic`Adds noise sampled from gaussian distributions elementwise to images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AdditiveLaplaceNoise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AdditiveLaplaceNoise",
+          "description"     : "from `imgaug.augmenters.arithmetic`Adds noise sampled from laplace distributions elementwise to images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AdditivePoissonNoise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AdditivePoissonNoise",
+          "description"     : "from `imgaug.augmenters.arithmetic`Adds noise sampled from poisson distributions elementwise to images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Multiply",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Multiply",
+          "description"     : "from `imgaug.augmenters.arithmetic`Multiplies all pixels in an image with a specific value, thereby making the image darker or brighter.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MultiplyElementwise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MultiplyElementwise",
+          "description"     : "from `imgaug.augmenters.arithmetic`Multiplies values of pixels with possibly different values for neighbouring pixels, making each pixel darker or brighter.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Cutout",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Cutout",
+          "description"     : "from `imgaug.augmenters.arithmetic`Fills one or more rectangular areas in an image using a fill mode. See paper &quot;[Improved Regularization of Convolutional Neural Networks with Cutout](https://arxiv.org/pdf/1708.04552.pdf)&quot; by DeVries e Taylor. In contrast to the paper, this implementation also supports replacing image sub-areas with gaussian noise, random intensities or random RGB colors. It also supports non-squared areas.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Dropout",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Dropout",
+          "description"     : "from `imgaug.augmenters.arithmetic`Sets a certain fraction of pixels in images to zero.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CoarseDropout",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CoarseDropout",
+          "description"     : "from `imgaug.augmenters.arithmetic`Sets rectangular areas within images to zero.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Dropout2D",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Dropout2D",
+          "description"     : "from `imgaug.augmenters.arithmetic`Drops random channels from images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ReplaceElementwise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ReplaceElementwise",
+          "description"     : "from `imgaug.augmenters.arithmetic`Replaces pixels in an image with new values.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ImpulseNoise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ImpulseNoise",
+          "description"     : "from `imgaug.augmenters.arithmetic`Adds impulse noise to images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "SaltAndPepper",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#SaltAndPepper",
+          "description"     : "from `imgaug.augmenters.arithmetic`Replaces pixels in images with salt/pepper noise (white/black-ish colors).",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CoarseSaltAndPepper",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CoarseSaltAndPepper",
+          "description"     : "from `imgaug.augmenters.arithmetic`Replaces rectangular areas in images with white/black-ish pixel noise.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Salt",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Salt",
+          "description"     : "from `imgaug.augmenters.arithmetic`Replaces pixels in images with salt noise, i.e. white-ish pixels.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CoarseSalt",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CoarseSalt",
+          "description"     : "from `imgaug.augmenters.arithmetic`Replaces rectangular areas in images with white-ish pixel noise.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Pepper",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Pepper",
+          "description"     : "from `imgaug.augmenters.arithmetic`Replaces pixels in images with pepper noise, i.e. black-ish pixels.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CoarsePepper",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CoarsePepper",
+          "description"     : "from `imgaug.augmenters.arithmetic`Replaces rectangular areas in images with black-ish pixel noise.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Invert",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Invert",
+          "description"     : "from `imgaug.augmenters.arithmetic`Inverts all values in images, i.e. sets a pixel from value `v` to `255-v`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Solarize-arithmetic",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Solarize-arithmetic",
+          "description"     : "from `imgaug.augmenters.arithmetic`Inverts all values above a threshold in images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "JpegCompression-arithmetic",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#JpegCompression-arithmetic",
+          "description"     : "from `imgaug.augmenters.arithmetic`Degrades the quality of images by JPEG-compressing them.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Cartoon",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Cartoon",
+          "description"     : "from `imgaug.augmenters.artistic`Converts the style of images to a more cartoonish one.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlpha",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlpha",
+          "description"     : "from `imgaug.augmenters.blend`Alpha-blends two image sources using an alpha/opacity value.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaMask",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaMask",
+          "description"     : "from `imgaug.augmenters.blend`Alpha-blends two image sources using non-binary masks generated per image.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaElementwise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaElementwise",
+          "description"     : "from `imgaug.augmenters.blend`Alpha-blends two image sources using alpha/opacity values sampled per pixel.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaSimplexNoise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaSimplexNoise",
+          "description"     : "from `imgaug.augmenters.blend`Alpha-blends two image sources using simplex noise alpha masks.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaFrequencyNoise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaFrequencyNoise",
+          "description"     : "from `imgaug.augmenters.blend`Alpha-blends two image sources using frequency noise masks.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaSomeColors",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaSomeColors",
+          "description"     : "from `imgaug.augmenters.blend`Blends images from two branches using colorwise masks.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaHorizontalLinearGradient",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaHorizontalLinearGradient",
+          "description"     : "from `imgaug.augmenters.blend`Blends images from two branches along a horizontal linear gradient.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaVerticalLinearGradient",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaVerticalLinearGradient",
+          "description"     : "from `imgaug.augmenters.blend`Blends images from two branches along a vertical linear gradient.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaRegularGrid",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaRegularGrid",
+          "description"     : "from `imgaug.augmenters.blend`Blends images from two branches according to a regular grid.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaCheckerboard",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaCheckerboard",
+          "description"     : "from `imgaug.augmenters.blend`Blends images from two branches according to a checkerboard pattern.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaSegMapClassIds",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaSegMapClassIds",
+          "description"     : "from `imgaug.augmenters.blend`Blends images from two branches based on segmentation map ids.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BlendAlphaBoundingBoxes",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BlendAlphaBoundingBoxes",
+          "description"     : "from `imgaug.augmenters.blend`Blends images from two branches based on areas enclosed in bounding boxes.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "GaussianBlur-blur",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#GaussianBlur-blur",
+          "description"     : "from `imgaug.augmenters.blur`Blurs images using gaussian kernels.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AverageBlur",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AverageBlur",
+          "description"     : "from `imgaug.augmenters.blur`Blurs an image by computing simple means over neighbourhoods.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MedianBlur",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MedianBlur",
+          "description"     : "from `imgaug.augmenters.blur`Blurs an image by computing median values over neighbourhoods.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "BilateralBlur",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#BilateralBlur",
+          "description"     : "from `imgaug.augmenters.blur`Blurs/Denoises an image using a bilateral filter.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MotionBlur-blur",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MotionBlur-blur",
+          "description"     : "from `imgaug.augmenters.blur`Blurs images in a way that fakes camera or object movements.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MeanShiftBlur",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MeanShiftBlur",
+          "description"     : "from `imgaug.augmenters.blur`Applies a pyramidic mean shift filter to each image.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandAugment",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#RandAugment",
+          "description"     : "from `imgaug.augmenters.collections`Applies RandAugment to inputs as described in the corresponding paper. See *Cubuk et al. [RandAugment: Practical automated data augmentation with a reduced search space](https://arxiv.org/pdf/1909.13719.pdf)*.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "WithColorspace",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#WithColorspace",
+          "description"     : "from `imgaug.augmenters.color`Applies child augmenters within a specific colorspace.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "WithBrightnessChannels",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#WithBrightnessChannels",
+          "description"     : "from `imgaug.augmenters.color`Applies child augmenters to brightness-related image channels.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MultiplyAndAddToBrightness",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MultiplyAndAddToBrightness",
+          "description"     : "from `imgaug.augmenters.color`Multiplies and adds to the brightness channels of input images. This is a wrapper around `WithBrightnessChannels` and hence performs internally the same projection to random colorspaces.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MultiplyBrightness",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MultiplyBrightness",
+          "description"     : "from `imgaug.augmenters.color`Multiplies the brightness channels of input images. This is a wrapper around `WithBrightnessChannels` and hence performs internally the same projection to random colorspaces.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AddToBrightness",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AddToBrightness",
+          "description"     : "from `imgaug.augmenters.color`Adds to the brightness channels of input images. This is a wrapper around `WithBrightnessChannels` and hence performs internally the same projection to random colorspaces.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "WithHueAndSaturation",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#WithHueAndSaturation",
+          "description"     : "from `imgaug.augmenters.color`Applies child augmenters to hue and saturation channels.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MultiplyHueAndSaturation",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MultiplyHueAndSaturation",
+          "description"     : "from `imgaug.augmenters.color`Multipies hue and saturation by random values. The augmenter first transforms images to HSV colorspace, then multiplies the pixel values in the H and S channels and afterwards converts back to RGB. This augmenter is a wrapper around `WithHueAndSaturation`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MultiplyHue",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MultiplyHue",
+          "description"     : "from `imgaug.augmenters.color`Multiplies the hue of images by random values. The augmenter first transforms images to HSV colorspace, then multiplies the pixel values in the H channel and afterwards converts back to RGB. This augmenter is a shortcut for `MultiplyHueAndSaturation(mul_hue=...)`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MultiplySaturation",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MultiplySaturation",
+          "description"     : "from `imgaug.augmenters.color`Multiplies the saturation of images by random values. The augmenter first transforms images to HSV colorspace, then multiplies the pixel values in the H channel and afterwards converts back to RGB. This augmenter is a shortcut for `MultiplyHueAndSaturation(mul_saturation=...)`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RemoveSaturation",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#RemoveSaturation",
+          "description"     : "from `imgaug.augmenters.color`Decreases the saturation of images by varying degrees. This creates images looking similar to `Grayscale`. This augmenter is the same as `MultiplySaturation((0.0, 1.0))`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AddToHueAndSaturation",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AddToHueAndSaturation",
+          "description"     : "from `imgaug.augmenters.color`Increases or decreases hue and saturation by random values. The augmenter first transforms images to HSV colorspace, then adds random values to the H and S channels and afterwards converts back to RGB.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AddToHue",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AddToHue",
+          "description"     : "from `imgaug.augmenters.color`Add random values to the hue of images. The augmenter first transforms images to HSV colorspace, then adds random values to the H channel and afterwards converts back to RGB. If you want to change both the hue and the saturation, it is recommended to use `AddToHueAndSaturation` as otherwise the image will be converted twice to HSV and back to RGB. This augmenter is a shortcut for `AddToHueAndSaturation(value_hue=...)`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AddToSaturation",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AddToSaturation",
+          "description"     : "from `imgaug.augmenters.color`Add random values to the saturation of images. The augmenter first transforms images to HSV colorspace, then adds random values to the S channel and afterwards converts back to RGB. If you want to change both the hue and the saturation, it is recommended to use `AddToHueAndSaturation` as otherwise the image will be converted twice to HSV and back to RGB. This augmenter is a shortcut for `AddToHueAndSaturation(value_saturation=...)`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Grayscale",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Grayscale",
+          "description"     : "from `imgaug.augmenters.color`Converts images to their grayscale versions.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ChangeColorTemperature",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ChangeColorTemperature",
+          "description"     : "from `imgaug.augmenters.color`Changes the temperature to a provided Kelvin value. Low Kelvin values around 1000 to 4000 will result in red, yellow or orange images. Kelvin values around 10000 to 40000 will result in progressively darker blue tones.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "KMeansColorQuantization",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#KMeansColorQuantization",
+          "description"     : "from `imgaug.augmenters.color`Quantizes colors using k-Means clustering. This “collects” the colors from the input image, groups them into k clusters using k-Means clustering and replaces the colors in the input image using the cluster centroids.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "UniformColorQuantization",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#UniformColorQuantization",
+          "description"     : "from `imgaug.augmenters.color`Quantizes colors into N bins with regular distance.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "UniformColorQuantizationToNBits",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#UniformColorQuantizationToNBits",
+          "description"     : "from `imgaug.augmenters.color`Quantizes images by setting 8-B bits of each component to zero.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "GammaContrast",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#GammaContrast",
+          "description"     : "from `imgaug.augmenters.contrast`Adjusts image contrast by scaling pixel values to `255*((v/255)**gamma)`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "SigmoidContrast",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#SigmoidContrast",
+          "description"     : "from `imgaug.augmenters.contrast`Adjust image contrast to `255*1/(1+exp(gain*(cutoff-I_ij/255)))`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "LogContrast",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#LogContrast",
+          "description"     : "from `imgaug.augmenters.contrast`Adjusts image contrast by scaling pixels to `255*gain*log_2(1+v/255)`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "LinearContrast",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#LinearContrast",
+          "description"     : "from `imgaug.augmenters.contrast`Adjust contrast by scaling each pixel to `127 + alpha*(v-127)`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AllChannelsCLAHE",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AllChannelsCLAHE",
+          "description"     : "from `imgaug.augmenters.contrast`Applies CLAHE to all channels of images in their original colorspaces. CLAHE (Contrast Limited Adaptive Histogram Equalization) performs histogram equilization within image patches, i.e. over local neighbourhoods.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "CLAHE",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CLAHE",
+          "description"     : "from `imgaug.augmenters.contrast`Applies CLAHE (Contrast Limited Adaptive Histogram Equalization) to L/V/L channels in HLS/HSV/Lab colorspaces. CLAHE is a form of histogram equalization that normalizes within local image patches.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "AllChannelsHistogramEqualization",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AllChannelsHistogramEqualization",
+          "description"     : "from `imgaug.augmenters.contrast`Applies histogram equalization to all channels of images in their original colorspaces.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "HistogramEqualization",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#HistogramEqualization",
+          "description"     : "from `imgaug.augmenters.contrast`Applies histogram equalization to L/V/L channels of images in HLS/HSV/Lab colorspaces.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Sharpen",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Sharpen",
+          "description"     : "from `imgaug.augmenters.convolutional`Sharpens images and overlays the result with the original image.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Emboss",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Emboss",
+          "description"     : "from `imgaug.augmenters.convolutional`Embosses images and overlays the result with the original image.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Fliplr",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Fliplr",
+          "description"     : "from `imgaug.augmenters.flip`Flips/mirrors input images horizontally.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Flipud",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Flipud",
+          "description"     : "from `imgaug.augmenters.flip` Flips/mirrors input images vertically.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Affine-geometric",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Affine-geometric",
+          "description"     : "from `imgaug.augmenters.geometric`Applies affine transformations to images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ScaleX",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ScaleX",
+          "description"     : "from `imgaug.augmenters.geometric`Applies affine scaling on the x-axis to input data. This is a wrapper around `imgaug.augmenters.geometric.Affine`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ScaleY",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ScaleY",
+          "description"     : "from `imgaug.augmenters.geometric`Applies affine scaling on the y-axis to input data. This is a wrapper around `imgaug.augmenters.geometric.Affine`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "TranslateX",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#TranslateX",
+          "description"     : "from `imgaug.augmenters.geometric`Applies affine translation on the x-axis to input data. This is a wrapper around `imgaug.augmenters.geometric.Affine`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "TranslateY",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#TranslateY",
+          "description"     : "from `imgaug.augmenters.geometric`Applies affine translation on the y-axis to input data. This is a wrapper around `imgaug.augmenters.geometric.Affine`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Rotate",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Rotate",
+          "description"     : "from `imgaug.augmenters.geometric`Applies affine rotation on the y-axis to input data. This is a wrapper around `imgaug.augmenters.geometric.Affine`.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "ShearX",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ShearX",
+          "description"     : "from `imgaug.augmenters.geometric`Applies affine shear on the x-axis to input data. This is a wrapper around `imgaug.augmenters.geometric.Affine`.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "ShearY",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ShearY",
+          "description"     : "from `imgaug.augmenters.geometric`Applies affine shear on the y-axis to input data. This is a wrapper around `imgaug.augmenters.geometric.Affine`.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "PiecewiseAffine",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#PiecewiseAffine",
+          "description"     : "from `imgaug.augmenters.geometric`Applies affine transformations that differ between local neighbourhoods.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "PerspectiveTransform",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#PerspectiveTransform",
+          "description"     : "from `imgaug.augmenters.geometric`Applies random four point perspective transformations to images.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "ElasticTransformation",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ElasticTransformation",
+          "description"     : "from `imgaug.augmenters.geometric`Transforms images by moving pixels locally around using displacement fields. See *Simard, Steinkraus and Platt, [Best Practices for Convolutional Neural Networks applied to Visual Document Analysis](https://cognitivemedium.com/assets/rmnist/Simard.pdf) in Proc. of the International Conference on Document Analysis and Recognition, 2003*.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Rot90",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Rot90",
+          "description"     : "from `imgaug.augmenters.geometric`Rotates images clockwise by multiples of 90 degrees. This could also be achieved using `Affine`, but `Rot90` is significantly more efficient.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "WithPolarWarping",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#WithPolarWarping",
+          "description"     : "from `imgaug.augmenters.geometric`Applies other augmenters in a polar-transformed space.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Jigsaw",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Jigsaw",
+          "description"     : "from `imgaug.augmenters.geometric`Moves cells within images similar to jigsaw patterns.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "GaussianNoise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#GaussianNoise",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `gaussian_noise()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ShotNoise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ShotNoise",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `shot_noise()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ImpulseNoise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ImpulseNoise",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `impulse_noise()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "SpeckleNoise",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#SpeckleNoise",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `speckle_noise()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "GaussianBlur-imgcorruptlike",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#GaussianBlur-imgcorruptlike",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `gaussian_blur()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "GlassBlur",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#GlassBlur",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `glass_blur()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "DefocusBlur",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#DefocusBlur",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `defocus_blur()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MotionBlur-imgcorruptlike",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MotionBlur-imgcorruptlike",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `motion_blur()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ZoomBlur",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ZoomBlur",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `zoom_blur()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Fog-imgcorruptlike",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Fog-imgcorruptlike",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `fog()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Frost",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Frost",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `frost()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Snow",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Snow",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `snow()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Spatter",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Spatter",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `spatter()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Contrast",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Contrast",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `contrast()`.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Brightness",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Brightness",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `brightness()`.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Saturate",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Saturate",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `saturate()`.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "JpegCompression-imgcorruptlike",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#JpegCompression-imgcorruptlike",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `jpeg_compression()`.",
+          "tags"            : "worsening"
+        } ,
+      
+        {
+          "transformation"  : "Pixelate",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Pixelate",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `pixelate()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ElasticTransform",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ElasticTransform",
+          "description"     : "from `imgaug.augmenters.imgcorruptlike`Wrapper around `elastic_transform()`.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ChannelShuffle",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#ChannelShuffle",
+          "description"     : "from `imgaug.augmenters.meta`Randomizes the order of channels in input images.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Solarize-pillike",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Solarize-pillike",
+          "description"     : "from `imgaug.augmenters.pillike`Inverts all pixel values above a threshold.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Posterize",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Posterize",
+          "description"     : "from `imgaug.augmenters.pillike`Quantizes each array component to `N` bits.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Equalize",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Equalize",
+          "description"     : "from `imgaug.augmenters.pillike`Equalizes the image histogram.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Autocontrast",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Autocontrast",
+          "description"     : "from `imgaug.augmenters.pillike`Adjusts contrast by cutting off p% of lowest/highest histogram values.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "EnhanceColor",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#EnhanceColor",
+          "description"     : "from `imgaug.augmenters.pillike`Converts images to grayscale.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "EnhanceContrast",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#EnhanceContrast",
+          "description"     : "from `imgaug.augmenters.pillike`Changes the contrast of images.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "EnhanceBrightness",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#EnhanceBrightness",
+          "description"     : "from `imgaug.augmenters.pillike`Changes the brightness of images.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "EnhanceSharpness",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#EnhanceSharpness",
+          "description"     : "from `imgaug.augmenters.pillike`Changes the sharpness of images.",
+          "tags"            : "sharpness"
+        } ,
+      
+        {
+          "transformation"  : "FilterBlur",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#FilterBlur",
+          "description"     : "from `imgaug.augmenters.pillike`Applies a blur filter kernel to images.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "FilterSmooth",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#FilterSmooth",
+          "description"     : "from `imgaug.augmenters.pillike`Applies a smoothening filter kernel to images.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "FilterSmoothMore",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#FilterSmoothMore",
+          "description"     : "from `imgaug.augmenters.pillike`Applies a strong smoothening filter kernel to images.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "FilterEdgeEnhance",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#FilterEdgeEnhance",
+          "description"     : "from `imgaug.augmenters.pillike`Applies an edge enhance filter kernel to images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "FilterEdgeEnhanceMore",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#FilterEdgeEnhanceMore",
+          "description"     : "from `imgaug.augmenters.pillike`Applies a strong edge enhancement filter kernel to images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "FilterSharpen",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#FilterSharpen",
+          "description"     : "from `imgaug.augmenters.pillike`Applies a sharpening filter kernel to images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "FilterDetail",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#FilterDetail",
+          "description"     : "from `imgaug.augmenters.pillike`Applies a detail enhancement filter kernel to images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Affine-pillike",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Affine-pillike",
+          "description"     : "from `imgaug.augmenters.pillike`Applies PIL-like affine transformations to images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AveragePooling",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#AveragePooling",
+          "description"     : "from `imgaug.augmenters.pooling`",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MaxPooling",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MaxPooling",
+          "description"     : "from `imgaug.augmenters.pooling`",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MinPooling",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MinPooling",
+          "description"     : "from `imgaug.augmenters.pooling`",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "MedianPooling",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#MedianPooling",
+          "description"     : "from `imgaug.augmenters.pooling`",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Superpixels",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Superpixels",
+          "description"     : "from `imgaug.augmenters.segmentation`Completely or partially transforms images to their superpixel representation.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Voronoi",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Voronoi",
+          "description"     : "from `imgaug.augmenters.segmentation`Averages colors of an image within Voronoi cells.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "UniformVoronoi",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#UniformVoronoi",
+          "description"     : "from `imgaug.augmenters.segmentation`Uniformly samples Voronoi cells on images and averages colors within them.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RegularGridVoronoi",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#RegularGridVoronoi",
+          "description"     : "from `imgaug.augmenters.segmentation`Samples Voronoi cells from regular grids and color-averages them.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RelativeRegularGridVoronoi",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#RelativeRegularGridVoronoi",
+          "description"     : "from `imgaug.augmenters.segmentation`Samples Voronoi cells from image-dependent grids and color-averages them.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Resize",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Resize",
+          "description"     : "from `imgaug.augmenters.size`Resizes images to specified heights and widths.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CropAndPad",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CropAndPad",
+          "description"     : "from `imgaug.augmenters.size`Crops/pads images by pixel amounts or fractions of image sizes.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Pad",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Pad",
+          "description"     : "from `imgaug.augmenters.size`Pads images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "Crop",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Crop",
+          "description"     : "from `imgaug.augmenters.size`Crops images.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "PadToFixedSize",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#PadToFixedSize",
+          "description"     : "from `imgaug.augmenters.size`Pads images to minimum width/height.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CropToFixedSize",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CropToFixedSize",
+          "description"     : "from `imgaug.augmenters.size`Crops images down to a fixed maximum width/height.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "PadToMultiplesOf",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#PadToMultiplesOf",
+          "description"     : "from `imgaug.augmenters.size`Pads images until their height/width is a multiple of a value.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CropToMultiplesOf",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CropToMultiplesOf",
+          "description"     : "from `imgaug.augmenters.size`Crops images down until their height/width is a multiple of a value.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CropToPowersOf",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CropToPowersOf",
+          "description"     : "from `imgaug.augmenters.size`Crops images until their height/width is a power of a base.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "PadToPowersOf",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#PadToPowersOf",
+          "description"     : "from `imgaug.augmenters.size`Pads images until their height/width is a power of a base.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CropToAspectRatio",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CropToAspectRatio",
+          "description"     : "from `imgaug.augmenters.size`Crops images until their width/height matches an aspect ratio.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "PadToAspectRatio",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#PadToAspectRatio",
+          "description"     : "from `imgaug.augmenters.size`Pads images until their width/height matches an aspect ratio.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CropToSquare",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CropToSquare",
+          "description"     : "from `imgaug.augmenters.size`Crops images until their width and height are identical.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "PadToSquare",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#PadToSquare",
+          "description"     : "from `imgaug.augmenters.size`Pads images until their height and width are identical.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterPadToFixedSize",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CenterPadToFixedSize",
+          "description"     : "from `imgaug.augmenters.size`Pads images equally on all sides up to given minimum heights/widths.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterCropToFixedSize",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CenterCropToFixedSize",
+          "description"     : "from `imgaug.augmenters.size`Takes a crop from the center of each image.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterCropToMultiplesOf",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CenterCropToMultiplesOf",
+          "description"     : "from `imgaug.augmenters.size`Crops images equally on all sides until H/W are multiples of given values.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterPadToMultiplesOf",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CenterPadToMultiplesOf",
+          "description"     : "from `imgaug.augmenters.size`Pads images equally on all sides until H/W are multiples of given values.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterCropToPowersOf",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CenterCropToPowersOf",
+          "description"     : "from `imgaug.augmenters.size`Crops images equally on all sides until H/W is a power of a base.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterPadToPowersOf",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CenterPadToPowersOf",
+          "description"     : "from `imgaug.augmenters.size`Pads images equally on all sides until H/W is a power of a base.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterCropToAspectRatio",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CenterCropToAspectRatio",
+          "description"     : "from `imgaug.augmenters.size`Crops images equally on all sides until they reach an aspect ratio.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterPadToAspectRatio",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CenterPadToAspectRatio",
+          "description"     : "from `imgaug.augmenters.size`Pads images equally on all sides until H/W matches an aspect ratio.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterCropToSquare",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CenterCropToSquare",
+          "description"     : "from `imgaug.augmenters.size`Crops images equally on all sides until their height/width are identical.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterPadToSquare",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CenterPadToSquare",
+          "description"     : "from `imgaug.augmenters.size`Pads images equally on all sides until their height &amp; width are identical.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "KeepSizeByResize",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#KeepSizeByResize",
+          "description"     : "from `imgaug.augmenters.size`Resizes images back to their input sizes after applying child augmenters.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "FastSnowyLandscape",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#FastSnowyLandscape",
+          "description"     : "from `imgaug.augmenters.weather`Converts non-snowy landscapes to snowy ones. It expects to get an image that roughly shows a landscape.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "Clouds",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Clouds",
+          "description"     : "from `imgaug.augmenters.weather`Adds clouds to images. This is a wrapper around `CloudLayer`.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "Fog-weather",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Fog-weather",
+          "description"     : "from `imgaug.augmenters.weather`Adds fog to images. This is a wrapper around `CloudLayer`.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "CloudLayer",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#CloudLayer",
+          "description"     : "from `imgaug.augmenters.weather`Adds a single layer of clouds to an image.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "Snowflakes",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Snowflakes",
+          "description"     : "from `imgaug.augmenters.weather`Adds falling snowflakes to images. This is a wrapper around `SnowflakesLayer`.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "SnowflakesLayer",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#SnowflakesLayer",
+          "description"     : "from `imgaug.augmenters.weather`Adds a single layer of falling snowflakes to images.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "Rain",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#Rain",
+          "description"     : "from `imgaug.augmenters.weather`Adds rain to images.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "RainLayer",
+          "library"         : "imgaug",
+          "url"             : "libraries/imgaug.html#RainLayer",
+          "description"     : "from `imgaug.augmenters.weather`Adds a single layer of falling raindrops to images.",
+          "tags"            : "weather"
+        } 
+      
+    
+    ,
+  
+    
+      
+        {
+          "transformation"  : "AutoContrast",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#AutoContrast",
+          "description"     : "Performs the AutoContrast operation on the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "AugMix",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#AugMix",
+          "description"     : "Performs the [AugMix](https://arxiv.org/pdf/1912.02781.pdf) data augmentation technique.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ChannelShuffle",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#ChannelShuffle",
+          "description"     : "Shuffle channels of the input image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "CutMix",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#CutMix",
+          "description"     : "Implements the [CutMix](https://arxiv.org/pdf/1905.04899.pdf) data augmentation technique.",
+          "tags"            : "mixed sample"
+        } ,
+      
+        {
+          "transformation"  : "FourierMix",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#FourierMix",
+          "description"     : "Implements the [FMix](https://arxiv.org/pdf/2002.12047.pdf7) data augmentation technique.",
+          "tags"            : "mixed sample"
+        } ,
+      
+        {
+          "transformation"  : "GridMask",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#GridMask",
+          "description"     : "Implements [GridMask](https://arxiv.org/pdf/2001.04086.pdf) augmentation.",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "JitteredResize",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#JitteredResize",
+          "description"     : "Implements resize with scale distortion.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "MixUp",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#MixUp",
+          "description"     : "Performs the MixUp data augmentation technique. References: [&quot;mixup: Beyond Empirical Risk Minimization&quot;](https://arxiv.org/pdf/1710.09412.pdf), [&quot;Bag of Freebies for Training Object Detection Neural Networks&quot;](https://arxiv.org/pdf/1902.04103.pdf).",
+          "tags"            : "mixed sample"
+        } ,
+      
+        {
+          "transformation"  : "RandAugment",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#RandAugment",
+          "description"     : "Performs the [Rand Augment](https://arxiv.org/pdf/1909.13719.pdf) operation on the input image.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandomAugmentationPipeline",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#RandomAugmentationPipeline",
+          "description"     : "Constructs a pipeline based on provided arguments.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandomChannelShift",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#RandomChannelShift",
+          "description"     : "Randomly shifts values for each channel of the input image(s).",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomColorDegeneration",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#RandomColorDegeneration",
+          "description"     : "Randomly performs the color degeneration operation. The sharpness operation first converts an image to gray scale, then back to color. It then takes a weighted average between original image and the degenerated image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomCutout",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#RandomCutout",
+          "description"     : "Randomly cuts out rectangles from images and fills them.",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "RandomHue",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#RandomHue",
+          "description"     : "Randomly adjusts the hue.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomSaturation",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#RandomSaturation",
+          "description"     : "Randomly adjusts the saturation.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomSharpness",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#RandomSharpness",
+          "description"     : "Randomly performs the sharpness operation. This operation first performs a blur operation, then blends between the original image and the blurred image. It makes the edges of an image less sharp than they were in the original image. Reference: [ImageEnhance](https://pillow.readthedocs.io/en/stable/reference/ImageEnhance.html).",
+          "tags"            : "sharpness"
+        } ,
+      
+        {
+          "transformation"  : "RandomShear",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#RandomShear",
+          "description"     : "A preprocessing layer which randomly shears images during training. This layer will apply random shearings to each image, filling empty space according to `fill_mode`.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Solarization",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#Solarization",
+          "description"     : "Applies `(max_value - pixel + min_value)` for each pixel in the image. When created without `threshold` parameter, the layer performs solarization to all values. When created with specified `threshold` the layer only augments pixels that are above the `threshold` value. References: [AutoAugment](https://arxiv.org/pdf/1805.09501.pdf), [RandAugment](https://arxiv.org/pdf/1909.13719.pdf).",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Resizing",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#Resizing",
+          "description"     : "A preprocessing layer which resizes the image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Grayscale",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#Grayscale",
+          "description"     : "Transforms RGB images to Grayscale images.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Equalization",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#Equalization",
+          "description"     : "Performs histogram equalization on a channel-wise basis.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Posterization",
+          "library"         : "KerasCV",
+          "url"             : "libraries/kerascv.html#Posterization",
+          "description"     : "Reduces the number of bits for each color channel. References: [&quot;AutoAugment&quot;](https://arxiv.org/pdf/1805.09501.pdf), [&quot;RandAugment&quot;](https://arxiv.org/pdf/1909.13719.pdf).",
+          "tags"            : "style filter"
+        } 
+      
+    
+    ,
+  
+    
+      
+        {
+          "transformation"  : "AutoAugment",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#AutoAugment",
+          "description"     : "from `kornia.augmentation.auto`Applies [AutoAugment](https://arxiv.org/pdf/1805.09501.pdf) searched strategies.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandAugment",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandAugment",
+          "description"     : "from `kornia.augmentation.auto`Applies [RandAugment](https://arxiv.org/pdf/1909.13719.pdf) augmentation strategies.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "TrivialAugment",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#TrivialAugment",
+          "description"     : "from `kornia.augmentation.auto`Applies [TrivialAugment](https://arxiv.org/pdf/2103.10158.pdf) augmentation strategies.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandomPlanckianJitter",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomPlanckianJitter",
+          "description"     : "from `kornia.augmentation`Applies [planckian jitter](https://arxiv.org/pdf/2202.07993.pdf) transformation.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomPlasmaShadow",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomPlasmaShadow",
+          "description"     : "from `kornia.augmentation`Adds a particular shadow. Based on [*TorMentor: Deterministic dynamic-path, data augmentations with fractals*](https://arxiv.org/pdf/2204.03776.pdf).",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandomPlasmaBrightness",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomPlasmaBrightness",
+          "description"     : "from `kornia.augmentation`Adds brightness to the image based on a fractal map generated by the diamond square algorithm. Based on [*TorMentor: Deterministic dynamic-path, data augmentations with fractals*](https://arxiv.org/pdf/2204.03776.pdf).",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandomPlasmaContrast",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomPlasmaContrast",
+          "description"     : "from `kornia.augmentation`Adds contrast to the image based on a fractal map generated by the diamond square algorithm. Based on [*TorMentor: Deterministic dynamic-path, data augmentations with fractals*](https://arxiv.org/pdf/2204.03776.pdf).",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "ColorJiggle",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#ColorJiggle",
+          "description"     : "from `kornia.augmentation`Applies a random transformation to the brightness, contrast, saturation and hue of an image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "ColorJitter",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#ColorJitter",
+          "description"     : "from `kornia.augmentation`Applies a random transformation to the brightness, contrast, saturation and hue of an image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomBoxBlur",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomBoxBlur",
+          "description"     : "from `kornia.augmentation`Adds random blur with a box filter to an image.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "RandomBrightness",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomBrightness",
+          "description"     : "from `kornia.augmentation`Applies a random transformation to the brightness of an image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomChannelShuffle",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomChannelShuffle",
+          "description"     : "from `kornia.augmentation`Shuffles the channels of a batch of multi-dimensional images.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomContrast",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomContrast",
+          "description"     : "from `kornia.augmentation`Applies a random transformation to the contrast of an image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomEqualize",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomEqualize",
+          "description"     : "from `kornia.augmentation`Equalizes given image(s) randomly.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomGamma",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomGamma",
+          "description"     : "from `kornia.augmentation`Applies a random transformation to the gamma of an image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomGrayscale",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomGrayscale",
+          "description"     : "from `kornia.augmentation`Applies random transformation to Grayscale according to a probability `p` value.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomGaussianBlur",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomGaussianBlur",
+          "description"     : "from `kornia.augmentation`Applies gaussian blur given image(s) randomly. The standard deviation is sampled for each instance.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "RandomGaussianNoise",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomGaussianNoise",
+          "description"     : "from `kornia.augmentation`Adds gaussian noise.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "RandomHue",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomHue",
+          "description"     : "from `kornia.augmentation`Applies a random transformation to the hue of an image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomMotionBlur",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomMotionBlur",
+          "description"     : "from `kornia.augmentation`Performs motion blur on 2D images (4D tensor).",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "RandomPosterize",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomPosterize",
+          "description"     : "from `kornia.augmentation`Posterizes given image(s) randomly.",
+          "tags"            : "style filter"
+        } ,
+      
+        {
+          "transformation"  : "RandomRGBShift",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomRGBShift",
+          "description"     : "from `kornia.augmentation`Randomly shifts each channel of an image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomSaturation",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomSaturation",
+          "description"     : "from `kornia.augmentation`Applies a random transformation to the saturation of an image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomSharpness",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomSharpness",
+          "description"     : "from `kornia.augmentation`Sharpens given image(s) randomly.",
+          "tags"            : "sharpness"
+        } ,
+      
+        {
+          "transformation"  : "RandomSolarize",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomSolarize",
+          "description"     : "from `kornia.augmentation`Solarizes given image(s) randomly.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomMedianBlur",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomMedianBlur",
+          "description"     : "from `kornia.augmentation`Adds random blur with a median filter to an image.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "RandomSnow",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomSnow",
+          "description"     : "from `kornia.augmentation`Generates snow effect on given image(s).",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "RandomRain",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomRain",
+          "description"     : "from `kornia.augmentation`Adds random rain to the image.",
+          "tags"            : "weather"
+        } ,
+      
+        {
+          "transformation"  : "CenterCrop",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#CenterCrop",
+          "description"     : "from `kornia.augmentation`Crops a given image at the center.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "PadTo",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#PadTo",
+          "description"     : "from `kornia.augmentation`Pads the given sample to a specific size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomAffine",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomAffine",
+          "description"     : "from `kornia.augmentation`Applies a random 2D affine transformation to an image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomCrop",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomCrop",
+          "description"     : "from `kornia.augmentation`Crops random patches of an image on a given size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomErasing",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomErasing",
+          "description"     : "from `kornia.augmentation`Erases a random rectangle of an image according to a probability `p` value.",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "RandomElasticTransform",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomElasticTransform",
+          "description"     : "from `kornia.augmentation`Adds random elastic transformation to an image.",
+          "tags"            : "distortion"
+        } ,
+      
+        {
+          "transformation"  : "RandomFisheye",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomFisheye",
+          "description"     : "from `kornia.augmentation`Adds random camera radial distortion.",
+          "tags"            : "distortion"
+        } ,
+      
+        {
+          "transformation"  : "RandomHorizontalFlip",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomHorizontalFlip",
+          "description"     : "from `kornia.augmentation`Applies a random horizontal flip to image(s) with a given probability.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomInvert",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomInvert",
+          "description"     : "from `kornia.augmentation`Inverts the images values randomly.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomPerspective",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomPerspective",
+          "description"     : "from `kornia.augmentation`Applies a random perspective transformation to an image with a given probability.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomResizedCrop",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomResizedCrop",
+          "description"     : "from `kornia.augmentation`Crops random patches in an image and resizes to a given size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomRotation",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomRotation",
+          "description"     : "from `kornia.augmentation`Applies a random rotation to image(s) given an amount of degrees.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomVerticalFlip",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomVerticalFlip",
+          "description"     : "from `kornia.augmentation`Applies a random vertical flip to image(s) with a given probability.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomThinPlateSpline",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomThinPlateSpline",
+          "description"     : "from `kornia.augmentation`Adds random noise to the Thin Plate Spline algorithm.",
+          "tags"            : "distortion"
+        } ,
+      
+        {
+          "transformation"  : "RandomCutMixV2",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomCutMixV2",
+          "description"     : "from `kornia.augmentation`Implementation for [*CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features*](https://arxiv.org/pdf/1905.04899.pdf).",
+          "tags"            : "mixed sample"
+        } ,
+      
+        {
+          "transformation"  : "RandomMixUpV2",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomMixUpV2",
+          "description"     : "from `kornia.augmentation`Implementation for [*mixup: BEYOND EMPIRICAL RISK MINIMIZATION*](https://arxiv.org/pdf/1710.09412.pdf).",
+          "tags"            : "mixed sample"
+        } ,
+      
+        {
+          "transformation"  : "RandomMosaic",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomMosaic",
+          "description"     : "from `kornia.augmentation`Mosaic augmentation.",
+          "tags"            : "mixed sample"
+        } ,
+      
+        {
+          "transformation"  : "RandomJigsaw",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#RandomJigsaw",
+          "description"     : "from `kornia.augmentation`RandomJigsaw augmentation.",
+          "tags"            : "mixed sample"
+        } ,
+      
+        {
+          "transformation"  : "Resize",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#Resize",
+          "description"     : "from `kornia.augmentation`Resizes to size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "LongestMaxSize",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#LongestMaxSize",
+          "description"     : "from `kornia.augmentation`Rescales an image so that maximum side is equal to `max_size`, keeping the aspect ratio of the initial image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "SmallestMaxSize",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#SmallestMaxSize",
+          "description"     : "from `kornia.augmentation`Rescales an image so that minimum side is equal to `max_size`, keeping the aspect ratio of the initial image.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Sepia",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#Sepia",
+          "description"     : "from `kornia.color`Applies the sepia filter to the image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "ZCAWhitening",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#ZCAWhitening",
+          "description"     : "from `kornia.enhance`",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AdjustSigmoid",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#AdjustSigmoid",
+          "description"     : "from `kornia.enhance`Adjusts the contrast of the image or performs sigmoid correction on the input image. [Reference](http://markfairchild.org/PDFs/PAP07.pdf).",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "AdjustLog",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#AdjustLog",
+          "description"     : "from `kornia.enhance`Adjusts log correction on the input image. [Reference](http://www.ece.ucsb.edu/Faculty/Manjunath/courses/ece178W03/EnhancePart1.pdf),",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "AddWeighted",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#AddWeighted",
+          "description"     : "from `kornia.enhance`Calculates the weighted sum of two image tensors.",
+          "tags"            : "mixed sample"
+        } ,
+      
+        {
+          "transformation"  : "BilateralBlur",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#BilateralBlur",
+          "description"     : "from `kornia.filters`Blurs an image using a Bilateral filter.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "BlurPool2D",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#BlurPool2D",
+          "description"     : "from `kornia.filters`Computes blur (anti-aliasing) and downsamples a given feature map. [Reference](https://proceedings.mlr.press/v97/zhang19a.html).",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "MaxBlurPool2D",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#MaxBlurPool2D",
+          "description"     : "from `kornia.filters`Computes pools and blurs and downsamples a given feature map.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "GuidedBlur",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#GuidedBlur",
+          "description"     : "from `kornia.filters`Blurs an image using a Guided filter.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "JointBilateralBlur",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#JointBilateralBlur",
+          "description"     : "from `kornia.filters`Blurs an image using a Joint Bilateral filter.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "UnsharpMask",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#UnsharpMask",
+          "description"     : "from `kornia.filters`Creates an operator that sharpens image.",
+          "tags"            : "sharpness"
+        } ,
+      
+        {
+          "transformation"  : "dilation",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#dilation",
+          "description"     : "from `kornia.morphology`Returns the dilated image applying the same kernel in each channel.",
+          "tags"            : "morphology"
+        } ,
+      
+        {
+          "transformation"  : "erosion",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#erosion",
+          "description"     : "from `kornia.morphology`Returns the eroded image applying the same kernel in each channel.",
+          "tags"            : "morphology"
+        } ,
+      
+        {
+          "transformation"  : "opening",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#opening",
+          "description"     : "from `kornia.morphology`Returns the opened image (dilation after an erosion), applying the same kernel in each channel.",
+          "tags"            : "morphology"
+        } ,
+      
+        {
+          "transformation"  : "closing",
+          "library"         : "Kornia",
+          "url"             : "libraries/kornia.html#closing",
+          "description"     : "from `kornia.morphology`Returns the closed image (erosion after a dilation), applying the same kernel in each channel.",
+          "tags"            : "morphology"
+        } 
+      
+    
+    ,
+  
+    
+      
+        {
+          "transformation"  : "Flip",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Flip",
+          "description"     : "Random Flipping transform.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Rotate",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Rotate",
+          "description"     : "Random rotation around the center clockwise.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Shear",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Shear",
+          "description"     : "Random shear around the center.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Scale",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Scale",
+          "description"     : "Random scale transform.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Translate",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Translate",
+          "description"     : "Random Translate transform.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Projection",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Projection",
+          "description"     : "Random Projective transform.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Pad",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Pad",
+          "description"     : "Pads the input to a given size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Crop",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Crop",
+          "description"     : "Center/Random crop transform.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Noise",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Noise",
+          "description"     : "Adds noise.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "GammaCorrection",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#GammaCorrection",
+          "description"     : "Applies random gamma correction.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "SaltAndPepper",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#SaltAndPepper",
+          "description"     : "Adds salt and pepper noise.",
+          "tags"            : "noise"
+        } ,
+      
+        {
+          "transformation"  : "Blur",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Blur",
+          "description"     : "Blurs the image.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "HSV",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#HSV",
+          "description"     : "Performs a random HSV color shift.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "IntensityRemap",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#IntensityRemap",
+          "description"     : "Performs random intensity remapping. See [Intensity augmentation for domain transfer of whole breast segmentation in MRI](https://arxiv.org/pdf/1909.02642.pdf).",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Resize",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Resize",
+          "description"     : "Resizes the input to a given size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Contrast",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Contrast",
+          "description"     : "Randomly changes the contrast.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Brightness",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Brightness",
+          "description"     : "Performs a random brightness augmentation.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Rotate90",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#Rotate90",
+          "description"     : "Performs a random rotation around the center by 90 degrees.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "CutOut",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#CutOut",
+          "description"     : "Does a [CutOut](https://arxiv.org/pdf/1708.04552.pdf) augmentation.",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "JPEGCompression",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#JPEGCompression",
+          "description"     : "Performs random JPEG-based worsening.",
+          "tags"            : "worsening"
+        } ,
+      
+        {
+          "transformation"  : "GridMask",
+          "library"         : "solt",
+          "url"             : "libraries/solt.html#GridMask",
+          "description"     : "Performs a [GridMask](https://arxiv.org/pdf/2001.04086.pdf) augmentation.",
+          "tags"            : "dropout"
+        } 
+      
+    
+    ,
+  
+    
+      
+        {
+          "transformation"  : "Compose",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#Compose",
+          "description"     : "Composes several transforms together.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "CenterCrop",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#CenterCrop",
+          "description"     : "Crops the given image at the center.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "ColorJitter",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#ColorJitter",
+          "description"     : "Randomly changes the brightness, contrast, saturation and hue of an image.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "FiveCrop",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#FiveCrop",
+          "description"     : "Crops the given image into four corners and the central crop.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Grayscale",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#Grayscale",
+          "description"     : "Converts image to grayscale.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "Pad",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#Pad",
+          "description"     : "Pads the given image on all sides with the given `pad` value.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomAffine",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomAffine",
+          "description"     : "Performs a random affine transformation of the image keeping center invariant.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomApply",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomApply",
+          "description"     : "Applies randomly a list of transformations with a given probability.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandomCrop",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomCrop",
+          "description"     : "Crops the given image at a random location.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomGrayscale",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomGrayscale",
+          "description"     : "Randomly converts image to grayscale with a probability of `p`.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomHorizontalFlip",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomHorizontalFlip",
+          "description"     : "Horizontally flips the given image randomly with a given probability.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomPerspective",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomPerspective",
+          "description"     : "Performs a random perspective transformation of the given image with a given probability.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomResizedCrop",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomResizedCrop",
+          "description"     : "Crops a random portion of image and resize it to a given size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomRotation",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomRotation",
+          "description"     : "Rotates the image by angle.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomVerticalFlip",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomVerticalFlip",
+          "description"     : "Vertically flips the given image randomly with a given probability.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "Resize",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#Resize",
+          "description"     : "Resizes the input image to the given size.",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "TenCrop",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#TenCrop",
+          "description"     : "Crops the given image into four corners and the central crop plus the flipped version of these (horizontal flipping is used by default).",
+          "tags"            : "basic geometry"
+        } ,
+      
+        {
+          "transformation"  : "GaussianBlur",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#GaussianBlur",
+          "description"     : "Blurs image with randomly chosen Gaussian blur.",
+          "tags"            : "blur"
+        } ,
+      
+        {
+          "transformation"  : "RandomInvert",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomInvert",
+          "description"     : "Inverts the colors of the given image randomly with a given probability.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomPosterize",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomPosterize",
+          "description"     : "Posterizes the image randomly with a given probability by reducing the number of bits for each color channel.",
+          "tags"            : "style filter"
+        } ,
+      
+        {
+          "transformation"  : "RandomSolarize",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomSolarize",
+          "description"     : "Solarizes the image randomly with a given probability by inverting all pixel values above a threshold.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomAdjustSharpness",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomAdjustSharpness",
+          "description"     : "Adjusts the sharpness of the image randomly with a given probability.",
+          "tags"            : "sharpness"
+        } ,
+      
+        {
+          "transformation"  : "RandomAutocontrast",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomAutocontrast",
+          "description"     : "Autocontrasts the pixels of the given image randomly with a given probability.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomEqualize",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomEqualize",
+          "description"     : "Equalizes the histogram of the given image randomly with a given probability.",
+          "tags"            : "photometry"
+        } ,
+      
+        {
+          "transformation"  : "RandomChoice",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomChoice",
+          "description"     : "Applies single transformation randomly picked from a list.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandomOrder",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomOrder",
+          "description"     : "Applies a list of transformations in a random order.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandomErasing",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandomErasing",
+          "description"     : "Randomly selects a rectangle region in a torch.Tensor image and erases its pixels. See [here](https://arxiv.org/pdf/1708.04896.pdf).",
+          "tags"            : "dropout"
+        } ,
+      
+        {
+          "transformation"  : "AutoAugment",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#AutoAugment",
+          "description"     : "Data augmentation method based on [AutoAugment](https://arxiv.org/pdf/1805.09501.pdf).",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "RandAugment",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#RandAugment",
+          "description"     : "Data augmentation method based on [RandAugment](https://arxiv.org/pdf/1909.13719.pdf).",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "TrivialAugmentWide",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#TrivialAugmentWide",
+          "description"     : "Dataset-independent data-augmentation with [TrivialAugment](https://arxiv.org/pdf/2103.10158.pdf) Wide.",
+          "tags"            : ""
+        } ,
+      
+        {
+          "transformation"  : "AugMix",
+          "library"         : "torchvision",
+          "url"             : "libraries/torchvision.html#AugMix",
+          "description"     : "Data augmentation method based on [AugMix](https://arxiv.org/pdf/1912.02781.pdf).",
+          "tags"            : ""
+        } 
+      
+    
+    
+  
+]
