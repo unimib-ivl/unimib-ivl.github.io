@@ -5,6 +5,7 @@ permalink: /projects/
 description: Funded research projects the laboratory takes part in.
 nav: true
 nav_order: 2.5
+published: false # hidden for now (see ivl_show_projects in _config.yml)
 ---
 
 {% comment %} One card per file in _projects/ (sorted by `order`); see _projects/onfoods.md for the fields. {% endcomment %}

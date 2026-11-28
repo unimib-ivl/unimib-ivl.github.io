@@ -182,7 +182,7 @@ collections:
     output: false # news pages are hidden for now; set to true (and publish _pages/news.md) to restore them
     permalink: /news/:name/
   projects:
-    output: true # funded projects, listed on /projects/ (_pages/projects.md), one page each (_layouts/ivl-project.liquid)
+    output: false # hidden for now (see ivl_show_projects); funded projects, listed on /projects/ (_pages/projects.md), one page each (_layouts/ivl-project.liquid)
     permalink: /projects/:name/
   activities:
     output: true # research activities imported from the old website (bin/import_ivl_activities.py), at their old address;
@@ -439,6 +439,10 @@ pub_fallback_style: illustration
 
 # Partners section on the homepage (_data/partners.yml) and its footer link; false hides both.
 ivl_show_partners: false
+
+# Projects section: footer link. To show it again set this to true, set output: true for the projects collection
+# (above) and remove "published: false" from _pages/projects.md.
+ivl_show_projects: false
 
 # -----------------------------------------------------------------------------
 # Jekyll Link Attributes
